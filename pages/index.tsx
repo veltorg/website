@@ -1,7 +1,9 @@
 import { Flex } from "@chakra-ui/react";
+import { Layout } from "../components/layout";
 
 
 const Home = () => (
+  <Layout>
     <Flex sx= {{
       backgroundColor: "pink00",
       alignItems: "center",
@@ -13,7 +15,8 @@ const Home = () => (
     }}>
       
     </Flex>
-  )
+  </Layout>
+)
 
 export default Home;
 
