@@ -1,5 +1,6 @@
 
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react"
+import { text } from "node:stream/consumers";
 
 const config: ThemeConfig = {
 
@@ -35,15 +36,21 @@ const theme = extendTheme({
         heading: "Inter",
         body: "Inter",
       },
-      fontSizes: [14, 24],
       textStyles: {
         normal: {
-          fontWeight: "400",
-          fontSize: 0,
+          fontWeight: "normal",
+          fontSize: "sm",
+          lineHeight: "shorter",
+        },
+        link: {
+            fontSize: "sm",
+            lineHeight: "shorter",
+            textDecoration: "underline"
         },
         header: {
-          fontWeight: "800",
-          fontSize: 1,
+          fontWeight: "extrabold",
+          fontSize: "2xl",
+          lineHeight: "shorter"
         },
       },
 }

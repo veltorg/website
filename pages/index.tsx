@@ -1,6 +1,6 @@
 import { Flex, Grid, Image, Link, Text } from "@chakra-ui/react";
 import { Layout } from "../components/layout";
-
+import NextLink from 'next/link';
 
 const Home = () => (
   <Layout>
@@ -38,11 +38,11 @@ const Home = () => (
             <Flex
               sx={{ alignItems: "center", flexDirection: "column", gap: 0 }}
             >
-              <Text variant="header" sx={{ color: "blue00" }}>
+              <Text textStyle="header" sx={{ color: "blue00" }}>
                 Vi styrker mennesker til å oppnå mer
               </Text>
               <Text
-                variant="normal"
+                textStyle="normal"
                 sx={{
                   color: "blue00",
                 }}
@@ -51,9 +51,9 @@ const Home = () => (
                 i en ny digital hverdag.
               </Text>
             </Flex>
-            <Link href="/about" mr="auto">
-              <Text variant="normal" sx={{ color: "blue00" }}>
-                Les mer om oss →
+            <Link as={NextLink}  href="/about" mr="auto">
+              <Text textStyle="link" sx={{ color: "blue00" }}>
+                Les mer om oss
               </Text>
             </Link>
           </Flex>
@@ -69,20 +69,20 @@ const Home = () => (
           <Image src="../squares.svg" sx={{}} width={110} height={121} alt={""} />
           <Flex sx={{ gap: 2, flexDirection: "column" }}>
             <Text
-              variant="header"
-              sx={{ color: "green00", textAlign: "center" }}
+              textStyle="header"
+              sx={{ color: "green00"}}
             >
               Utvid, tilpass og skreddersy iterativt
             </Text>
-            <Text variant="normal" sx={{ textAlign: "center" }}>
+            <Text textStyle="normal" sx={{  }}>
               Vi elsker å skape fantastiske opplevelser, og vi innser at alle
               har forskjellige behov. Med oss på laget kan du utvide, tilpasse
               og skreddersky mens du går.
             </Text>
-            <Link href="/about">
+            <Link as={NextLink} href="/about">
               <Text
-                variant="normal"
-                sx={{ color: "black", textAlign: "center", fontWeight: "800" }}
+                textStyle="link"
+                sx={{ color: "black", }}
               >
                 Les mer om vår kompetanse
               </Text>
@@ -95,24 +95,24 @@ const Home = () => (
             p: 3,
             backgroundColor: "green00noswap",
             borderRadius: 0,
-            gap: 0,
+            gap: 2,
           }}
         >
-          <Text variant="header" sx={{ color: "green10noswap" }}>
+          <Text textStyle="header" sx={{ color: "green10noswap" }}>
             Lorem ipsum sit amet
           </Text>
-          <Text variant="normal" sx={{ color: "green10noswap" }}>
+          <Text textStyle="normal" sx={{ color: "green10noswap" }}>
             Aliquam pellentesque urna lacinia, finibus tellus non, aliquam urna.
             Phasellus varius aliquet massa, id tempus dui aliquet at.
           </Text>
-          <Text variant="normal" sx={{ color: "green10noswap" }}>
+          <Text textStyle="normal" sx={{ color: "green10noswap" }}>
             Aenean aliquam sed ante nec aliquam. Pellentesque habitant morbi
             tristique senectus et netus et malesuada fames ac turpis egestas. In
             sit amet metus efficitur, cursus sapien maximus, semper purus.
           </Text>
           <Link href="/about" mr="auto">
-            <Text variant="normal" sx={{ color: "green10noswap" }}>
-              Les mer om oss →
+            <Text textStyle="link" sx={{ color: "green10noswap" }}>
+              Les mer om oss
             </Text>
           </Link>
         </Flex>
