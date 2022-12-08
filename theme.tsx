@@ -11,6 +11,8 @@ const theme = extendTheme({
     initialColorMode: "system",
     useSystemColorMode: true,
     },
+    space: ["0.5em", "0.625em", "1em", "2em", "3em"],
+    radii: ["1em"],
     colors: {
         background: "#FFFFFF",
         pink00: "#E1CCFF",
@@ -34,7 +36,7 @@ const theme = extendTheme({
         body: "Inter",
       },
       fontSizes: [14, 24],
-      text: {
+      textStyles: {
         normal: {
           fontWeight: "400",
           fontSize: 0,
