@@ -1,4 +1,13 @@
-import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
+import {
+  defineStyleConfig,
+  extendTheme,
+  StyleFunctionProps,
+  useColorMode,
+  useColorModeValue,
+  type ThemeConfig,
+} from "@chakra-ui/react";
+import defaultTheme from "@chakra-ui/theme";
+import { switchTheme } from "./components/footer/switch";
 
 const config: ThemeConfig = {
   initialColorMode: "system",
@@ -10,33 +19,37 @@ const theme = extendTheme({
   space: ["0.5em", "0.625em", "1em", "2em", "3em"],
   radii: ["1em"],
   colors: {
-    background: "#FFFFFF",
     pink00: "#E1CCFF",
     blue00: "#454BFF",
-    green00: "#00837D",
     green00noswap: "#00837D",
-    green10: "#C8FAFF",
     green10noswap: "#C8FAFF",
     black10: "#101326",
-    modes: {
-      dark: {
-        background: "#101326",
-        green00: "#C8FAFF",
-        green10: "#00837D",
-        black10: "#101326",
+  },
+  // SemanticTokens is used when you want different colors for 'light' and 'dark' mode.
+  semanticTokens: {
+    colors: {
+      green00: {
+        default: "#00837D",
+        _dark: "#C8FAFF",
+      },
+      green10: {
+        default: "#C8FAFF",
+        _dark: "#00837D",
+      },
+      blacktogreen: {
+        default: "#000000",
+        _dark: "#C8FAFF",
       },
     },
-    brand: {
-        100: "#00837D",
-        200: "#C8FAFF"
-    }
   },
   fonts: {
     heading: "Inter",
     body: "Inter",
+    mono: "Inter"
   },
   textStyles: {
     normal: {
+      font: "Inter",
       fontWeight: "normal",
       fontSize: "sm",
       lineHeight: "shorter",
@@ -52,10 +65,15 @@ const theme = extendTheme({
       lineHeight: "shorter",
     },
   },
-  styles: {
+  styles: (props: StyleFunctionProps) => ({
     global: {
-      body: {},
+      body: {
+        bg: props.colorMode === "light" ? "#FFFFFF" : "#101326",
+      },
     },
+  }),
+  components: {
+    Switch: switchTheme
   },
 });
 
