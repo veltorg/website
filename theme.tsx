@@ -1,10 +1,12 @@
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
 
+const config: ThemeConfig = {
+  initialColorMode: "system",
+  useSystemColorMode: true,
+};
+
 const theme = extendTheme({
-  config: {
-    initialColorMode: "system",
-    useSystemColorMode: true,
-  },
+  config,
   space: ["0.5em", "0.625em", "1em", "2em", "3em"],
   radii: ["1em"],
   colors: {
