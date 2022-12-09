@@ -1,22 +1,20 @@
-import { Flex } from "@chakra-ui/react"
-import Head from "next/head"
-import { ReactNode } from "react"
-import { Footer } from "./footer/footer"
-import { Header } from "./header/header"
+import { Flex } from "@chakra-ui/react";
+import Head from "next/head";
+import { ReactNode } from "react";
+import { Footer } from "./footer/footer";
+import { Header } from "./header/header";
 
 type Props = {
-    children?: ReactNode
-}
+  children?: ReactNode;
+};
 
-export const Layout = ({
-    children,
-}: Props) => (
-    <Flex
+export const Layout = ({ children }: Props) => (
+  <Flex
     sx={{
       flexDirection: "column",
       //gap: 0,
-      pb: 0,
       maxWidth: "26.75em",
+      background: "background",
     }}
   >
     <Header />
@@ -27,6 +25,6 @@ export const Layout = ({
     >
       {children}
     </Flex>
-      <Footer/>
+    <Footer />
   </Flex>
-)
+);
