@@ -13,15 +13,19 @@ import {
   Link,
   Menu,
   Spacer,
+  useColorMode,
   useDisclosure,
 } from "@chakra-ui/react";
 import { Hamburger } from "./hamburger";
 import { Logo } from "./logo";
+import { LogoDark } from "./logo-dark";
+import { HamburgerDark } from "./hamburger-dark";
 
 export const Header: React.FC = () => {
-  const { pathname } = useRouter();
-  const isHome = pathname === "/";
+  const { colorMode, setColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const logoInput = colorMode === "light" ? <Logo /> : <LogoDark />;
+  const burgerInput = colorMode === "light" ? <Hamburger /> : <HamburgerDark />;
   return (
     <Flex>
       <Flex
@@ -30,9 +34,7 @@ export const Header: React.FC = () => {
         flexDirection={"row"}
         width="100%"
       >
-        <Link href={"/"}>
-          <Logo />
-        </Link>
+        <Link href={"/"}>{logoInput}</Link>
 
         <IconButton
           variant="link"
@@ -42,7 +44,7 @@ export const Header: React.FC = () => {
           ml="auto"
           pr="2em"
         >
-          <Hamburger />
+          {burgerInput}
         </IconButton>
       </Flex>
       <Drawer placement={"top"} onClose={onClose} isOpen={isOpen} size="sm">
