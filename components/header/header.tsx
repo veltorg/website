@@ -24,19 +24,31 @@ export const Header: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Flex>
-      <Flex my="2em" alignContent="space-between" flexDirection={"row"} width="100%" >
+      <Flex
+        my="2em"
+        alignContent="space-between"
+        flexDirection={"row"}
+        width="100%"
+      >
         <Link href={"/"}>
           <Logo />
         </Link>
 
-        <IconButton variant="link" aria-label="Hamburger" onClick={onOpen} size="lg" ml="auto" pr="2em">
+        <IconButton
+          variant="link"
+          aria-label="Hamburger"
+          onClick={onOpen}
+          size="lg"
+          ml="auto"
+          pr="2em"
+        >
           <Hamburger />
         </IconButton>
       </Flex>
       <Drawer placement={"top"} onClose={onClose} isOpen={isOpen} size="sm">
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton />
+          <DrawerCloseButton color="black" />
           <DrawerBody>
             <Flex
               sx={{
@@ -45,7 +57,7 @@ export const Header: React.FC = () => {
                 zIndex: 2,
                 display: "flex",
                 flexDirection: "column",
-                m: "2em"
+                m: "2em",
               }}
             >
               <Flex
@@ -57,22 +69,19 @@ export const Header: React.FC = () => {
               >
                 <Link
                   href="/about"
-                  sx={{                     color: "#00837D",
-                  textDecoration: "none" }}
+                  sx={{ color: "#00837D", textDecoration: "none" }}
                 >
                   Om oss
                 </Link>
                 <Link
                   href="/principles"
-                  sx={{                     color: "#00837D",
-                  textDecoration: "none"}}
+                  sx={{ color: "#00837D", textDecoration: "none" }}
                 >
                   Våre prinsipper
                 </Link>
                 <Link
                   href="/people"
-                  sx={{                     color: "#00837D",
-                  textDecoration: "none"}}
+                  sx={{ color: "#00837D", textDecoration: "none" }}
                 >
                   Folkene bak
                 </Link>
@@ -80,7 +89,7 @@ export const Header: React.FC = () => {
                   href="/customer-service"
                   sx={{
                     color: "#00837D",
-                    textDecoration: "none"
+                    textDecoration: "none",
                   }}
                 >
                   Kundestøtte
@@ -92,13 +101,17 @@ export const Header: React.FC = () => {
                     borderRadius: "8px",
                     justifyContent: "center",
                     width: "40%",
-                    ml:"-2em",
-                    alignSelf: "center"
+                    ml: "-2em",
+                    alignSelf: "center",
                   }}
                 >
                   <Link
                     href="/become-customer"
-                    sx={{ color: "#00837D", textDecoration: "none", alignSelf: "center" }}
+                    sx={{
+                      color: "#00837D",
+                      textDecoration: "none",
+                      alignSelf: "center",
+                    }}
                   >
                     <Box sx={{}}>Bli kunde</Box>
                   </Link>
