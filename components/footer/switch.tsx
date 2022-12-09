@@ -1,4 +1,4 @@
-import { Switch, useColorMode } from "@chakra-ui/react";
+import { FormControl, FormLabel, Switch, useColorMode } from "@chakra-ui/react";
 import { switchAnatomy } from "@chakra-ui/anatomy";
 import { createMultiStyleConfigHelpers, defineStyle } from "@chakra-ui/react";
 
@@ -27,7 +27,7 @@ const baseStyle = definePartsStyle((props) => ({
     // ...
   },
   thumb: {
-    bg: "green.10",
+    bg: "green.200",
     // let's also provide dark mode alternatives
     _dark: {
       bg: "gray.900",
@@ -42,11 +42,13 @@ export const Switches: React.FC = ({}) => {
   const { colorMode, setColorMode } = useColorMode();
   const colorswap = colorMode === "dark" ? "light" : "dark";
   return (
+    <FormControl display={"flex"} gap={2} flexDirection={"row"} justifyContent="center" >
     <Switch
-      borderRadius="sm"
-      aria-label={"Mørk-modus"}
+      id="dark-mode"
       size="lg"
       onChange={() => setColorMode(colorswap)}
     />
+    <FormLabel htmlFor="dark-mode" color="brand.100">Mørk-modus</FormLabel>
+    </FormControl>
   );
 };

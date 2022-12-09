@@ -26,6 +26,10 @@ const theme = extendTheme({
         black10: "#101326",
       },
     },
+    brand: {
+        100: "#00837D",
+        200: "#C8FAFF"
+    }
   },
   fonts: {
     heading: "Inter",
