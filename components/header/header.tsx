@@ -40,75 +40,67 @@ export const Header: React.FC = () => {
           <DrawerBody>
             <Flex
               sx={{
-                position: "fixed",
-                left: 0,
-                top: 0,
-                backgroundColor: "blue04",
                 width: "100%",
-                height: "460px",
+                height: "28em",
                 zIndex: 2,
                 display: "flex",
-                p: 4,
                 flexDirection: "column",
-                alignItems: "center",
-                overflow: "scroll",
+                m: "2em"
               }}
             >
               <Flex
                 sx={{
                   flexDirection: "column",
-                  fontFamily: "DM Sans",
-                  mr: "auto",
-
-                  mt: "20px",
-                  gap: 4,
+                  gap: 3,
                   width: "100%",
-                  height: "70%",
                 }}
               >
                 <Link
                   href="/about"
-                  sx={{ color: "black", textDecoration: "none", ml: "20px" }}
+                  sx={{                     color: "#00837D",
+                  textDecoration: "none" }}
                 >
                   Om oss
                 </Link>
                 <Link
                   href="/principles"
-                  sx={{ color: "black", textDecoration: "none", ml: "20px" }}
+                  sx={{                     color: "#00837D",
+                  textDecoration: "none"}}
                 >
                   Våre prinsipper
                 </Link>
                 <Link
                   href="/people"
-                  sx={{ color: "black", textDecoration: "none", ml: "20px" }}
+                  sx={{                     color: "#00837D",
+                  textDecoration: "none"}}
                 >
                   Folkene bak
                 </Link>
                 <Link
                   href="/customer-service"
                   sx={{
-                    color: "black",
-                    textDecoration: "none",
-                    mb: "20px",
-                    ml: "20px",
+                    color: "#00837D",
+                    textDecoration: "none"
                   }}
                 >
                   Kundestøtte
                 </Link>
                 <Flex
                   sx={{
-                    py: "15px",
-                    height: "55px",
-                    border: "3px solid #D9EBFF",
+                    height: "45px",
+                    border: "2px solid #00837D",
                     borderRadius: "8px",
                     justifyContent: "center",
+                    width: "40%",
+                    ml:"-2em",
+                    alignSelf: "center"
                   }}
                 >
                   <Link
                     href="/become-customer"
-                    sx={{ color: "black", textDecoration: "none" }}
+                    sx={{ color: "#00837D", textDecoration: "none", alignSelf: "center" }}
                   >
-                    <Box sx={{}}>Bli kunde →</Box>
+                    <Box sx={{}}>Bli kunde</Box>
                   </Link>
                 </Flex>
               </Flex>
