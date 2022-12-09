@@ -26,9 +26,9 @@ export const Header: React.FC = () => {
     <Flex>
       <Flex my="2em">
         <Link href={"/"}>
-          <Logo/>
+          <Logo />
         </Link>
-<Spacer/>
+        <Spacer />
         <IconButton aria-label="Hamburger" onClick={onOpen}>
           <Hamburger />
         </IconButton>
@@ -36,85 +36,84 @@ export const Header: React.FC = () => {
       <Drawer placement={"top"} onClose={onClose} isOpen={isOpen} size="sm">
         <DrawerOverlay />
         <DrawerContent>
-        <DrawerCloseButton/>
-        <DrawerBody>
-        <Flex
-          sx={{
-            position: "fixed",
-            left: 0,
-            top: 0,
-            backgroundColor: "blue04",
-            width: "100%",
-            height: "460px",
-            zIndex: 2,
-            display: "flex",
-            p: 4,
-            flexDirection: "column",
-            alignItems: "center",
-            overflow: "scroll",
-          }}
-        >
-
-          <Flex
-            sx={{
-              flexDirection: "column",
-              fontFamily: "DM Sans",
-              mr: "auto",
-
-              mt: "20px",
-              gap: 4,
-              width: "100%",
-              height: "70%",
-            }}
-          >
-            <Link
-              href="/about"
-              sx={{ color: "black", textDecoration: "none", ml: "20px" }}
-            >
-              Om oss
-            </Link>
-            <Link
-              href="/principles"
-              sx={{ color: "black", textDecoration: "none", ml: "20px" }}
-            >
-              Våre prinsipper
-            </Link>
-            <Link
-              href="/people"
-              sx={{ color: "black", textDecoration: "none", ml: "20px" }}
-            >
-              Folkene bak
-            </Link>
-            <Link
-              href="/customer-service"
-              sx={{
-                color: "black",
-                textDecoration: "none",
-                mb: "20px",
-                ml: "20px",
-              }}
-            >
-              Kundestøtte
-            </Link>
+          <DrawerCloseButton />
+          <DrawerBody>
             <Flex
               sx={{
-                py: "15px",
-                height: "55px",
-                border: "3px solid #D9EBFF",
-                borderRadius: "8px",
-                justifyContent: "center",
+                position: "fixed",
+                left: 0,
+                top: 0,
+                backgroundColor: "blue04",
+                width: "100%",
+                height: "460px",
+                zIndex: 2,
+                display: "flex",
+                p: 4,
+                flexDirection: "column",
+                alignItems: "center",
+                overflow: "scroll",
               }}
             >
-              <Link
-                href="/become-customer"
-                sx={{ color: "black", textDecoration: "none" }}
+              <Flex
+                sx={{
+                  flexDirection: "column",
+                  fontFamily: "DM Sans",
+                  mr: "auto",
+
+                  mt: "20px",
+                  gap: 4,
+                  width: "100%",
+                  height: "70%",
+                }}
               >
-                <Box sx={{}}>Bli kunde →</Box>
-              </Link>
+                <Link
+                  href="/about"
+                  sx={{ color: "black", textDecoration: "none", ml: "20px" }}
+                >
+                  Om oss
+                </Link>
+                <Link
+                  href="/principles"
+                  sx={{ color: "black", textDecoration: "none", ml: "20px" }}
+                >
+                  Våre prinsipper
+                </Link>
+                <Link
+                  href="/people"
+                  sx={{ color: "black", textDecoration: "none", ml: "20px" }}
+                >
+                  Folkene bak
+                </Link>
+                <Link
+                  href="/customer-service"
+                  sx={{
+                    color: "black",
+                    textDecoration: "none",
+                    mb: "20px",
+                    ml: "20px",
+                  }}
+                >
+                  Kundestøtte
+                </Link>
+                <Flex
+                  sx={{
+                    py: "15px",
+                    height: "55px",
+                    border: "3px solid #D9EBFF",
+                    borderRadius: "8px",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Link
+                    href="/become-customer"
+                    sx={{ color: "black", textDecoration: "none" }}
+                  >
+                    <Box sx={{}}>Bli kunde →</Box>
+                  </Link>
+                </Flex>
+              </Flex>
             </Flex>
-          </Flex>
-        </Flex>
-        </DrawerBody>
+          </DrawerBody>
         </DrawerContent>
       </Drawer>
     </Flex>

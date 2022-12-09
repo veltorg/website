@@ -48,10 +48,9 @@ const theme = extendTheme({
   },
   styles: {
     global: {
-        'body': {
-        }
-    }
-  }
+      body: {},
+    },
+  },
 });
 
 export default theme;
