@@ -24,12 +24,12 @@ export const Header: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Flex>
-      <Flex my="2em">
+      <Flex my="2em" alignContent="space-between" flexDirection={"row"} width="100%" >
         <Link href={"/"}>
           <Logo />
         </Link>
-        <Spacer />
-        <IconButton aria-label="Hamburger" onClick={onOpen}>
+
+        <IconButton variant="link" aria-label="Hamburger" onClick={onOpen} size="lg" ml="auto" pr="2em">
           <Hamburger />
         </IconButton>
       </Flex>

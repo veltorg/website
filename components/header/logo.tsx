@@ -7,7 +7,7 @@ export const Logo: FC<Props> = () => {
   return (
     <svg
       width="187"
-      height="41"
+      height="39"
       viewBox="0 0 187 41"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
