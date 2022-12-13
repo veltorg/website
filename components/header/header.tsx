@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
   return (
     <Flex>
       <Flex
-        my="2em"
+        my={3}
         alignContent="space-between"
         flexDirection={"row"}
         width="100%"
@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
           onClick={onOpen}
           size="lg"
           ml="auto"
-          pr="2em"
+          pr={3}
         >
           {burgerInput}
         </IconButton>
@@ -59,7 +59,7 @@ export const Header: React.FC = () => {
                 zIndex: 2,
                 display: "flex",
                 flexDirection: "column",
-                m: "2em",
+                m: 3,
               }}
             >
               <Flex
@@ -99,8 +99,8 @@ export const Header: React.FC = () => {
                 <Flex
                   sx={{
                     border: "drawer",
-                    height: "45px",
-                    borderRadius: "8px",
+                    height: "3em",
+                    borderRadius: 0,
                     justifyContent: "center",
                     width: "40%",
                     ml: "-2em",

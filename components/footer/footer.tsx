@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
   const freshLogo = colorMode === "light" ? <Freshworks /> : <FreshworksDark />;
   //const switchInput = colorMode === "light" ? <Switches/> : <SwitchesDark>
   return (
-    <Flex sx={{ flexDirection: "column", p: 3, gap: 4 }}>
+    <Flex sx={{ flexDirection: "column", p: 3, gap: 4, mt: 2 }}>
       <Flex sx={{ alignItems: "center", justifyContent: "center", gap: 1 }}>
         {freshLogo}
       </Flex>
