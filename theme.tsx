@@ -27,6 +27,12 @@ const theme = extendTheme({
   },
   // SemanticTokens is used when you want different colors for 'light' and 'dark' mode.
   semanticTokens: {
+    borders: {
+      drawer: {
+        default: "2px solid #00837D",
+        _dark: "2px solid #C8FAFF"
+      }
+    },
     colors: {
       green00: {
         default: "#00837D",

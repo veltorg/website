@@ -50,7 +50,7 @@ export const Header: React.FC = () => {
       <Drawer placement={"top"} onClose={onClose} isOpen={isOpen} size="sm">
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton color="black" />
+          <DrawerCloseButton color="green00" />
           <DrawerBody>
             <Flex
               sx={{
@@ -71,26 +71,26 @@ export const Header: React.FC = () => {
               >
                 <Link
                   href="/about"
-                  sx={{ color: "#00837D", textDecoration: "none" }}
+                  sx={{ color: "green00", textDecoration: "none" }}
                 >
                   Om oss
                 </Link>
                 <Link
                   href="/principles"
-                  sx={{ color: "#00837D", textDecoration: "none" }}
+                  sx={{ color: "green00", textDecoration: "none" }}
                 >
                   Våre prinsipper
                 </Link>
                 <Link
                   href="/people"
-                  sx={{ color: "#00837D", textDecoration: "none" }}
+                  sx={{ color: "green00", textDecoration: "none" }}
                 >
                   Folkene bak
                 </Link>
                 <Link
                   href="/customer-service"
                   sx={{
-                    color: "#00837D",
+                    color: "green00",
                     textDecoration: "none",
                   }}
                 >
@@ -98,8 +98,8 @@ export const Header: React.FC = () => {
                 </Link>
                 <Flex
                   sx={{
+                    border: "drawer",
                     height: "45px",
-                    border: "2px solid #00837D",
                     borderRadius: "8px",
                     justifyContent: "center",
                     width: "40%",
@@ -110,7 +110,7 @@ export const Header: React.FC = () => {
                   <Link
                     href="/become-customer"
                     sx={{
-                      color: "#00837D",
+                      color: "green00",
                       textDecoration: "none",
                       alignSelf: "center",
                     }}
