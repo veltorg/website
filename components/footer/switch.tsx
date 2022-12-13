@@ -17,7 +17,7 @@ const baseStyle = definePartsStyle((props) => ({
     // ...
   },
   thumb: {
-    borderRadius: "1em",
+    borderRadius: 0,
     bg: "green00noswap",
 
     // let's also provide dark mode alternatives
@@ -33,21 +33,21 @@ export const switchTheme = defineMultiStyleConfig({ baseStyle });
 const baseStyleTrack = defineStyle((props) => {
   return {
     bg: `green10noswap`,
-    borderRadius: "1em",
+    borderRadius: 0,
     //color: 'green10',
     _checked: {
       //color: 'green10',
       bg: "green00noswap",
-      borderRadius: "1em",
+      borderRadius: 0,
     },
     _dark: {
       //color: 'green10',
       bg: `green10noswap`,
-      borderRadius: "1em",
+      borderRadius: 0,
       _checked: {
         //color: 'green10',
         bg: `green00noswap`,
-        borderRadius: "1em",
+        borderRadius: 0,
       },
     },
   };
@@ -63,7 +63,7 @@ export const Switches: React.FC = ({}) => {
       gap={2}
       flexDirection={"row"}
       justifyContent="center"
-      sx={{ color: "green00noswap" }}
+      sx={{ color: "greentowhite" }}
       label="Mørk Modus"
       fontFamily={"Inter"}
     >
