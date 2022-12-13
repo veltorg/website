@@ -11,7 +11,6 @@ const Home = () => (
           alignItems: "center",
           flexDirection: "column",
           mt: 3,
-          pb: 3,
           borderRadius: 0,
           position: "relative",
         }}
@@ -57,6 +56,7 @@ const Home = () => (
           p: 3,
           flexDirection: "column",
           gap: 2,
+          mb: 2
         }}
       >
         <Image src="../squares.svg" sx={{}} width={110} height={121} alt={""} />
