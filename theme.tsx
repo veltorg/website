@@ -38,6 +38,10 @@ const theme = extendTheme({
       }
     },
     colors: {
+    background: {
+      default: "#FFFFFF",
+      _dark: "#101326",
+      },
     green00: {
       default: "#00837D",
       _dark: "#C8FAFF",

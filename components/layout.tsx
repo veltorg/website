@@ -14,6 +14,7 @@ export const Layout = ({ children }: Props) => (
       flexDirection: "column",
       //gap: 0,
       maxWidth: "26.75em",
+      backgroundColor: "background"
     }}
   >
     <Header />

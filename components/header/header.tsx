@@ -48,8 +48,8 @@ export const Header: React.FC = () => {
         </IconButton>
       </Flex>
       <Drawer placement={"top"} onClose={onClose} isOpen={isOpen} size="sm">
-        <DrawerOverlay />
-        <DrawerContent>
+        <DrawerOverlay/>
+        <DrawerContent backgroundColor="background">
           <DrawerCloseButton color="green00" />
           <DrawerBody>
             <Flex
