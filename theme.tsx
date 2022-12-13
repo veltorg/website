@@ -1,12 +1,10 @@
+
 import {
-  defineStyleConfig,
   extendTheme,
   StyleFunctionProps,
-  useColorMode,
-  useColorModeValue,
   type ThemeConfig,
 } from "@chakra-ui/react";
-import defaultTheme from "@chakra-ui/theme";
+
 import { switchTheme } from "./components/footer/switch";
 
 const config: ThemeConfig = {
@@ -16,7 +14,13 @@ const config: ThemeConfig = {
 
 const theme = extendTheme({
   config,
-  space: ["0.5em", "0.625em", "1em", "2em", "3em"],
+  space: {
+    0: "0.5em",
+    1: "0.625em",
+    2: "1em",
+    3: "2em",
+    4: "3em"
+  }, 
   radii: ["1em"],
   colors: {
     pink00: "#E1CCFF",
@@ -29,24 +33,28 @@ const theme = extendTheme({
   semanticTokens: {
     borders: {
       drawer: {
-        default: "2px solid #00837D",
-        _dark: "2px solid #C8FAFF"
+        default: "0.125em solid #00837D",
+        _dark: "0.125em solid #C8FAFF"
       }
     },
     colors: {
-      green00: {
-        default: "#00837D",
-        _dark: "#C8FAFF",
-      },
-      green10: {
-        default: "#C8FAFF",
-        _dark: "#00837D",
-      },
-      blacktogreen: {
-        default: "#000000",
-        _dark: "#C8FAFF",
-      },
+    green00: {
+      default: "#00837D",
+      _dark: "#C8FAFF",
     },
+    green10: {
+      default: "#C8FAFF",
+      _dark: "#00837D",
+    },
+    blacktogreen: {
+      default: "#000000",
+      _dark: "#C8FAFF",
+    },
+    greentowhite: {
+      default: "#00837D",
+      _dark: "#FFFFFF"
+    }
+  },
   },
   fonts: {
     heading: "Inter",
