@@ -12,8 +12,6 @@ export const Layout = ({ children }: Props) => (
   <Flex
     sx={{
       flexDirection: "column",
-      //gap: 0,
-      maxWidth: "26.75em",
       backgroundColor: "background"
     }}
   >
