@@ -18,6 +18,7 @@ export const Layout = ({ children }: Props) => (
     <Flex
       sx={{
         alignItems: "stretch",
+        m:"0rem"
       }}
     >
       {children}
