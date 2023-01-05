@@ -7,7 +7,7 @@ export const DesktopLogo: FC<Props> = () => {
   return (
     <svg
       width="104"
-      height="95"
+      height="75"
       viewBox="0 7 104 95"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
