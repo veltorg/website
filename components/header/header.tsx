@@ -1,5 +1,5 @@
 import {
-  Box,
+  Button,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -8,6 +8,10 @@ import {
   Flex,
   IconButton,
   Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Show,
   useColorMode,
   useDisclosure,
@@ -32,7 +36,7 @@ export const Header: React.FC = () => {
       <Show above="md">
         <Flex m={{ md: 4, lg: 5 }} justifyContent="space-between" width="100%">
           <Flex>{desktopLogoInput}</Flex>
-          <Flex gap={{ md: 2, lg: 4 }} alignItems="end">
+          <Flex gap={{ md: 3, lg: 4 }} alignItems="end">
             <Link as={NextLink} href="/about" variant="nav">
               About us
             </Link>
@@ -40,7 +44,7 @@ export const Header: React.FC = () => {
               Products
             </Link>
 
-            <Link
+            <Menu
               /*Will be dropdown with
                 Blog
                 Courses
@@ -48,11 +52,18 @@ export const Header: React.FC = () => {
                 Events
                 Webinars
                 */
-              href="/resources"
-              variant="nav"
             >
+              <MenuButton as={Link} fontSize='md' m="0rem" p="0rem" border='none'>
               Resources
-            </Link>
+              </MenuButton>
+              <MenuList>
+                <MenuItem>Blog</MenuItem>
+                <MenuItem>Courses</MenuItem>
+                <MenuItem>Customer Stories</MenuItem>
+                <MenuItem>Events</MenuItem>
+                <MenuItem>Webinars</MenuItem>
+              </MenuList>
+            </Menu>
             <Link as={NextLink} href="/consultancy" variant="nav">
               Consultancy
             </Link>
