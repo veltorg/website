@@ -51,47 +51,39 @@ export const Header: React.FC = () => {
             </Link>
 
             <Menu
-              /*Will be dropdown with
-                Blog
-                Courses
-                Customes Stories
-                Events
-                Webinars
-                */
               isOpen={isOpen}
             >
               <MenuButton 
-                as={Link} 
-                fontSize='md'
+                as={Link}
                 aria-label="Resources"
                 onMouseEnter={onOpen}
-                onMouseLeave={onOpen}
+                onMouseLeave={onClose}
               >
               Resources
               </MenuButton>
               <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
-                <MenuItem>
-                  <Link as={NextLink} href="/blog" variant="nav">
+                <MenuItem px={1}>
+                  <Link as={NextLink} href="/blog" variant="navmenu">
                     Blog
                   </Link>
                 </MenuItem>
-                <MenuItem>
-                <Link as={NextLink} href="/courses" variant="nav">
+                <MenuItem px={1}>
+                <Link as={NextLink} href="/courses" variant="navmenu">
                     Courses
                   </Link>
                 </MenuItem>
-                <MenuItem>    
-                  <Link as={NextLink} href="/customer-stories" variant="nav">
+                <MenuItem px={1}>    
+                  <Link as={NextLink} href="/customer-stories" variant="navmenu">
                     Customers Stories
                   </Link>
                 </MenuItem>
-                <MenuItem>
-                  <Link as={NextLink} href="/events" variant="nav">
+                <MenuItem px={1}>
+                  <Link as={NextLink} href="/events" variant="navmenu">
                     Events
                   </Link>
                 </MenuItem>
-                <MenuItem>                
-                  <Link as={NextLink} href="/webinars" variant="nav">
+                <MenuItem px={1}>                
+                  <Link as={NextLink} href="/webinars" variant="navmenu" >
                     Webinars
                   </Link>
                 </MenuItem>
@@ -157,19 +149,45 @@ export const Header: React.FC = () => {
                     Products
                   </Link>
 
-                  <Link
-                    /*Will be dropdown with
-                Blog
-                Courses
-                Customes Stories
-                Events
-                Webinars
-                */
-                    href="/resources"
-                    variant="hamburger"
-                  >
-                    Resources
+                  <Menu
+              isOpen={isOpen}
+            >
+              <MenuButton 
+                as={Link} 
+                aria-label="Resources"
+                onClick={onClose}
+                variant="hamburger"
+              >
+              Resources
+              </MenuButton>
+              <MenuList>
+                <MenuItem>
+                  <Link as={NextLink} href="/blog" variant="nav">
+                    Blog
                   </Link>
+                </MenuItem>
+                <MenuItem>
+                <Link as={NextLink} href="/courses" variant="nav">
+                    Courses
+                  </Link>
+                </MenuItem>
+                <MenuItem>    
+                  <Link as={NextLink} href="/customer-stories" variant="nav">
+                    Customers Stories
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link as={NextLink} href="/events" variant="nav">
+                    Events
+                  </Link>
+                </MenuItem>
+                <MenuItem>                
+                  <Link as={NextLink} href="/webinars" variant="nav">
+                    Webinars
+                  </Link>
+                </MenuItem>
+              </MenuList>
+            </Menu>
 
 
                 </Flex>
