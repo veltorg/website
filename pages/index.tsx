@@ -4,7 +4,7 @@ import NextLink from "next/link";
 
 const Home = () => (
   <Layout>
-    <Grid sx={{ width: "100%", px: 3 }}>
+    <Grid width= "100%" px= {3} display={{ sm:'block', md:'none'}}>
       <Flex
         sx={{
           backgroundColor: "pink00",
