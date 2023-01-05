@@ -40,6 +40,12 @@ export const Header: React.FC = () => {
             <Link as={NextLink} href="/about" variant="nav">
               About us
             </Link>
+            <Link as={NextLink} href="/consultancy" variant="nav">
+              Consultancy
+            </Link>
+            <Link as={NextLink} href="/vision" variant="nav">
+              Philosophy
+            </Link>
             <Link as={NextLink} href="/products" variant="nav">
               Products
             </Link>
@@ -52,24 +58,47 @@ export const Header: React.FC = () => {
                 Events
                 Webinars
                 */
+              isOpen={isOpen}
             >
-              <MenuButton as={Link} fontSize='md' m="0rem" p="0rem" border='none'>
+              <MenuButton 
+                as={Link} 
+                fontSize='md'
+                aria-label="Resources"
+                onMouseEnter={onOpen}
+                onMouseLeave={onOpen}
+              >
               Resources
               </MenuButton>
-              <MenuList>
-                <MenuItem>Blog</MenuItem>
-                <MenuItem>Courses</MenuItem>
-                <MenuItem>Customer Stories</MenuItem>
-                <MenuItem>Events</MenuItem>
-                <MenuItem>Webinars</MenuItem>
+              <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
+                <MenuItem>
+                  <Link as={NextLink} href="/blog" variant="nav">
+                    Blog
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                <Link as={NextLink} href="/courses" variant="nav">
+                    Courses
+                  </Link>
+                </MenuItem>
+                <MenuItem>    
+                  <Link as={NextLink} href="/customer-stories" variant="nav">
+                    Customers Stories
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link as={NextLink} href="/events" variant="nav">
+                    Events
+                  </Link>
+                </MenuItem>
+                <MenuItem>                
+                  <Link as={NextLink} href="/webinars" variant="nav">
+                    Webinars
+                  </Link>
+                </MenuItem>
               </MenuList>
             </Menu>
-            <Link as={NextLink} href="/consultancy" variant="nav">
-              Consultancy
-            </Link>
-            <Link as={NextLink} href="/vision" variant="nav">
-              Philosophy
-            </Link>
+
+
           </Flex>
         </Flex>
       </Show>
@@ -118,6 +147,12 @@ export const Header: React.FC = () => {
                   <Link as={NextLink} href="/about" variant="hamburger">
                     About us
                   </Link>
+                  <Link as={NextLink} href="/consultancy" variant="hamburger">
+                    Consultancy
+                  </Link>
+                  <Link as={NextLink} href="/vision" variant="hamburger">
+                    Philosophy
+                  </Link>
                   <Link as={NextLink} href="/products" variant="hamburger">
                     Products
                   </Link>
@@ -135,12 +170,8 @@ export const Header: React.FC = () => {
                   >
                     Resources
                   </Link>
-                  <Link as={NextLink} href="/consultancy" variant="hamburger">
-                    Consultancy
-                  </Link>
-                  <Link as={NextLink} href="/vision" variant="hamburger">
-                    Philosophy
-                  </Link>
+
+
                 </Flex>
               </Flex>
             </DrawerBody>
