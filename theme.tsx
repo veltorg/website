@@ -20,6 +20,7 @@ const theme = extendTheme({
     xl: '100rem',
   },
   space: {
+    min: '0.2rem',
     0: '0.5rem',
     1: '0.625rem',
     2: '1rem',
@@ -108,6 +109,15 @@ const theme = extendTheme({
           fontSize: '2xl',
           color: 'green00',
           textDecoration: 'none',
+        },
+        nav: {
+          fontSize: 'md'
+        },
+        navmenu: {
+          fontSize: 'md',
+          width: "100%",
+          py: 'min',
+          pl: 1,
         },
       },
     },
