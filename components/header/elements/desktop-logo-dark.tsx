@@ -8,7 +8,7 @@ export const DesktopLogoDark: FC<Props> = () => {
     <svg
       width="104"
       height="95"
-      viewBox="0 0 104 95"
+      viewBox="0 7 104 95"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
