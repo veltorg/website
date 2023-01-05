@@ -100,7 +100,7 @@ export const Header: React.FC = () => {
                   sx={{
                     border: "drawer",
                     height: "3em",
-                    borderRadius: 0,
+                    borderRadius: "md",
                     justifyContent: "center",
                     width: "40%",
                     ml: "-2em",

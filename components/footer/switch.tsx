@@ -17,7 +17,7 @@ const baseStyle = definePartsStyle((props) => ({
     // ...
   },
   thumb: {
-    borderRadius: 0,
+    borderRadius: "md",
     bg: "green00noswap",
 
     // let's also provide dark mode alternatives
@@ -33,21 +33,21 @@ export const switchTheme = defineMultiStyleConfig({ baseStyle });
 const baseStyleTrack = defineStyle((props) => {
   return {
     bg: `green10noswap`,
-    borderRadius: 0,
+    borderRadius: "md",
     //color: 'green10',
     _checked: {
       //color: 'green10',
       bg: "green00noswap",
-      borderRadius: 0,
+      borderRadius: "md",
     },
     _dark: {
       //color: 'green10',
       bg: `green10noswap`,
-      borderRadius: 0,
+      borderRadius: "md",
       _checked: {
         //color: 'green10',
         bg: `green00noswap`,
-        borderRadius: 0,
+        borderRadius: "md",
       },
     },
   };
