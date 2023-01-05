@@ -28,8 +28,7 @@ export const Header: React.FC = () => {
   const { colorMode, setColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const logoInput = colorMode === 'light' ? <Logo /> : <LogoDark />;
-  const desktopLogoInput =
-    colorMode === 'light' ? <DesktopLogo /> : <DesktopLogoDark />;
+  const desktopLogoInput = colorMode === 'light' ? <DesktopLogo /> : <DesktopLogoDark />;
   const burgerInput = colorMode === 'light' ? <Hamburger /> : <HamburgerDark />;
   return (
     <Flex>
@@ -57,11 +56,10 @@ export const Header: React.FC = () => {
                 as={Link}
                 aria-label="Resources"
                 onMouseEnter={onOpen}
-                onMouseLeave={onClose}
               >
               Resources
               </MenuButton>
-              <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
+              <MenuList onMouseLeave={onClose}>
                 <MenuItem px={1}>
                   <Link as={NextLink} href="/blog" variant="navmenu">
                     Blog
@@ -122,10 +120,9 @@ export const Header: React.FC = () => {
               <Flex
                 sx={{
                   width: '100%',
-                  height: '38rem',
+                  height: '42rem',
                   zIndex: 2,
                   flexDirection: 'column',
-                  justifyContent: 'center',
                 }}
               >
                 <Flex
@@ -134,6 +131,7 @@ export const Header: React.FC = () => {
                     gap: 3,
                     width: '100%',
                     alignItems: 'center',
+                    mt: 5
                   }}
                 >
                   <Link as={NextLink} href="/about" variant="hamburger">
@@ -150,39 +148,40 @@ export const Header: React.FC = () => {
                   </Link>
 
                   <Menu
-              isOpen={isOpen}
-            >
+                    defaultIsOpen={false}
+                    placement="bottom"
+                  >
               <MenuButton 
                 as={Link} 
                 aria-label="Resources"
-                onClick={onClose}
                 variant="hamburger"
+                onClick={onOpen}
               >
               Resources
               </MenuButton>
               <MenuList>
                 <MenuItem>
-                  <Link as={NextLink} href="/blog" variant="nav">
+                  <Link as={NextLink} href="/blog" variant="hamburgermenu">
                     Blog
                   </Link>
                 </MenuItem>
                 <MenuItem>
-                <Link as={NextLink} href="/courses" variant="nav">
+                <Link as={NextLink} href="/courses" variant="hamburgermenu">
                     Courses
                   </Link>
                 </MenuItem>
                 <MenuItem>    
-                  <Link as={NextLink} href="/customer-stories" variant="nav">
+                  <Link as={NextLink} href="/customer-stories" variant="hamburgermenu">
                     Customers Stories
                   </Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link as={NextLink} href="/events" variant="nav">
+                  <Link as={NextLink} href="/events" variant="hamburgermenu">
                     Events
                   </Link>
                 </MenuItem>
                 <MenuItem>                
-                  <Link as={NextLink} href="/webinars" variant="nav">
+                  <Link as={NextLink} href="/webinars" variant="hamburgermenu">
                     Webinars
                   </Link>
                 </MenuItem>
