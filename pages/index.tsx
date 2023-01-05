@@ -1,29 +1,24 @@
-import { Flex, Grid, Image, Link, Text } from "@chakra-ui/react";
+import { AspectRatio, Container, Flex, Grid, GridItem, Image, Link, Text } from "@chakra-ui/react";
 import { Layout } from "../components/layout";
 import NextLink from "next/link";
+import React from 'react';
 
 const Home = () => (
   <Layout>
-    <Grid width= "100%" px= {3} display={{ sm:'block', md:'none'}}>
+    <Container width= "100%" px={3} py={3} display={{ sm:'block', md:'none'}}>
+      <GridItem>
       <Flex
         sx={{
           backgroundColor: "pink00",
-          alignItems: "center",
           flexDirection: "column",
-          mt: 3,
-          borderRadius: 0,
-          position: "relative",
+          borderRadius: "md",
         }}
-      >
+      > 
         <Image
           src={"../tablemeet.png"}
-          width={364}
-          height={293}
-          sx={{
-            borderTopLeftRadius: 0,
-            borderTopRightRadius: 0,
-          }}
+          width={"100%"}
           alt={""}
+          borderTopRadius="md"
         />
         <Flex
           sx={{
@@ -33,8 +28,8 @@ const Home = () => (
             gap: 2,
           }}
         >
-          <Image src="../snap.svg" sx={{}} height={128} width={90} alt={""} />
-          <Flex sx={{ alignItems: "center", flexDirection: "column", gap: 0 }}>
+          <Image src="./snap.svg" alt="" width='20%'/>
+          <Flex sx={{ flexDirection: "column", gap: 0, alignItems:"center" }}>
             <Text textStyle="header" color="blue00">
               Vi styrker mennesker til å oppnå mer
             </Text>
@@ -43,25 +38,26 @@ const Home = () => (
               en ny digital hverdag.
             </Text>
           </Flex>
-          <Link as={NextLink} href="/about" mr="auto">
+          <Link as={NextLink} href="/about">
             <Text textStyle="link" color="blue00">
               Les mer om oss
             </Text>
           </Link>
         </Flex>
       </Flex>
+      </GridItem>
+      <GridItem>
       <Flex
         sx={{
           alignItems: "center",
           p: 3,
           flexDirection: "column",
           gap: 2,
-          mb: 2
         }}
       >
-        <Image src="../squares.svg" sx={{}} width={110} height={121} alt={""} />
-        <Flex sx={{ gap: 2, flexDirection: "column" }}>
-          <Text textStyle="header" color="green00">
+        <Image src="../squares.svg" sx={{}} width="20%" alt={""} />
+        <Flex sx={{ gap: 2, flexDirection: "column", alignItems: "center" }}>
+          <Text textStyle="header" color="green00" alignSelf="center">
             Utvid, tilpass og skreddersy iterativt
           </Text>
           <Text textStyle="normal" color="blacktogreen">
@@ -76,12 +72,15 @@ const Home = () => (
           </Link>
         </Flex>
       </Flex>
+      </GridItem>
+      <GridItem>
       <Flex
         sx={{
           flexDirection: "column",
           p: 3,
           backgroundColor: "green00noswap",
-          borderRadius: 0,
+          borderRadius: "md",
+          alignItems:"center",
           gap: 2,
         }}
       >
@@ -97,13 +96,14 @@ const Home = () => (
           tristique senectus et netus et malesuada fames ac turpis egestas. In
           sit amet metus efficitur, cursus sapien maximus, semper purus.
         </Text>
-        <Link href="/about" mr="auto">
+        <Link href="/about">
           <Text textStyle="link" color="green10noswap">
             Les mer om oss
           </Text>
         </Link>
       </Flex>
-    </Grid>
+      </GridItem>
+      </Container> 
   </Layout>
 );
 
