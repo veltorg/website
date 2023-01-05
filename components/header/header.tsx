@@ -17,15 +17,51 @@ import { Logo } from './elements/logo';
 import { LogoDark } from './elements/logo-dark';
 import { HamburgerDark } from './elements/hamburger-dark';
 import NextLink from 'next/link';
+import { DesktopLogo } from './elements/desktop-logo';
+import { DesktopLogoDark } from './elements/desktop-logo-dark';
 
 export const Header: React.FC = () => {
   const { colorMode, setColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const logoInput = colorMode === 'light' ? <Logo /> : <LogoDark />;
+  const desktopLogoInput =
+    colorMode === 'light' ? <DesktopLogo /> : <DesktopLogoDark />;
   const burgerInput = colorMode === 'light' ? <Hamburger /> : <HamburgerDark />;
   return (
     <Flex>
-      <Show above="md"></Show>
+      <Show above="md">
+        <Flex m={{ md: 4, lg: 5 }} justifyContent="space-between" width="100%">
+          <Flex>{desktopLogoInput}</Flex>
+          <Flex gap={{ md: 2, lg: 4 }} alignItems="end">
+            <Link as={NextLink} href="/about" variant="nav">
+              About us
+            </Link>
+            <Link as={NextLink} href="/products" variant="nav">
+              Products
+            </Link>
+
+            <Link
+              /*Will be dropdown with
+                Blog
+                Courses
+                Customes Stories
+                Events
+                Webinars
+                */
+              href="/resources"
+              variant="nav"
+            >
+              Resources
+            </Link>
+            <Link as={NextLink} href="/consultancy" variant="nav">
+              Consultancy
+            </Link>
+            <Link as={NextLink} href="/vision" variant="nav">
+              Philosophy
+            </Link>
+          </Flex>
+        </Flex>
+      </Show>
       <Show below="md">
         <Flex
           m={3}
