@@ -14,14 +14,25 @@ const config: ThemeConfig = {
 
 const theme = extendTheme({
   config,
+  breakpoints: {
+    sm: '30rem',
+    md: '50rem',
+    lg: '75rem',
+    xl: '100rem'
+  },
   space: {
-    0: "0.5em",
-    1: "0.625em",
-    2: "1em",
-    3: "2em",
-    4: "3em"
+    0: "0.5rem",
+    1: "0.625rem",
+    2: "1rem",
+    3: "2rem",
+    4: "3rem",
+    5: "4rem"
   }, 
-  radii: ["1em"],
+  radii: {
+    sm: "0.4rem",
+    md: "1rem",
+    lg: "2rem"
+  },
   colors: {
     pink00: "#E1CCFF",
     blue00: "#454BFF",
@@ -33,8 +44,8 @@ const theme = extendTheme({
   semanticTokens: {
     borders: {
       drawer: {
-        default: "0.125em solid #00837D",
-        _dark: "0.125em solid #C8FAFF"
+        default: "0.125rem solid #00837D",
+        _dark: "0.125rem solid #C8FAFF"
       }
     },
     colors: {

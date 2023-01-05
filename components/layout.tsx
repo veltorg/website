@@ -12,15 +12,13 @@ export const Layout = ({ children }: Props) => (
   <Flex
     sx={{
       flexDirection: "column",
-      //gap: 0,
-      maxWidth: "26.75em",
-      backgroundColor: "background"
     }}
   >
     <Header />
     <Flex
       sx={{
         alignItems: "stretch",
+        m:"0rem"
       }}
     >
       {children}
