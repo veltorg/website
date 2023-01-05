@@ -110,6 +110,11 @@ const theme = extendTheme({
           color: 'green00',
           textDecoration: 'none',
         },
+        hamburgermenu: {
+          fontSize: 'xl',
+          color: 'green00',
+          width: "100%",
+        },
         nav: {
           fontSize: 'md'
         },
