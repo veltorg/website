@@ -1,8 +1,5 @@
-import { useRouter } from "next/router";
-import { useState } from "react";
 import {
   Box,
-  Container,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -11,15 +8,15 @@ import {
   Flex,
   IconButton,
   Link,
-  Menu,
-  Spacer,
+  Show,
   useColorMode,
   useDisclosure,
 } from "@chakra-ui/react";
-import { Hamburger } from "./hamburger";
-import { Logo } from "./logo";
-import { LogoDark } from "./logo-dark";
-import { HamburgerDark } from "./hamburger-dark";
+import { Hamburger } from "./elements/hamburger";
+import { Logo } from "./elements/logo";
+import { LogoDark } from "./elements/logo-dark";
+import { HamburgerDark } from "./elements/hamburger-dark";
+import NextLink from 'next/link';
 
 export const Header: React.FC = () => {
   const { colorMode, setColorMode } = useColorMode();
@@ -27,39 +24,46 @@ export const Header: React.FC = () => {
   const logoInput = colorMode === "light" ? <Logo /> : <LogoDark />;
   const burgerInput = colorMode === "light" ? <Hamburger /> : <HamburgerDark />;
   return (
+    
     <Flex>
+      <Show above="md">
+
+      </Show>
+    <Show below="md">
       <Flex
-        my={3}
-        alignContent="space-between"
-        flexDirection={"row"}
+        m={3}
+        justifyContent="space-between"
+        flexDirection="row"
         width="100%"
       >
-        <Link href={"/"}>{logoInput}</Link>
+        <Link 
+          as={NextLink}
+          href={"/"}
+        >
+          {logoInput}
+        </Link>
 
         <IconButton
           variant="link"
           aria-label="Hamburger"
           onClick={onOpen}
           size="lg"
-          ml="auto"
-          pr={3}
         >
           {burgerInput}
         </IconButton>
       </Flex>
-      <Drawer placement={"top"} onClose={onClose} isOpen={isOpen} size="sm">
+      <Drawer placement={"top"} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay/>
         <DrawerContent backgroundColor="background">
-          <DrawerCloseButton color="green00" />
+          <DrawerCloseButton color="green00" size="lg" p={4}/>
           <DrawerBody>
             <Flex
               sx={{
                 width: "100%",
-                height: "28em",
+                height: "38rem",
                 zIndex: 2,
-                display: "flex",
                 flexDirection: "column",
-                m: 3,
+                justifyContent: "center",
               }}
             >
               <Flex
@@ -67,62 +71,57 @@ export const Header: React.FC = () => {
                   flexDirection: "column",
                   gap: 3,
                   width: "100%",
+                  alignItems: "center"
                 }}
               >
                 <Link
+                  as={NextLink}
                   href="/about"
-                  sx={{ color: "green00", textDecoration: "none" }}
+                  variant="hamburger"
                 >
-                  Om oss
+                  About us
                 </Link>
                 <Link
-                  href="/principles"
-                  sx={{ color: "green00", textDecoration: "none" }}
+                  as={NextLink}
+                  href="/products"
+                  variant="hamburger"
                 >
-                  Våre prinsipper
+                  Products
+                </Link>
+
+                <Link
+                /*Will be dropdown with
+                Blog
+                Courses
+                Customes Stories
+                Events
+                Webinars
+                */
+                  href="/resources"
+                  variant="hamburger"
+                >
+                  Resources
                 </Link>
                 <Link
-                  href="/people"
-                  sx={{ color: "green00", textDecoration: "none" }}
+                  as={NextLink}
+                  href="/consultancy"
+                  variant="hamburger"
                 >
-                  Folkene bak
+                  Consultancy
                 </Link>
                 <Link
-                  href="/customer-service"
-                  sx={{
-                    color: "green00",
-                    textDecoration: "none",
-                  }}
+                  as={NextLink}
+                  href="/vision"
+                  variant="hamburger"
                 >
-                  Kundestøtte
+                Philosophy
                 </Link>
-                <Flex
-                  sx={{
-                    border: "drawer",
-                    height: "3em",
-                    borderRadius: "md",
-                    justifyContent: "center",
-                    width: "40%",
-                    ml: "-2em",
-                    alignSelf: "center",
-                  }}
-                >
-                  <Link
-                    href="/become-customer"
-                    sx={{
-                      color: "green00",
-                      textDecoration: "none",
-                      alignSelf: "center",
-                    }}
-                  >
-                    <Box sx={{}}>Bli kunde</Box>
-                  </Link>
-                </Flex>
               </Flex>
             </Flex>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
+      </Show>
     </Flex>
   );
 };
