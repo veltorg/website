@@ -5,7 +5,7 @@ import {
   type ThemeConfig,
 } from "@chakra-ui/react";
 
-import { switchTheme } from "./components/footer/switch";
+import { switchTheme } from "./components/footer/elements/switch";
 
 const config: ThemeConfig = {
   initialColorMode: "system",
@@ -103,6 +103,15 @@ const theme = extendTheme({
   }),
   components: {
     Switch: switchTheme,
+    Link: {
+      variants: {
+        hamburger: {
+          fontSize: "2xl",
+          color: "green00",
+          textDecoration: "none"
+        },
+      },
+    },
   },
 });
 
