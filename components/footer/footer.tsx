@@ -1,7 +1,7 @@
 import { Flex, Image, useColorMode } from "@chakra-ui/react";
-import { Freshworks } from "./freshworks";
-import { FreshworksDark } from "./freshworks-dark";
-import { Switches } from "./switch";
+import { Freshworks } from "./elements/freshworks";
+import { FreshworksDark } from "./elements/freshworks-dark";
+import { Switches } from "./elements/switch";
 
 export const Footer: React.FC = () => {
   const { colorMode, setColorMode } = useColorMode();
