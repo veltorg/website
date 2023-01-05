@@ -1,11 +1,17 @@
-import { AspectRatio, Container, Flex, Grid, GridItem, Image, Link, Text } from "@chakra-ui/react";
+import { AspectRatio, Container, Flex, Grid, GridItem, Image, Link, Show, Text } from "@chakra-ui/react";
 import { Layout } from "../components/layout";
 import NextLink from "next/link";
 import React from 'react';
 
 const Home = () => (
   <Layout>
-    <Container width= "100%" px={3} py={3} display={{ sm:'block', md:'none'}}>
+    <Show above="md">
+    <Container width= "100%" px={3} py={3} display={{ sm:'none', md:'block'}}>
+  potato
+    </Container>
+    </Show>
+  <Show below="md">
+    <Container width= "100%" px={3} py={3}>
       <GridItem>
       <Flex
         sx={{
@@ -104,6 +110,7 @@ const Home = () => (
       </Flex>
       </GridItem>
       </Container> 
+      </Show>
   </Layout>
 );
 
