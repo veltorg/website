@@ -12,7 +12,6 @@ export const Layout = ({ children }: Props) => (
   <Flex
     sx={{
       flexDirection: "column",
-      backgroundColor: "background"
     }}
   >
     <Header />
