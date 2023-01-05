@@ -1,22 +1,22 @@
-import { Flex, Image, useColorMode } from "@chakra-ui/react";
-import { Freshworks } from "./elements/freshworks";
-import { FreshworksDark } from "./elements/freshworks-dark";
-import { Switches } from "./elements/switch";
+import { Flex, Image, useColorMode } from '@chakra-ui/react';
+import { Freshworks } from './elements/freshworks';
+import { FreshworksDark } from './elements/freshworks-dark';
+import { Switches } from './elements/switch';
 
 export const Footer: React.FC = () => {
   const { colorMode, setColorMode } = useColorMode();
-  const freshLogo = colorMode === "light" ? <Freshworks /> : <FreshworksDark />;
+  const freshLogo = colorMode === 'light' ? <Freshworks /> : <FreshworksDark />;
   //const switchInput = colorMode === "light" ? <Switches/> : <SwitchesDark>
   return (
-    <Flex sx={{ flexDirection: "column", p: 3, gap: 4, mt: 2 }}>
-      <Flex sx={{ alignItems: "center", justifyContent: "center", gap: 1 }}>
+    <Flex sx={{ flexDirection: 'column', p: 3, gap: 4, mt: 2 }}>
+      <Flex sx={{ alignItems: 'center', justifyContent: 'center', gap: 1 }}>
         {freshLogo}
       </Flex>
       <Flex
         sx={{
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <Switches />
