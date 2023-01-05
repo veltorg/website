@@ -14,6 +14,12 @@ const config: ThemeConfig = {
 
 const theme = extendTheme({
   config,
+  breakpoints: {
+    sm: '30rem',
+    md: '50rem',
+    lg: '75rem',
+    xl: '100rem'
+  },
   space: {
     0: "0.5em",
     1: "0.625em",
