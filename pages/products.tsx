@@ -1,9 +1,10 @@
-import { Button, Flex, FormControl, FormHelperText, FormLabel, Image, Input, InputGroup, InputLeftElement, Show, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, propNames } from "@chakra-ui/react";
+import { Button, Flex, FormControl, FormHelperText, FormLabel, Image, Input, InputGroup, InputLeftElement, ScaleFade, Show, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, propNames, useDisclosure } from "@chakra-ui/react";
 import { Layout } from "../components/layout";
 import { EmailIcon, PhoneIcon, SearchIcon, SettingsIcon } from "@chakra-ui/icons";
 
 
 const Products: React.FC = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <Layout>
             <Show above='md'>
@@ -12,23 +13,24 @@ const Products: React.FC = () => {
                         <Image src="./productgraphic.jpg"/>
                     </Flex>
                     <Flex>
-                        <Tabs isFitted>
+                        <Tabs isFitted variant='enclosed' isLazy={true}>
                             <TabList bgColor="green10" height='7rem'>
-                                <Tab>
+                                <Tab onClick={onOpen} onMouseEnter={onOpen}>
                                     <Image src='./freshchat.svg'/>
                                 </Tab>
-                                <Tab>
+                                <Tab onClick={onOpen}>
                                     <Image src='./freshdesk.svg'/>
                                 </Tab>
-                                <Tab>
+                                <Tab onClick={onOpen}>
                                     <Image src='./freshsales.svg'/>
                                 </Tab>
-                                <Tab>
+                                <Tab onClick={onOpen}>
                                     <Image src='./freshservice.svg'/>
                                 </Tab>
                             </TabList>
                             <TabPanels>
-                                <TabPanel>
+                                <TabPanel >
+                                    <ScaleFade initialScale={0.5} in={isOpen}>
                                     <Flex flexDirection="row" gap={3}>
                                         <Flex flexDirection="column" width='50%' gap={2}  justifyContent="center">
                                             <Text fontSize="5xl" lineHeight='3.5rem' fontWeight="bold">
@@ -72,8 +74,10 @@ const Products: React.FC = () => {
                                             </FormControl>
                                         </Flex>
                                     </Flex>
+                                    </ScaleFade>
                                 </TabPanel>
                                 <TabPanel>
+                                <ScaleFade initialScale={0.5} in={isOpen}>
                                     <Flex flexDirection="row" gap={3}>
                                         <Flex flexDirection="column" width='50%' gap={2}  justifyContent="center">
                                             <Text fontSize="5xl" lineHeight='3.5rem' fontWeight="bold">
@@ -117,8 +121,10 @@ const Products: React.FC = () => {
                                             </FormControl>
                                         </Flex>
                                     </Flex>
+                                    </ScaleFade>
                                 </TabPanel>
                                 <TabPanel>
+                                <ScaleFade initialScale={0.5} in={isOpen}>
                                     <Flex flexDirection="row" gap={3}>
                                         <Flex flexDirection="column" width='50%' gap={2}  justifyContent="center">
                                             <Text fontSize="5xl" lineHeight='3.5rem' fontWeight="bold">
@@ -130,7 +136,7 @@ const Products: React.FC = () => {
                                         </Flex>
                                         <Flex flexDirection="column" width="50%" gap={2}>
                                             <Text textAlign="center" fontSize='3xl' fontWeight="bold">
-                                                Start din 30-dagers gratis prøveperiode.
+                                                Start din 21-dagers gratis prøveperiode.
                                             </Text>
                                             <FormControl>
                                                 <Stack direction="row" spacing={2}>
@@ -162,8 +168,10 @@ const Products: React.FC = () => {
                                             </FormControl>
                                         </Flex>
                                     </Flex>
+                                    </ScaleFade>
                                 </TabPanel>
                                 <TabPanel>
+                                <ScaleFade initialScale={0.5} in={isOpen}>
                                     <Flex flexDirection="row" gap={3}>
                                         <Flex flexDirection="column" width='50%' gap={2}  justifyContent="center">
                                             <Text fontSize="5xl" lineHeight='3.5rem' fontWeight="bold">
@@ -206,6 +214,7 @@ const Products: React.FC = () => {
                                             </FormControl>
                                         </Flex>
                                     </Flex>
+                                    </ScaleFade>
                                 </TabPanel>
                             </TabPanels>
                         </Tabs>
