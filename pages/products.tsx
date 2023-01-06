@@ -45,7 +45,7 @@ const Products: React.FC = () => {
                                             <FormControl>
                                                 <Stack direction="row" spacing={2}>
                                                     <InputGroup alignItems="center">
-                                                        <InputLeftElement children={<SearchIcon/>}/>
+                                                    <InputLeftElement> <SearchIcon/> </InputLeftElement>
                                                         <Input type='name' placeholder="Fornavn" isRequired/>
                                                     </InputGroup>
                                                     <InputGroup alignItems="center">
@@ -54,15 +54,15 @@ const Products: React.FC = () => {
                                                 </Stack>
                                                 <Stack direction="column" spacing={0} alignItems="center">
                                                 <InputGroup >
-                                                    <InputLeftElement children={<EmailIcon/>} />
+                                                    <InputLeftElement> <EmailIcon/> </InputLeftElement>
                                                     <Input type='email' placeholder="E-post" isRequired/>
                                                 </InputGroup>
                                                 <InputGroup >
-                                                    <InputLeftElement children={<SettingsIcon/>} />
+                                                <InputLeftElement> <SettingsIcon/> </InputLeftElement>
                                                     <Input type='name' placeholder="Bedrift" isRequired/>
                                                 </InputGroup>
                                                 <InputGroup >
-                                                    <InputLeftElement children={<PhoneIcon/>} />
+                                                <InputLeftElement> <PhoneIcon/> </InputLeftElement>
                                                     <Input type='tel' placeholder="Telefonnummer" isRequired/>
                                                 </InputGroup>
                                                 </Stack>
@@ -90,7 +90,7 @@ const Products: React.FC = () => {
                                             <FormControl>
                                                 <Stack direction="row" spacing={2}>
                                                     <InputGroup alignItems="center">
-                                                        <InputLeftElement children={<SearchIcon/>}/>
+                                                    <InputLeftElement> <SearchIcon/> </InputLeftElement>
                                                         <Input type='name' placeholder="Fornavn" isRequired/>
                                                     </InputGroup>
                                                     <InputGroup alignItems="center">
@@ -99,15 +99,15 @@ const Products: React.FC = () => {
                                                 </Stack>
                                                 <Stack direction="column" spacing={0} alignItems="center">
                                                 <InputGroup >
-                                                    <InputLeftElement children={<EmailIcon/>} />
+                                                    <InputLeftElement> <EmailIcon/> </InputLeftElement>
                                                     <Input type='email' placeholder="E-post" isRequired/>
                                                 </InputGroup>
                                                 <InputGroup >
-                                                    <InputLeftElement children={<SettingsIcon/>} />
+                                                <InputLeftElement> <SettingsIcon/> </InputLeftElement>
                                                     <Input type='name' placeholder="Bedrift" isRequired/>
                                                 </InputGroup>
                                                 <InputGroup >
-                                                    <InputLeftElement children={<PhoneIcon/>} />
+                                                <InputLeftElement> <PhoneIcon/> </InputLeftElement>
                                                     <Input type='tel' placeholder="Telefonnummer" isRequired/>
                                                 </InputGroup>
                                                 </Stack>
@@ -135,7 +135,7 @@ const Products: React.FC = () => {
                                             <FormControl>
                                                 <Stack direction="row" spacing={2}>
                                                     <InputGroup alignItems="center">
-                                                        <InputLeftElement children={<SearchIcon/>}/>
+                                                    <InputLeftElement> <SearchIcon/> </InputLeftElement>
                                                         <Input type='name' placeholder="Fornavn" isRequired/>
                                                     </InputGroup>
                                                     <InputGroup alignItems="center">
@@ -144,15 +144,15 @@ const Products: React.FC = () => {
                                                 </Stack>
                                                 <Stack direction="column" spacing={0} alignItems="center">
                                                 <InputGroup >
-                                                    <InputLeftElement children={<EmailIcon/>} />
+                                                    <InputLeftElement> <EmailIcon/> </InputLeftElement>
                                                     <Input type='email' placeholder="E-post" isRequired/>
                                                 </InputGroup>
                                                 <InputGroup >
-                                                    <InputLeftElement children={<SettingsIcon/>} />
+                                                <InputLeftElement> <SettingsIcon/> </InputLeftElement>
                                                     <Input type='name' placeholder="Bedrift" isRequired/>
                                                 </InputGroup>
                                                 <InputGroup >
-                                                    <InputLeftElement children={<PhoneIcon/>} />
+                                                <InputLeftElement> <PhoneIcon/> </InputLeftElement>
                                                     <Input type='tel' placeholder="Telefonnummer" isRequired/>
                                                 </InputGroup>
                                                 </Stack>
@@ -179,7 +179,7 @@ const Products: React.FC = () => {
                                             <FormControl>
                                                 <Stack direction="row" spacing={2}>
                                                     <InputGroup alignItems="center">
-                                                        <InputLeftElement children={<SearchIcon/>}/>
+                                                    <InputLeftElement> <SearchIcon/> </InputLeftElement>
                                                         <Input type='name' placeholder="Fornavn" isRequired/>
                                                     </InputGroup>
                                                     <InputGroup alignItems="center">
@@ -188,15 +188,15 @@ const Products: React.FC = () => {
                                                 </Stack>
                                                 <Stack direction="column" spacing={0} alignItems="center">
                                                 <InputGroup >
-                                                    <InputLeftElement children={<EmailIcon/>} />
+                                                    <InputLeftElement> <EmailIcon/> </InputLeftElement>
                                                     <Input type='email' placeholder="E-post" isRequired/>
                                                 </InputGroup>
                                                 <InputGroup >
-                                                    <InputLeftElement children={<SettingsIcon/>} />
+                                                <InputLeftElement> <SettingsIcon/> </InputLeftElement>
                                                     <Input type='name' placeholder="Bedrift" isRequired/>
                                                 </InputGroup>
                                                 <InputGroup >
-                                                    <InputLeftElement children={<PhoneIcon/>} />
+                                                <InputLeftElement> <PhoneIcon/> </InputLeftElement>
                                                     <Input type='tel' placeholder="Telefonnummer" isRequired/>
                                                 </InputGroup>
                                                 </Stack>
