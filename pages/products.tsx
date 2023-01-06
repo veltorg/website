@@ -7,8 +7,8 @@ const Products: React.FC = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <Layout>
-            <Show above='md'>
-                <Flex flexDirection="column" width='100%' gap={5}>
+            <Show below='2xl'>
+                <Flex flexDirection="column" width='100%' >
                     <Flex>
                         <Image src="./productgraphic.jpg"/>
                     </Flex>
@@ -221,9 +221,7 @@ const Products: React.FC = () => {
                     </Flex>
                 </Flex>
             </Show>
-            <Show below='md'>
 
-            </Show>
         </Layout>
     );
 };
