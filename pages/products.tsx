@@ -15,7 +15,7 @@ const Products: React.FC = () => {
                     <Flex>
                         <Tabs isFitted variant='enclosed' isLazy={true}>
                             <TabList bgColor="green10" height='7rem'>
-                                <Tab onClick={onOpen} onMouseEnter={onOpen}>
+                                <Tab onClick={onOpen} onLoad={onOpen}>
                                     <Image src='./freshchat.svg'/>
                                 </Tab>
                                 <Tab onClick={onOpen}>
