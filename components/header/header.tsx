@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
     <Flex>
       <Show above="md">
         <Flex m={{ md: 4, lg: 5 }} justifyContent="space-between" width="100%">
-          <Flex>{desktopLogoInput}</Flex>
+          <Link as={NextLink} href='/'>{desktopLogoInput}</Link>
           <Flex gap={{ md: 3, lg: 4 }} alignItems="end">
             <Link as={NextLink} href="/about" variant="nav">
               About us
