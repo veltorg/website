@@ -1,128 +1,218 @@
-import { useRouter } from "next/router";
-import { useState } from "react";
 import {
-  Box,
-  Container,
+  Button,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
   DrawerOverlay,
   Flex,
+  Highlight,
   IconButton,
   Link,
   Menu,
-  Spacer,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Show,
+  textDecoration,
   useColorMode,
   useDisclosure,
-} from "@chakra-ui/react";
-import { Hamburger } from "./hamburger";
-import { Logo } from "./logo";
-import { LogoDark } from "./logo-dark";
-import { HamburgerDark } from "./hamburger-dark";
+} from '@chakra-ui/react';
+import { Hamburger } from './elements/hamburger';
+import { Logo } from './elements/logo';
+import { LogoDark } from './elements/logo-dark';
+import { HamburgerDark } from './elements/hamburger-dark';
+import NextLink from 'next/link';
+import { DesktopLogo } from './elements/desktop-logo';
+import { DesktopLogoDark } from './elements/desktop-logo-dark';
 
 export const Header: React.FC = () => {
   const { colorMode, setColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const logoInput = colorMode === "light" ? <Logo /> : <LogoDark />;
-  const burgerInput = colorMode === "light" ? <Hamburger /> : <HamburgerDark />;
+  const logoInput = colorMode === 'light' ? <Logo /> : <LogoDark />;
+  const desktopLogoInput =
+    colorMode === 'light' ? <DesktopLogo /> : <DesktopLogoDark />;
+  const burgerInput = colorMode === 'light' ? <Hamburger /> : <HamburgerDark />;
   return (
     <Flex>
-      <Flex
-        my={3}
-        alignContent="space-between"
-        flexDirection={"row"}
-        width="100%"
-      >
-        <Link href={"/"}>{logoInput}</Link>
+      <Show above="md">
+        <Flex m={{ md: 4, lg: 5 }} justifyContent="space-between" width="100%">
+          <Link as={NextLink} href='/'>{desktopLogoInput}</Link>
+          <Flex gap={{ md: 3, lg: 4 }} alignItems="end">
+            <Link as={NextLink} href="/about" variant="nav">
+              About us
+            </Link>
+            <Link as={NextLink} href="/consultancy" variant="nav">
+              Consultancy
+            </Link>
+            <Link as={NextLink} href="/vision" variant="nav">
+              Philosophy
+            </Link>
+            <Link as={NextLink} href="/products" variant="nav">
+              Products
+            </Link>
 
-        <IconButton
-          variant="link"
-          aria-label="Hamburger"
-          onClick={onOpen}
-          size="lg"
-          ml="auto"
-          pr={3}
+            <Menu isOpen={isOpen}>
+              <MenuButton
+                as={Link}
+                aria-label="Resources"
+                onMouseEnter={onOpen}
+              >
+                Resources
+              </MenuButton>
+              <MenuList onMouseLeave={onClose}>
+                <MenuItem px={1}>
+                  <Link as={NextLink} href="/blog" variant="navmenu">
+                    Blog
+                  </Link>
+                </MenuItem>
+                <MenuItem px={1}>
+                  <Link as={NextLink} href="/courses" variant="navmenu">
+                    Courses
+                  </Link>
+                </MenuItem>
+                <MenuItem px={1}>
+                  <Link
+                    as={NextLink}
+                    href="/customer-stories"
+                    variant="navmenu"
+                  >
+                    Customers Stories
+                  </Link>
+                </MenuItem>
+                <MenuItem px={1}>
+                  <Link as={NextLink} href="/events" variant="navmenu">
+                    Events
+                  </Link>
+                </MenuItem>
+                <MenuItem px={1}>
+                  <Link as={NextLink} href="/webinars" variant="navmenu">
+                    Webinars
+                  </Link>
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          </Flex>
+        </Flex>
+      </Show>
+      <Show below="md">
+        <Flex
+          m={3}
+          justifyContent="space-between"
+          flexDirection="row"
+          width="100%"
         >
-          {burgerInput}
-        </IconButton>
-      </Flex>
-      <Drawer placement={"top"} onClose={onClose} isOpen={isOpen} size="sm">
-        <DrawerOverlay/>
-        <DrawerContent backgroundColor="background">
-          <DrawerCloseButton color="green00" />
-          <DrawerBody>
-            <Flex
-              sx={{
-                width: "100%",
-                height: "28em",
-                zIndex: 2,
-                display: "flex",
-                flexDirection: "column",
-                m: 3,
-              }}
-            >
+          <Link as={NextLink} href={'/'}>
+            {logoInput}
+          </Link>
+
+          <IconButton
+            variant="link"
+            aria-label="Hamburger"
+            onClick={onOpen}
+            size="lg"
+          >
+            {burgerInput}
+          </IconButton>
+        </Flex>
+        <Drawer placement={'top'} onClose={onClose} isOpen={isOpen}>
+          <DrawerOverlay />
+          <DrawerContent backgroundColor="background">
+            <DrawerCloseButton color="green00" size="lg" p={4} />
+            <DrawerBody>
               <Flex
                 sx={{
-                  flexDirection: "column",
-                  gap: 3,
-                  width: "100%",
+                  width: '100%',
+                  height: '42rem',
+                  zIndex: 2,
+                  flexDirection: 'column',
                 }}
               >
-                <Link
-                  href="/about"
-                  sx={{ color: "green00", textDecoration: "none" }}
-                >
-                  Om oss
-                </Link>
-                <Link
-                  href="/principles"
-                  sx={{ color: "green00", textDecoration: "none" }}
-                >
-                  Våre prinsipper
-                </Link>
-                <Link
-                  href="/people"
-                  sx={{ color: "green00", textDecoration: "none" }}
-                >
-                  Folkene bak
-                </Link>
-                <Link
-                  href="/customer-service"
-                  sx={{
-                    color: "green00",
-                    textDecoration: "none",
-                  }}
-                >
-                  Kundestøtte
-                </Link>
                 <Flex
                   sx={{
-                    border: "drawer",
-                    height: "3em",
-                    borderRadius: "md",
-                    justifyContent: "center",
-                    width: "40%",
-                    ml: "-2em",
-                    alignSelf: "center",
+                    flexDirection: 'column',
+                    gap: 3,
+                    width: '100%',
+                    alignItems: 'center',
+                    mt: 5,
                   }}
                 >
-                  <Link
-                    href="/become-customer"
-                    sx={{
-                      color: "green00",
-                      textDecoration: "none",
-                      alignSelf: "center",
-                    }}
-                  >
-                    <Box sx={{}}>Bli kunde</Box>
+                  <Link as={NextLink} href="/about" variant="hamburger">
+                    About us
                   </Link>
+                  <Link as={NextLink} href="/consultancy" variant="hamburger">
+                    Consultancy
+                  </Link>
+                  <Link as={NextLink} href="/vision" variant="hamburger">
+                    Philosophy
+                  </Link>
+                  <Link as={NextLink} href="/products" variant="hamburger">
+                    Products
+                  </Link>
+
+                  <Menu defaultIsOpen={false} placement="bottom">
+                    <MenuButton
+                      as={Link}
+                      aria-label="Resources"
+                      variant="hamburger"
+                      onClick={onOpen}
+                    >
+                      Resources
+                    </MenuButton>
+                    <MenuList>
+                      <MenuItem>
+                        <Link
+                          as={NextLink}
+                          href="/blog"
+                          variant="hamburgermenu"
+                        >
+                          Blog
+                        </Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link
+                          as={NextLink}
+                          href="/courses"
+                          variant="hamburgermenu"
+                        >
+                          Courses
+                        </Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link
+                          as={NextLink}
+                          href="/customer-stories"
+                          variant="hamburgermenu"
+                        >
+                          Customers Stories
+                        </Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link
+                          as={NextLink}
+                          href="/events"
+                          variant="hamburgermenu"
+                        >
+                          Events
+                        </Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link
+                          as={NextLink}
+                          href="/webinars"
+                          variant="hamburgermenu"
+                        >
+                          Webinars
+                        </Link>
+                      </MenuItem>
+                    </MenuList>
+                  </Menu>
                 </Flex>
               </Flex>
-            </Flex>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
+            </DrawerBody>
+          </DrawerContent>
+        </Drawer>
+      </Show>
     </Flex>
   );
 };
