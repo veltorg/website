@@ -1,6 +1,4 @@
 import {
-  AspectRatio,
-  Container,
   Flex,
   Grid,
   GridItem,
@@ -16,17 +14,165 @@ import React from 'react';
 const Home = () => (
   <Layout>
     <Show above="md">
-      <Container
-        width="100%"
-        px={3}
-        py={3}
-        display={{ sm: 'none', md: 'block' }}
-      >
-        potato
-      </Container>
+      <Flex width="100%" flexDirection="column" gap={6} mb={4}>
+        <Flex
+          width="100%"
+          flexDirection="column"
+          height="15rem"
+          bgSize="cover"
+          backgroundImage="/banner.jpg"
+        >
+          <Text
+            h="full"
+            p={3}
+            fontSize="xl"
+            color="blue00"
+            mt={7}
+            letterSpacing="wider"
+          >
+            Få en enkel og sømløs
+            <br /> digital hverdag.
+          </Text>
+        </Flex>
+        <Flex flexDirection="column">
+          <Grid templateColumns="1fr 1fr" gap={5} p={4}>
+            <GridItem>
+              <Image src="./working.jpg" borderRadius="md" />
+            </GridItem>
+            <GridItem>
+              <Flex
+                flexDirection="row"
+                gap={3}
+                justifyContent="center"
+                height="100%"
+              >
+                <Image
+                  src="../squares.svg"
+                  alignSelf="center"
+                  width="70%"
+                  alt={''}
+                />
+
+                <Flex
+                  sx={{
+                    gap: 2,
+                    flexDirection: 'column',
+                    alignSelf: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Text textStyle="header" color="green00" textAlign="center">
+                    Utvid, tilpass og skreddersy iterativt
+                  </Text>
+                  <Text textStyle="normal" color="blacktogreen">
+                    Vi elsker å skape fantastiske opplevelser, og vi innser at
+                    alle har forskjellige behov. Med oss på laget kan du utvide,
+                    tilpasse og skreddersky mens du går.
+                  </Text>
+                  <Link as={NextLink} href="/about">
+                    <Text textStyle="link" color="blacktogreen">
+                      Les mer om vår kompetanse
+                    </Text>
+                  </Link>
+                </Flex>
+              </Flex>
+            </GridItem>
+          </Grid>
+        </Flex>
+        <Flex flexDirection="column">
+          <Grid templateColumns="1fr 1fr" gap={5} p={3}>
+            <GridItem>
+              <Flex
+                flexDirection="row"
+                gap={3}
+                justifyContent="center"
+                height="100%"
+              >
+                <Image
+                  src="../squares.svg"
+                  alignSelf="center"
+                  width="70%"
+                  alt={''}
+                />
+
+                <Flex
+                  sx={{
+                    gap: 2,
+                    flexDirection: 'column',
+                    alignSelf: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Text textStyle="header" color="green00" textAlign="center">
+                    Utvid, tilpass og skreddersy iterativt
+                  </Text>
+                  <Text textStyle="normal" color="blacktogreen">
+                    Vi elsker å skape fantastiske opplevelser, og vi innser at
+                    alle har forskjellige behov. Med oss på laget kan du utvide,
+                    tilpasse og skreddersky mens du går.
+                  </Text>
+                  <Link as={NextLink} href="/about">
+                    <Text textStyle="link" color="blacktogreen">
+                      Les mer om vår kompetanse
+                    </Text>
+                  </Link>
+                </Flex>
+              </Flex>
+            </GridItem>
+            <GridItem>
+              <Image src="./working.jpg" borderRadius="md" />
+            </GridItem>
+          </Grid>
+        </Flex>
+        <Flex flexDirection="column">
+          <Grid templateColumns="1fr 1fr" gap={5} p={3}>
+            <GridItem>
+              <Image src="./working.jpg" borderRadius="md" />
+            </GridItem>
+            <GridItem>
+              <Flex
+                flexDirection="row"
+                gap={3}
+                justifyContent="center"
+                height="100%"
+              >
+                <Image
+                  src="../squares.svg"
+                  alignSelf="center"
+                  width="70%"
+                  alt={''}
+                />
+
+                <Flex
+                  sx={{
+                    gap: 2,
+                    flexDirection: 'column',
+                    alignSelf: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Text textStyle="header" color="green00" textAlign="center">
+                    Utvid, tilpass og skreddersy iterativt
+                  </Text>
+                  <Text textStyle="normal" color="blacktogreen">
+                    Vi elsker å skape fantastiske opplevelser, og vi innser at
+                    alle har forskjellige behov. Med oss på laget kan du utvide,
+                    tilpasse og skreddersky mens du går.
+                  </Text>
+                  <Link as={NextLink} href="/about">
+                    <Text textStyle="link" color="blacktogreen">
+                      Les mer om vår kompetanse
+                    </Text>
+                  </Link>
+                </Flex>
+              </Flex>
+            </GridItem>
+          </Grid>
+        </Flex>
+      </Flex>
     </Show>
     <Show below="md">
-      <Container width="100%" px={3} py={3}>
+      <Flex width="100%" px={3} py={3} flexDirection="column">
         <Flex
           sx={{
             backgroundColor: 'pink00',
@@ -120,7 +266,7 @@ const Home = () => (
             </Text>
           </Link>
         </Flex>
-      </Container>
+      </Flex>
     </Show>
   </Layout>
 );
