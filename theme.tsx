@@ -15,7 +15,7 @@ const theme = extendTheme({
   config,
   breakpoints: {
     sm: '30rem',
-    md: '50.001rem', 
+    md: '50.001rem',
     /* 
     Maybe a bit hacky, but avoids
     the problem of double versions
