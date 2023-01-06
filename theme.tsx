@@ -15,7 +15,12 @@ const theme = extendTheme({
   config,
   breakpoints: {
     sm: '30rem',
-    md: '50rem',
+    md: '50.001rem', 
+    /* 
+    Maybe a bit hacky, but avoids
+    the problem of double versions
+    on the breakpoint value.
+    */
     lg: '75rem',
     xl: '100rem',
   },
@@ -27,6 +32,9 @@ const theme = extendTheme({
     3: '2rem',
     4: '3rem',
     5: '4rem',
+    6: '5rem',
+    7: '7rem',
+    8: '9rem',
   },
   radii: {
     sm: '0.4rem',
@@ -113,14 +121,14 @@ const theme = extendTheme({
         hamburgermenu: {
           fontSize: 'xl',
           color: 'green00',
-          width: "100%",
+          width: '100%',
         },
         nav: {
-          fontSize: 'md'
+          fontSize: 'md',
         },
         navmenu: {
           fontSize: 'md',
-          width: "100%",
+          width: '100%',
           py: 'min',
           pl: 1,
         },
