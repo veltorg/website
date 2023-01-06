@@ -6,6 +6,7 @@ import {
   DrawerContent,
   DrawerOverlay,
   Flex,
+  Highlight,
   IconButton,
   Link,
   Menu,
@@ -13,6 +14,7 @@ import {
   MenuItem,
   MenuList,
   Show,
+  textDecoration,
   useColorMode,
   useDisclosure,
 } from '@chakra-ui/react';
@@ -28,7 +30,8 @@ export const Header: React.FC = () => {
   const { colorMode, setColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const logoInput = colorMode === 'light' ? <Logo /> : <LogoDark />;
-  const desktopLogoInput = colorMode === 'light' ? <DesktopLogo /> : <DesktopLogoDark />;
+  const desktopLogoInput =
+    colorMode === 'light' ? <DesktopLogo /> : <DesktopLogoDark />;
   const burgerInput = colorMode === 'light' ? <Hamburger /> : <HamburgerDark />;
   return (
     <Flex>
@@ -49,15 +52,13 @@ export const Header: React.FC = () => {
               Products
             </Link>
 
-            <Menu
-              isOpen={isOpen}
-            >
-              <MenuButton 
+            <Menu isOpen={isOpen}>
+              <MenuButton
                 as={Link}
                 aria-label="Resources"
                 onMouseEnter={onOpen}
               >
-              Resources
+                Resources
               </MenuButton>
               <MenuList onMouseLeave={onClose}>
                 <MenuItem px={1}>
@@ -66,12 +67,16 @@ export const Header: React.FC = () => {
                   </Link>
                 </MenuItem>
                 <MenuItem px={1}>
-                <Link as={NextLink} href="/courses" variant="navmenu">
+                  <Link as={NextLink} href="/courses" variant="navmenu">
                     Courses
                   </Link>
                 </MenuItem>
-                <MenuItem px={1}>    
-                  <Link as={NextLink} href="/customer-stories" variant="navmenu">
+                <MenuItem px={1}>
+                  <Link
+                    as={NextLink}
+                    href="/customer-stories"
+                    variant="navmenu"
+                  >
                     Customers Stories
                   </Link>
                 </MenuItem>
@@ -80,15 +85,13 @@ export const Header: React.FC = () => {
                     Events
                   </Link>
                 </MenuItem>
-                <MenuItem px={1}>                
-                  <Link as={NextLink} href="/webinars" variant="navmenu" >
+                <MenuItem px={1}>
+                  <Link as={NextLink} href="/webinars" variant="navmenu">
                     Webinars
                   </Link>
                 </MenuItem>
               </MenuList>
             </Menu>
-
-
           </Flex>
         </Flex>
       </Show>
@@ -131,7 +134,7 @@ export const Header: React.FC = () => {
                     gap: 3,
                     width: '100%',
                     alignItems: 'center',
-                    mt: 5
+                    mt: 5,
                   }}
                 >
                   <Link as={NextLink} href="/about" variant="hamburger">
@@ -147,48 +150,63 @@ export const Header: React.FC = () => {
                     Products
                   </Link>
 
-                  <Menu
-                    defaultIsOpen={false}
-                    placement="bottom"
-                  >
-              <MenuButton 
-                as={Link} 
-                aria-label="Resources"
-                variant="hamburger"
-                onClick={onOpen}
-              >
-              Resources
-              </MenuButton>
-              <MenuList>
-                <MenuItem>
-                  <Link as={NextLink} href="/blog" variant="hamburgermenu">
-                    Blog
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                <Link as={NextLink} href="/courses" variant="hamburgermenu">
-                    Courses
-                  </Link>
-                </MenuItem>
-                <MenuItem>    
-                  <Link as={NextLink} href="/customer-stories" variant="hamburgermenu">
-                    Customers Stories
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link as={NextLink} href="/events" variant="hamburgermenu">
-                    Events
-                  </Link>
-                </MenuItem>
-                <MenuItem>                
-                  <Link as={NextLink} href="/webinars" variant="hamburgermenu">
-                    Webinars
-                  </Link>
-                </MenuItem>
-              </MenuList>
-            </Menu>
-
-
+                  <Menu defaultIsOpen={false} placement="bottom">
+                    <MenuButton
+                      as={Link}
+                      aria-label="Resources"
+                      variant="hamburger"
+                      onClick={onOpen}
+                    >
+                      Resources
+                    </MenuButton>
+                    <MenuList>
+                      <MenuItem>
+                        <Link
+                          as={NextLink}
+                          href="/blog"
+                          variant="hamburgermenu"
+                        >
+                          Blog
+                        </Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link
+                          as={NextLink}
+                          href="/courses"
+                          variant="hamburgermenu"
+                        >
+                          Courses
+                        </Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link
+                          as={NextLink}
+                          href="/customer-stories"
+                          variant="hamburgermenu"
+                        >
+                          Customers Stories
+                        </Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link
+                          as={NextLink}
+                          href="/events"
+                          variant="hamburgermenu"
+                        >
+                          Events
+                        </Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link
+                          as={NextLink}
+                          href="/webinars"
+                          variant="hamburgermenu"
+                        >
+                          Webinars
+                        </Link>
+                      </MenuItem>
+                    </MenuList>
+                  </Menu>
                 </Flex>
               </Flex>
             </DrawerBody>
