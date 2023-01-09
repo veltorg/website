@@ -328,27 +328,28 @@ const Products: React.FC = () => {
                           <Text>
                             Help your teams collaborate effectively to provide
                             better support experiences.
-                            <UnorderedList>
-                              <ListItem>
-                                Share ownership of tickets without losing
-                                visibility. Loop in teammates for a discussion
-                                right inside the ticket for full context.
-                              </ListItem>
-                              <ListItem>
-                                Split tickets with several tasks into
-                                sub-tickets. Have multiple teams work on them in
-                                parallel.
-                              </ListItem>
-                              <ListItem>
-                                Link and keep track of tickets related to
-                                similar issues. Send bulk updates to customers
-                                in one go.
-                              </ListItem>
-                            </UnorderedList>
                           </Text>
+                          <UnorderedList>
+                            <ListItem>
+                              Share ownership of tickets without losing
+                              visibility. Loop in teammates for a discussion
+                              right inside the ticket for full context.
+                            </ListItem>
+                            <ListItem>
+                              Split tickets with several tasks into sub-tickets.
+                              Have multiple teams work on them in parallel.
+                            </ListItem>
+                            <ListItem>
+                              Link and keep track of tickets related to similar
+                              issues. Send bulk updates to customers in one go.
+                            </ListItem>
+                          </UnorderedList>
                         </Flex>
                         <Flex width="50%" align="center" justify="end">
-                          <Image src="/freshdesk/freshdesk-screenshot.jpg" h="70%" />
+                          <Image
+                            src="/freshdesk/freshdesk-screenshot.jpg"
+                            h="70%"
+                          />
                         </Flex>
                       </Flex>
                       <Flex flexDirection="row" p={4} gap={3}>
@@ -482,9 +483,7 @@ const Products: React.FC = () => {
                           </Flex>
                         </Flex>
                       </Flex>
-                      <Flex>
-                        
-                      </Flex>
+                      <Flex></Flex>
                       <Flex p={4} bgColor="green.100" width="100%">
                         <SimpleGrid
                           width="100%"
@@ -702,16 +701,16 @@ const Products: React.FC = () => {
                                 label="Automate follow-ups, escalations, and other tasks 
                                 using specific time and event-based triggers to perform any action of your choice."
                               >
-                                <InfoOutlineIcon/>
+                                <InfoOutlineIcon />
                               </Tooltip>
                             </Text>
                             <Text fontSize="sm">
                               <CheckIcon /> Collision Detection{' '}
                               <Tooltip
                                 label="Know when another agent is viewing/replying
-                                to a ticket to avoid duplicating each other’s effort."
+                                to a ticket to avoid duplicating each other's effort."
                               >
-                                <InfoOutlineIcon/>
+                                <InfoOutlineIcon />
                               </Tooltip>
                             </Text>
                             <Text fontSize="sm">
@@ -720,7 +719,7 @@ const Products: React.FC = () => {
                                 label="Get access to 1000+ apps and extend
                                 the capabilities of your helpdesk with the Freshworks Marketplace."
                               >
-                                <InfoOutlineIcon/>
+                                <InfoOutlineIcon />
                               </Tooltip>
                             </Text>
                             <Text fontSize="sm">
@@ -733,7 +732,7 @@ const Products: React.FC = () => {
                                 on the response and resolution timeframes for every ticket
                                 in your helpdesk, and set the right business hours."
                               >
-                                <InfoOutlineIcon/>
+                                <InfoOutlineIcon />
                               </Tooltip>
                             </Text>
                             <Text fontSize="sm">
@@ -749,38 +748,253 @@ const Products: React.FC = () => {
                               <CheckIcon /> Custom SSL{' '}
                             </Text>
                             <Text fontSize="sm">
-                              <CheckIcon /> Easily track time spent by agents on tickets{' '}
+                              <CheckIcon /> Easily track time spent by agents on
+                              tickets{' '}
                             </Text>
                             <Text fontSize="sm">
-                              <CheckIcon /> 24x5 phone support {' '}
+                              <CheckIcon /> 24x5 phone support{' '}
                             </Text>
                           </GridItem>
                           <GridItem p={2} justifySelf="center">
-                          <Text fontSize="sm" as="i">
+                            <Text fontSize="sm" as="i">
                               {' '}
-                              Everything in Free and...{' '}
+                              Everything in Growth and...{' '}
                             </Text>
-                            Multiple products
-Includes up to 5000 Collaborators
-Round-robin routing
-Custom Roles
-Custom Reports and Dashboards
-Segment customers for personalized support
-Customer journey
-Canned forms
-Manage versions in knowledge base
-Community forums
-Extendable API Limits
-CSAT surveys & reports
-Multiple SLA policies & business hours
-SLA reminder & escalation
-Multilingual knowledge base
-Custom apps
-Average handling Time (AHT)
-Custom Metrics
-Report Sharing 
+                            <Text fontSize="sm">
+                              <CheckIcon /> Multiple products{' '}
+                              <Tooltip label="Up to 5 products">
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Includes up to 5000 Collaborators{' '}
+                              <Tooltip
+                                label="Invite external agents and third parties into 
+                                Freshdesk to help full-time agents resolve complex customer issues."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Round-robin routing{' '}
+                              <Tooltip
+                                label="Automatically assign tickets to all available
+                                 agents in a group in a circular fashion."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Custom Roles{' '}
+                              <Tooltip label="Provide or restrict access to your agents at granular levels.">
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Custom Reports and Dashboards{' '}
+                              <Tooltip
+                                label="Create powerful reports and dashboards unique to your
+                                 business and draw deeper insights from your Freshdesk data."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Segment customers for personalized
+                              support{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Customer journey{' '}
+                              <Tooltip
+                                label="Show agents the solution articles that a customer
+                                 opened before they created a support ticket."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Canned forms{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Manage versions in knowledge base{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Community forums{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Extendable API Limits{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> CSAT surveys & reports{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Multiple SLA policies & business
+                              hours{' '}
+                              <Tooltip
+                                label="Set custom Service Level Agreements (SLA) for multiple regions, products and business
+                                 units to prioritize and deliver by suitable deadlines for each requirement."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> SLA reminder & escalation{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Multilingual knowledge base{' '}
+                              <Tooltip label="Supports 42 languages">
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Custom apps{' '}
+                              <Tooltip
+                                label="Extend your support capabilities 
+                                by building apps customized for your business."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Average handling Time (AHT){' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Custom Metrics{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Report Sharing{' '}
+                            </Text>
                           </GridItem>
-                          <GridItem></GridItem>
+                          <GridItem p={2} justifySelf="center">
+                            <Text fontSize="sm" as="i">
+                              {' '}
+                              Everything in Pro and...{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Unlimited products{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Sandbox{' '}
+                              <Tooltip
+                                label="Create a secure test environment to try new features and 
+                                settings in Freshdesk without impacting agents or customers."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Easily manage agent shifts across
+                              time zones{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Custom objects{' '}
+                              <Tooltip
+                                label="Create a secure test environment to try new features and 
+                                settings in Freshdesk without impacting agents or customers."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Assist bot{' '}
+                              <Tooltip
+                                label="Create a secure test environment to try new features and 
+                                settings in Freshdesk without impacting agents or customers."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Email bot{' '}
+                              <Tooltip
+                                label="Create a secure test environment to try new features and 
+                                settings in Freshdesk without impacting agents or customers."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Audit log{' '}
+                              <Tooltip
+                                label="Create a secure test environment to try new features and 
+                                settings in Freshdesk without impacting agents or customers."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Skill-based routing{' '}
+                              <Tooltip
+                                label="Create a secure test environment to try new features and 
+                                settings in Freshdesk without impacting agents or customers."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Knowledge base approval workflow{' '}
+                              <Tooltip
+                                label="Create a secure test environment to try new features and 
+                                settings in Freshdesk without impacting agents or customers."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Flexible knowledge base hierarchy{' '}
+                              <Tooltip
+                                label="Create a secure test environment to try new features and 
+                                settings in Freshdesk without impacting agents or customers."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> IP range restriction{' '}
+                              <Tooltip
+                                label="Create a secure test environment to try new features and 
+                                settings in Freshdesk without impacting agents or customers."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Auto-triage Freddy{' '}
+                              <Tooltip
+                                label="Create a secure test environment to try new features and 
+                                settings in Freshdesk without impacting agents or customers."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Article suggester{' '}
+                              <Tooltip
+                                label="Create a secure test environment to try new features and 
+                                settings in Freshdesk without impacting agents or customers."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Canned response suggester{' '}
+                              <Tooltip
+                                label="Create a secure test environment to try new features and 
+                                settings in Freshdesk without impacting agents or customers."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> AI-powered social signals{' '}
+                              <Tooltip
+                                label="Create a secure test environment to try new features and 
+                                settings in Freshdesk without impacting agents or customers."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                          </GridItem>
                         </SimpleGrid>
                       </Flex>
                     </Flex>
