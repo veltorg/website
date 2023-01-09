@@ -454,30 +454,28 @@ const Products: React.FC = () => {
                           Ensure secure access with Custom SSL certificates
                         </Text>
                       </Flex>
-                      <Flex flexDirection="column" p={4} gap={2}>
+                      <Flex flexDirection="column" p={4} gap={3}>
                         <Flex justify="center">
                           <Text fontSize="2xl">Kundereferanser</Text>
                         </Flex>
-                        <Flex flexDirection="row">
-                          <Flex align="center">Pearson-logo</Flex>
+                        <Flex flexDirection="row" gap={3}>
+                          <Image src="./pearson.svg" w="20%"/>
                           <Flex flexDirection="column" gap={2}>
-                            
                             <Text>
-                              Vi ble solgt da vi så Freshdesk. Kombinasjonen av
+                              &apos;&apos;Vi ble solgt da vi så Freshdesk. Kombinasjonen av
                               sosiale medier, e-post, kunnskapsbas, mobil og
                               fleksibilitet på en og samme platform, gjorde det
-                              enkelt for oss å velge en kundesenter-løsning.
+                              enkelt for oss å velge en kundesenter-løsning.&apos;&apos;
                             </Text>
                             <Text fontWeight="semibold">Matthijs Lok</Text>
                           </Flex>
-                          <Flex>Lesley-Logo</Flex>
-                          <Flex flexDirection="column" gap={2}>
-                            
+                          <Image src="./lesley.jpg" w="20%" alignSelf="center"/>
+                          <Flex flexDirection="column" gap={2} >
                             <Text>
-                              Vi begynte å lete etter en ny løsning på høsten og
+                            &apos;&apos;Vi begynte å lete etter en ny løsning på høsten og
                               var opptatt av å få noe på plass og optimalisert
                               raskt. Freshdesk sørget for en rask og enkel
-                              implementering og vi var i gang innen 48 timer.
+                              implementering og vi var i gang innen 48 timer.&apos;&apos;
                             </Text>
                             <Text fontWeight="semibold">Vaughan Potter</Text>
                           </Flex>
@@ -888,9 +886,7 @@ const Products: React.FC = () => {
                             </Text>
                             <Text fontSize="sm">
                               <CheckIcon /> Custom objects{' '}
-                              <Tooltip
-                                label="Create or bring in business-critical data right inside your Freshdesk."
-                              >
+                              <Tooltip label="Create or bring in business-critical data right inside your Freshdesk.">
                                 <InfoOutlineIcon />
                               </Tooltip>
                             </Text>
@@ -932,25 +928,19 @@ const Products: React.FC = () => {
                             </Text>
                             <Text fontSize="sm">
                               <CheckIcon /> Knowledge base approval workflow{' '}
-                              <Tooltip
-                                label="Track, review, approve, and publish knowledge base articles."
-                              >
+                              <Tooltip label="Track, review, approve, and publish knowledge base articles.">
                                 <InfoOutlineIcon />
                               </Tooltip>
                             </Text>
                             <Text fontSize="sm">
                               <CheckIcon /> Flexible knowledge base hierarchy{' '}
-                              <Tooltip
-                                label="Categorize articles up to 5 folder levels and scale your knowledge base."
-                              >
+                              <Tooltip label="Categorize articles up to 5 folder levels and scale your knowledge base.">
                                 <InfoOutlineIcon />
                               </Tooltip>
                             </Text>
                             <Text fontSize="sm">
                               <CheckIcon /> IP range restriction{' '}
-                              <Tooltip
-                                label="Increase helpdesk security by allowing certain IP addresses to access your portal."
-                              >
+                              <Tooltip label="Increase helpdesk security by allowing certain IP addresses to access your portal.">
                                 <InfoOutlineIcon />
                               </Tooltip>
                             </Text>
@@ -965,25 +955,19 @@ const Products: React.FC = () => {
                             </Text>
                             <Text fontSize="sm">
                               <CheckIcon /> Article suggester{' '}
-                              <Tooltip
-                                label="Let Freddy suggest solution articles to your agents to help them respond to tickets faster."
-                              >
+                              <Tooltip label="Let Freddy suggest solution articles to your agents to help them respond to tickets faster.">
                                 <InfoOutlineIcon />
                               </Tooltip>
                             </Text>
                             <Text fontSize="sm">
                               <CheckIcon /> Canned response suggester{' '}
-                              <Tooltip
-                                label="Let Freddy suggest canned responses to help your agents respond to tickets faster."
-                              >
+                              <Tooltip label="Let Freddy suggest canned responses to help your agents respond to tickets faster.">
                                 <InfoOutlineIcon />
                               </Tooltip>
                             </Text>
                             <Text fontSize="sm">
                               <CheckIcon /> AI-powered social signals{' '}
-                              <Tooltip
-                                label="Use AI to find important tweets and cancel out the noise."
-                              >
+                              <Tooltip label="Use AI to find important tweets and cancel out the noise.">
                                 <InfoOutlineIcon />
                               </Tooltip>
                             </Text>
