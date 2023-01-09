@@ -38,7 +38,7 @@ import {
 import NextLink from 'next/link';
 import { Layout } from '../components/layout';
 import {
-    CheckIcon,
+  CheckIcon,
   EmailIcon,
   InfoIcon,
   InfoOutlineIcon,
@@ -48,6 +48,7 @@ import {
 } from '@chakra-ui/icons';
 import { Freshworks } from '../components/footer/elements/freshworks';
 import { FreshworksDark } from '../components/footer/elements/freshworks-dark';
+import { Pricing } from '../components/pricing';
 
 const Products: React.FC = () => {
   const { colorMode, setColorMode } = useColorMode();
@@ -77,16 +78,16 @@ const Products: React.FC = () => {
             <Tabs isFitted variant="enclosed" isLazy={true}>
               <TabList bgColor="green10" height="7rem">
                 <Tab onClick={onOpen} onLoad={onOpen}>
-                  <Image src="./freshdesk.svg" />
+                  <Image src="/freshdesk/freshdesk.svg" />
                 </Tab>
                 <Tab onClick={onOpen}>
-                  <Image src="./freshservice.svg" />
+                  <Image src="/freshservice/freshservice.svg" />
                 </Tab>
                 <Tab onClick={onOpen}>
-                  <Image src="./freshsales.svg" />
+                  <Image src="/freshsales/freshsales.svg" />
                 </Tab>
                 <Tab onClick={onOpen}>
-                  <Image src="./freshchat.svg" />
+                  <Image src="/freshchat/freshchat.svg" />
                 </Tab>
               </TabList>
               <TabPanels>
@@ -107,7 +108,7 @@ const Products: React.FC = () => {
                           Support Desk
                         </Text>
                         <Divider orientation="horizontal" w="30%" />
-                        <Image src="freshdesk.svg" mt={4} w="20%" />
+                        <Image src="/freshdesk/freshdesk.svg" mt={4} w="20%" />
                       </Flex>
                       <Flex flexDirection="row" gap={3} p={4}>
                         <Flex
@@ -125,7 +126,7 @@ const Products: React.FC = () => {
                           </Text>
                         </Flex>
                         <Flex width="40%" flexDirection="column">
-                          <Image src="/freshdeskgraphic-person.svg" />
+                          <Image src="/freshdesk/freshdeskgraphic-person.svg" />
                         </Flex>
                       </Flex>
                       <Flex
@@ -147,7 +148,7 @@ const Products: React.FC = () => {
                           </Text>
                         </Flex>
                         <Image
-                          src="/freshdeskgraphic-pc.svg"
+                          src="/freshdesk/freshdeskgraphic-pc.svg"
                           width="40%"
                           ml="auto"
                         />
@@ -272,10 +273,11 @@ const Products: React.FC = () => {
                           teammates to efficiently resolve customer issues.
                         </Text>
                       </Flex>
+
                       <Flex flexDirection="row">
                         <Grid gridTemplateColumns="1fr 1fr 1fr">
                           <GridItem p={6}>
-                            <Image src="/freshdeskgraphic-kog.svg" />
+                            <Image src="/freshdesk/freshdeskgraphic-kog.svg" />
                             <Text
                               align="center"
                               mt={3}
@@ -286,7 +288,7 @@ const Products: React.FC = () => {
                             </Text>
                           </GridItem>
                           <GridItem p={6}>
-                            <Image src="/freshdeskgraphic-handshake.svg" />
+                            <Image src="/freshdesk/freshdeskgraphic-handshake.svg" />
                             <Text
                               align="center"
                               mt={3}
@@ -297,7 +299,7 @@ const Products: React.FC = () => {
                             </Text>
                           </GridItem>
                           <GridItem p={6}>
-                            <Image src="/freshdeskgraphic-kogs.svg" />
+                            <Image src="/freshdesk/freshdeskgraphic-kogs.svg" />
                             <Text
                               align="center"
                               mt={3}
@@ -346,12 +348,12 @@ const Products: React.FC = () => {
                           </Text>
                         </Flex>
                         <Flex width="50%" align="center" justify="end">
-                          <Image src="/freshdesk-screenshot.jpg" h="70%" />
+                          <Image src="/freshdesk/freshdesk-screenshot.jpg" h="70%" />
                         </Flex>
                       </Flex>
                       <Flex flexDirection="row" p={4} gap={3}>
                         <Flex width="50%" align="center">
-                          <Image src="/freshdesk-admin.jpg" />
+                          <Image src="/freshdesk/freshdesk-admin.jpg" />
                         </Flex>
                         <Flex flexDirection="column" width="50%" gap={3}>
                           <Text fontSize="2xl" fontWeight="bold">
@@ -405,7 +407,7 @@ const Products: React.FC = () => {
                           </Text>
                         </Flex>
                         <Flex width="50%">
-                          <Image src="/freshdesk-carousel.svg" />
+                          <Image src="/freshdesk/freshdesk-carousel.svg" />
                         </Flex>
                       </Flex>
                       <Flex p={4} align="center" flexDirection="column" gap={3}>
@@ -415,7 +417,7 @@ const Products: React.FC = () => {
                         </Text>
 
                         <Flex w="70%">
-                          <Image src="/freshdesk-page.svg" />
+                          <Image src="/freshdesk/freshdesk-page.svg" />
                         </Flex>
                       </Flex>
                       <Flex
@@ -434,7 +436,7 @@ const Products: React.FC = () => {
                         </Text>
                       </Flex>
                       <Flex p={4}>
-                        <Image src="/freshdesk-admin2.jpg" />
+                        <Image src="/freshdesk/freshdesk-admin2.jpg" />
                       </Flex>
                       <Flex
                         bgColor="green10"
@@ -480,6 +482,9 @@ const Products: React.FC = () => {
                           </Flex>
                         </Flex>
                       </Flex>
+                      <Flex>
+                        
+                      </Flex>
                       <Flex p={4} bgColor="green.100" width="100%">
                         <SimpleGrid
                           width="100%"
@@ -490,26 +495,26 @@ const Products: React.FC = () => {
                         >
                           <GridItem borderBottom="2px" p={1}>
                             <Text
-                              fontSize="sm"
+                              fontSize="lg"
                               fontWeight="bold"
                               align="center"
                             >
                               Free
                             </Text>
-                            <Text fontSize="2xs" mt={1} align="center">
+                            <Text fontSize="sm" mt={1} align="center">
                               Get going for free
                             </Text>
                           </GridItem>
 
                           <GridItem borderBottom="2px" p={1}>
                             <Text
-                              fontSize="sm"
+                              fontSize="lg"
                               align="center"
                               fontWeight="bold"
                             >
                               Growth
                             </Text>
-                            <Text fontSize="2xs" mt={1} align="center">
+                            <Text fontSize="sm" mt={1} align="center">
                               Intuitive, industry-leading
                               <br />
                               support for growing businesses
@@ -517,13 +522,13 @@ const Products: React.FC = () => {
                           </GridItem>
                           <GridItem borderBottom="2px" p={1}>
                             <Text
-                              fontSize="sm"
+                              fontSize="lg"
                               align="center"
                               fontWeight="bold"
                             >
                               Pro
                             </Text>
-                            <Text fontSize="2xs" mt={1} align="center">
+                            <Text fontSize="sm" mt={1} align="center">
                               Advanced automation for high
                               <br />
                               performance
@@ -531,13 +536,13 @@ const Products: React.FC = () => {
                           </GridItem>
                           <GridItem borderBottom="2px" p={1}>
                             <Text
-                              fontSize="sm"
+                              fontSize="lg"
                               align="center"
                               fontWeight="bold"
                             >
                               Enterprise
                             </Text>
-                            <Text fontSize="2xs" mt={1} align="center">
+                            <Text fontSize="sm" mt={1} align="center">
                               Fully featured with bots for
                               <br />
                               enterprise-level support
@@ -570,14 +575,14 @@ const Products: React.FC = () => {
                             </Text>
                           </GridItem>
                           <GridItem p={1}>
-                          <Text
+                            <Text
                               align="center"
                               fontSize="lg"
                               fontWeight="semibold"
                             >
                               €49
                             </Text>
-                          <Text align="center" fontSize="md">
+                            <Text align="center" fontSize="md">
                               /agent/month, billed annualy <br />
                               €59 <br />
                               /agent/month, billed monthly
@@ -591,66 +596,191 @@ const Products: React.FC = () => {
                             >
                               €79
                             </Text>
-                          <Text align="center" fontSize="md">
+                            <Text align="center" fontSize="md">
                               /agent/month, billed annualy <br />
                               €95 <br />
                               /agent/month, billed monthly
-                            </Text></GridItem>
-                          <GridItem borderBottom="2px" p={1} justifySelf="center">
-                            <Button size="sm" border="1px" borderRadius="none">Start Free Trial</Button>
+                            </Text>
                           </GridItem>
-                          <GridItem borderBottom="2px" p={1} justifySelf="center">
-                            <Button size="sm" border="1px" borderRadius="none">Start Free Trial</Button>
+                          <GridItem
+                            borderBottom="2px"
+                            p={2}
+                            justifySelf="center"
+                          >
+                            <Button size="sm" border="1px" borderRadius="none">
+                              Start Free Trial
+                            </Button>
                           </GridItem>
-                          <GridItem borderBottom="2px" p={1} justifySelf="center">
-                            <Button size="sm" border="1px" borderRadius="none">Start Free Trial</Button>
+                          <GridItem
+                            borderBottom="2px"
+                            p={2}
+                            justifySelf="center"
+                          >
+                            <Button size="sm" border="1px" borderRadius="none">
+                              Start Free Trial
+                            </Button>
                           </GridItem>
-                          <GridItem borderBottom="2px" p={1} justifySelf="center">
-                            <Button size="sm" border="1px" borderRadius="none">Start Free Trial</Button>
-                        </GridItem>
-                        <GridItem p={1} justifySelf="center">
+                          <GridItem
+                            borderBottom="2px"
+                            p={2}
+                            justifySelf="center"
+                          >
+                            <Button size="sm" border="1px" borderRadius="none">
+                              Start Free Trial
+                            </Button>
+                          </GridItem>
+                          <GridItem
+                            borderBottom="2px"
+                            p={2}
+                            justifySelf="center"
+                          >
+                            <Button size="sm" border="1px" borderRadius="none">
+                              Start Free Trial
+                            </Button>
+                          </GridItem>
+                          <GridItem p={2} justifySelf="center">
                             <Text fontSize="sm">
-                                <CheckIcon/>{' '}Integrated ticketing across email and social{' '}
-                                <Tooltip 
-                                    label="Convert all email and social inquiries
+                              <CheckIcon /> Integrated ticketing across email
+                              and social{' '}
+                              <Tooltip
+                                label="Convert all email and social inquiries
                                     into tickets and track, prioritize, 
                                     and reply using Freshdesk."
-                                >
-                                    <InfoOutlineIcon/>
-                                </Tooltip>
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
                             </Text>
                             <Text fontSize="sm">
-                                <CheckIcon/>{' '}Ticket Dispatch{' '}
-                                <Tooltip
-                                    label="Categorize, prioritize, and route tickets to
+                              <CheckIcon /> Ticket Dispatch{' '}
+                              <Tooltip
+                                label="Categorize, prioritize, and route tickets to
                                     the right teams by creating your own business rules."
-                                >
-                                    <InfoOutlineIcon/>
-                                </Tooltip>                            
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
                             </Text>
-                            <Text fontSize="sm"><CheckIcon/>{' '}Knowledge Base</Text>
-                            <Text fontSize="sm"><CheckIcon/>{' '}Ticket Trend Report</Text>
-                            <Text fontSize="sm"><CheckIcon/>{' '}Out-of-the-box analytics and reporting</Text>
-                            <Text fontSize="sm"><CheckIcon/>{' '}Choose your data center location</Text>
-                            <Text fontSize="sm"><CheckIcon/>{' '}Team collaboration</Text>
-                            <Text fontSize="sm"><CheckIcon/>{' '}24x7 email support </Text>
-                        </GridItem>
-                        <GridItem p={1} justifySelf="center">
-                            <Text fontSize="sm" as='i'> Everything in Free and... </Text>
-                            <Text fontSize="sm"><CheckIcon/>{' '}Ticket Dispatch</Text>
-                            <Text fontSize="sm"><CheckIcon/>{' '}Knowledge Base</Text>
-                            <Text fontSize="sm"><CheckIcon/>{' '}Ticket Trend Report</Text>
-                            <Text fontSize="sm"><CheckIcon/>{' '}Out-of-the-box analytics and reporting</Text>
-                            <Text fontSize="sm"><CheckIcon/>{' '}Choose your data center location</Text>
-                            <Text fontSize="sm"><CheckIcon/>{' '}Team collaboration</Text>
-                            <Text fontSize="sm"><CheckIcon/>{' '}24x7 email support </Text>
-                        </GridItem>
-                        <GridItem>
-                        
-                        </GridItem>
-                        <GridItem>
-                        
-                        </GridItem>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Knowledge Base{' '}
+                              <Tooltip
+                                label="Enable customers to help themselves 
+                                    by finding answers on their own."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Ticket Trend Report{' '}
+                              <Tooltip
+                                label="Analyze trends and stay on top of
+                                    tickets by allocating resources at the right time."
+                              >
+                                <InfoOutlineIcon />
+                              </Tooltip>{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Out-of-the-box analytics and
+                              reporting{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Choose your data center location{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Team collaboration{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> 24x7 email support{' '}
+                            </Text>
+                          </GridItem>
+                          <GridItem p={2} justifySelf="center">
+                            <Text fontSize="sm" as="i">
+                              {' '}
+                              Everything in Free and...{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Automation{' '}
+                              <Tooltip
+                                label="Automate follow-ups, escalations, and other tasks 
+                                using specific time and event-based triggers to perform any action of your choice."
+                              >
+                                <InfoOutlineIcon/>
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Collision Detection{' '}
+                              <Tooltip
+                                label="Know when another agent is viewing/replying
+                                to a ticket to avoid duplicating each other’s effort."
+                              >
+                                <InfoOutlineIcon/>
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> 1000+ marketplace apps{' '}
+                              <Tooltip
+                                label="Get access to 1000+ apps and extend
+                                the capabilities of your helpdesk with the Freshworks Marketplace."
+                              >
+                                <InfoOutlineIcon/>
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> In-depth helpdesk report{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> SLA management & business hours{' '}
+                              <Tooltip
+                                label="Set the right expectations with customers and agents
+                                on the response and resolution timeframes for every ticket
+                                in your helpdesk, and set the right business hours."
+                              >
+                                <InfoOutlineIcon/>
+                              </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Custom Email Server{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Custom Ticket Views{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Custom ticket fields & status{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Custom SSL{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> Easily track time spent by agents on tickets{' '}
+                            </Text>
+                            <Text fontSize="sm">
+                              <CheckIcon /> 24x5 phone support {' '}
+                            </Text>
+                          </GridItem>
+                          <GridItem p={2} justifySelf="center">
+                          <Text fontSize="sm" as="i">
+                              {' '}
+                              Everything in Free and...{' '}
+                            </Text>
+                            Multiple products
+Includes up to 5000 Collaborators
+Round-robin routing
+Custom Roles
+Custom Reports and Dashboards
+Segment customers for personalized support
+Customer journey
+Canned forms
+Manage versions in knowledge base
+Community forums
+Extendable API Limits
+CSAT surveys & reports
+Multiple SLA policies & business hours
+SLA reminder & escalation
+Multilingual knowledge base
+Custom apps
+Average handling Time (AHT)
+Custom Metrics
+Report Sharing 
+                          </GridItem>
+                          <GridItem></GridItem>
                         </SimpleGrid>
                       </Flex>
                     </Flex>
