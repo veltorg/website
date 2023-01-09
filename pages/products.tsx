@@ -413,7 +413,7 @@ const Products: React.FC = () => {
                       </Flex>
                       <Flex p={4} align="center" flexDirection="column" gap={3}>
                         <Text fontSize="2xl" fontWeight="bold">
-                          AI powered automations to streamline your teams'
+                          AI powered automations to streamline your team&apos;
                           workflows
                         </Text>
 
@@ -428,7 +428,7 @@ const Products: React.FC = () => {
                         gap={2}
                       >
                         <Text fontSize="2xl" fontWeight="bold" color="green00">
-                          We've simplified ticketing for you!
+                          We&apos;ve simplified ticketing for you!
                         </Text>
                         <Text>
                           Customer issues from any channel can be converted into
@@ -461,7 +461,7 @@ const Products: React.FC = () => {
                         <Flex flexDirection="row">
                           <Flex align="center">Pearson-logo</Flex>
                           <Flex flexDirection="column" gap={2}>
-                            ''
+                            
                             <Text>
                               Vi ble solgt da vi så Freshdesk. Kombinasjonen av
                               sosiale medier, e-post, kunnskapsbas, mobil og
@@ -472,7 +472,7 @@ const Products: React.FC = () => {
                           </Flex>
                           <Flex>Lesley-Logo</Flex>
                           <Flex flexDirection="column" gap={2}>
-                            ''
+                            
                             <Text>
                               Vi begynte å lete etter en ny løsning på høsten og
                               var opptatt av å få noe på plass og optimalisert
@@ -889,8 +889,7 @@ const Products: React.FC = () => {
                             <Text fontSize="sm">
                               <CheckIcon /> Custom objects{' '}
                               <Tooltip
-                                label="Create a secure test environment to try new features and 
-                                settings in Freshdesk without impacting agents or customers."
+                                label="Create or bring in business-critical data right inside your Freshdesk."
                               >
                                 <InfoOutlineIcon />
                               </Tooltip>
@@ -898,8 +897,8 @@ const Products: React.FC = () => {
                             <Text fontSize="sm">
                               <CheckIcon /> Assist bot{' '}
                               <Tooltip
-                                label="Create a secure test environment to try new features and 
-                                settings in Freshdesk without impacting agents or customers."
+                                label="Guide agents through pre-configured steps
+                                 to help resolve customer queries faster. Does not require bot sessions."
                               >
                                 <InfoOutlineIcon />
                               </Tooltip>
@@ -907,8 +906,8 @@ const Products: React.FC = () => {
                             <Text fontSize="sm">
                               <CheckIcon /> Email bot{' '}
                               <Tooltip
-                                label="Create a secure test environment to try new features and 
-                                settings in Freshdesk without impacting agents or customers."
+                                label="Automatically respond to email tickets with relevant
+                                 solution articles. Consumes bot sessions."
                               >
                                 <InfoOutlineIcon />
                               </Tooltip>
@@ -916,8 +915,8 @@ const Products: React.FC = () => {
                             <Text fontSize="sm">
                               <CheckIcon /> Audit log{' '}
                               <Tooltip
-                                label="Create a secure test environment to try new features and 
-                                settings in Freshdesk without impacting agents or customers."
+                                label="Monitor changes and always stay up-to-date 
+                                on what's happening with your helpdesk."
                               >
                                 <InfoOutlineIcon />
                               </Tooltip>
@@ -925,8 +924,8 @@ const Products: React.FC = () => {
                             <Text fontSize="sm">
                               <CheckIcon /> Skill-based routing{' '}
                               <Tooltip
-                                label="Create a secure test environment to try new features and 
-                                settings in Freshdesk without impacting agents or customers."
+                                label="Match tickets to the agent most skilled in 
+                                handling specific types of issues within the group."
                               >
                                 <InfoOutlineIcon />
                               </Tooltip>
@@ -934,8 +933,7 @@ const Products: React.FC = () => {
                             <Text fontSize="sm">
                               <CheckIcon /> Knowledge base approval workflow{' '}
                               <Tooltip
-                                label="Create a secure test environment to try new features and 
-                                settings in Freshdesk without impacting agents or customers."
+                                label="Track, review, approve, and publish knowledge base articles."
                               >
                                 <InfoOutlineIcon />
                               </Tooltip>
@@ -943,8 +941,7 @@ const Products: React.FC = () => {
                             <Text fontSize="sm">
                               <CheckIcon /> Flexible knowledge base hierarchy{' '}
                               <Tooltip
-                                label="Create a secure test environment to try new features and 
-                                settings in Freshdesk without impacting agents or customers."
+                                label="Categorize articles up to 5 folder levels and scale your knowledge base."
                               >
                                 <InfoOutlineIcon />
                               </Tooltip>
@@ -952,8 +949,7 @@ const Products: React.FC = () => {
                             <Text fontSize="sm">
                               <CheckIcon /> IP range restriction{' '}
                               <Tooltip
-                                label="Create a secure test environment to try new features and 
-                                settings in Freshdesk without impacting agents or customers."
+                                label="Increase helpdesk security by allowing certain IP addresses to access your portal."
                               >
                                 <InfoOutlineIcon />
                               </Tooltip>
@@ -961,8 +957,8 @@ const Products: React.FC = () => {
                             <Text fontSize="sm">
                               <CheckIcon /> Auto-triage Freddy{' '}
                               <Tooltip
-                                label="Create a secure test environment to try new features and 
-                                settings in Freshdesk without impacting agents or customers."
+                                label="Automatically predict basic ticket fields like Type, 
+                                Priority & Group and other custom ticket fields."
                               >
                                 <InfoOutlineIcon />
                               </Tooltip>
@@ -970,8 +966,7 @@ const Products: React.FC = () => {
                             <Text fontSize="sm">
                               <CheckIcon /> Article suggester{' '}
                               <Tooltip
-                                label="Create a secure test environment to try new features and 
-                                settings in Freshdesk without impacting agents or customers."
+                                label="Let Freddy suggest solution articles to your agents to help them respond to tickets faster."
                               >
                                 <InfoOutlineIcon />
                               </Tooltip>
@@ -979,8 +974,7 @@ const Products: React.FC = () => {
                             <Text fontSize="sm">
                               <CheckIcon /> Canned response suggester{' '}
                               <Tooltip
-                                label="Create a secure test environment to try new features and 
-                                settings in Freshdesk without impacting agents or customers."
+                                label="Let Freddy suggest canned responses to help your agents respond to tickets faster."
                               >
                                 <InfoOutlineIcon />
                               </Tooltip>
@@ -988,8 +982,7 @@ const Products: React.FC = () => {
                             <Text fontSize="sm">
                               <CheckIcon /> AI-powered social signals{' '}
                               <Tooltip
-                                label="Create a secure test environment to try new features and 
-                                settings in Freshdesk without impacting agents or customers."
+                                label="Use AI to find important tweets and cancel out the noise."
                               >
                                 <InfoOutlineIcon />
                               </Tooltip>
@@ -1127,7 +1120,7 @@ const Products: React.FC = () => {
                           <Text fontSize="xl">
                             Freshworks CRM bruker AI, automasjoner og sømløse
                             integrasjoner for å gi deg de verktøyene ditt salgs-
-                            og markedsteam behøver for å jobbe bedre. 
+                            og markedsteam behøver for å jobbe bedre.
                           </Text>
                         </Flex>
                         <Flex flexDirection="column" width="50%" gap={2}>
