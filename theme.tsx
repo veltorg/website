@@ -23,7 +23,7 @@ const theme = extendTheme({
     */
     lg: '75rem',
     xl: '100rem',
-    '2xl': '150rem'
+    '2xl': '150rem',
   },
   space: {
     min: '0.2rem',
