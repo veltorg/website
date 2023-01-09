@@ -15,6 +15,7 @@ import {
   ListItem,
   ScaleFade,
   Show,
+  SimpleGrid,
   Stack,
   Tab,
   TabList,
@@ -27,6 +28,7 @@ import {
   Text,
   Th,
   Thead,
+  Tooltip,
   Tr,
   UnorderedList,
   propNames,
@@ -36,7 +38,10 @@ import {
 import NextLink from 'next/link';
 import { Layout } from '../components/layout';
 import {
+    CheckIcon,
   EmailIcon,
+  InfoIcon,
+  InfoOutlineIcon,
   PhoneIcon,
   SearchIcon,
   SettingsIcon,
@@ -476,14 +481,14 @@ const Products: React.FC = () => {
                         </Flex>
                       </Flex>
                       <Flex p={4} bgColor="green.100" width="100%">
-                        <Grid
+                        <SimpleGrid
                           width="100%"
-                          gridTemplateColumns="1fr 1fr 1fr 1fr"
-                          gridTemplateRows="5rem 2rem"
-                          border="1px"
+                          columns={4}
+                          gridTemplateRows="auto auto auto"
+                          border="2px"
                           borderRadius="md"
                         >
-                          <GridItem>
+                          <GridItem borderBottom="2px" p={1}>
                             <Text
                               fontSize="sm"
                               fontWeight="bold"
@@ -495,7 +500,8 @@ const Products: React.FC = () => {
                               Get going for free
                             </Text>
                           </GridItem>
-                          <GridItem>
+
+                          <GridItem borderBottom="2px" p={1}>
                             <Text
                               fontSize="sm"
                               align="center"
@@ -509,7 +515,7 @@ const Products: React.FC = () => {
                               support for growing businesses
                             </Text>
                           </GridItem>
-                          <GridItem>
+                          <GridItem borderBottom="2px" p={1}>
                             <Text
                               fontSize="sm"
                               align="center"
@@ -523,7 +529,7 @@ const Products: React.FC = () => {
                               performance
                             </Text>
                           </GridItem>
-                          <GridItem>
+                          <GridItem borderBottom="2px" p={1}>
                             <Text
                               fontSize="sm"
                               align="center"
@@ -537,13 +543,115 @@ const Products: React.FC = () => {
                               enterprise-level support
                             </Text>
                           </GridItem>
-                          <GridItem>
-                            <Text align="center">Euro 0</Text>
+                          <GridItem p={1}>
+                            <Text
+                              align="center"
+                              fontSize="lg"
+                              fontWeight="semibold"
+                            >
+                              €0
+                            </Text>
+                            <Text align="center" fontSize="md">
+                              Up to 10 agents
+                            </Text>
                           </GridItem>
-                          <GridItem>euro</GridItem>
-                          <GridItem>Euro 0</GridItem>
-                          <GridItem>euro</GridItem>
-                        </Grid>
+                          <GridItem p={1}>
+                            <Text
+                              align="center"
+                              fontSize="lg"
+                              fontWeight="semibold"
+                            >
+                              €15
+                            </Text>
+                            <Text align="center" fontSize="md">
+                              /agent/month, billed annualy <br />
+                              €18 <br />
+                              /agent/month, billed monthly
+                            </Text>
+                          </GridItem>
+                          <GridItem p={1}>
+                          <Text
+                              align="center"
+                              fontSize="lg"
+                              fontWeight="semibold"
+                            >
+                              €49
+                            </Text>
+                          <Text align="center" fontSize="md">
+                              /agent/month, billed annualy <br />
+                              €59 <br />
+                              /agent/month, billed monthly
+                            </Text>
+                          </GridItem>
+                          <GridItem p={1}>
+                            <Text
+                              align="center"
+                              fontSize="lg"
+                              fontWeight="semibold"
+                            >
+                              €79
+                            </Text>
+                          <Text align="center" fontSize="md">
+                              /agent/month, billed annualy <br />
+                              €95 <br />
+                              /agent/month, billed monthly
+                            </Text></GridItem>
+                          <GridItem borderBottom="2px" p={1} justifySelf="center">
+                            <Button size="sm" border="1px" borderRadius="none">Start Free Trial</Button>
+                          </GridItem>
+                          <GridItem borderBottom="2px" p={1} justifySelf="center">
+                            <Button size="sm" border="1px" borderRadius="none">Start Free Trial</Button>
+                          </GridItem>
+                          <GridItem borderBottom="2px" p={1} justifySelf="center">
+                            <Button size="sm" border="1px" borderRadius="none">Start Free Trial</Button>
+                          </GridItem>
+                          <GridItem borderBottom="2px" p={1} justifySelf="center">
+                            <Button size="sm" border="1px" borderRadius="none">Start Free Trial</Button>
+                        </GridItem>
+                        <GridItem p={1} justifySelf="center">
+                            <Text fontSize="sm">
+                                <CheckIcon/>{' '}Integrated ticketing across email and social{' '}
+                                <Tooltip 
+                                    label="Convert all email and social inquiries
+                                    into tickets and track, prioritize, 
+                                    and reply using Freshdesk."
+                                >
+                                    <InfoOutlineIcon/>
+                                </Tooltip>
+                            </Text>
+                            <Text fontSize="sm">
+                                <CheckIcon/>{' '}Ticket Dispatch{' '}
+                                <Tooltip
+                                    label="Categorize, prioritize, and route tickets to
+                                    the right teams by creating your own business rules."
+                                >
+                                    <InfoOutlineIcon/>
+                                </Tooltip>                            
+                            </Text>
+                            <Text fontSize="sm"><CheckIcon/>{' '}Knowledge Base</Text>
+                            <Text fontSize="sm"><CheckIcon/>{' '}Ticket Trend Report</Text>
+                            <Text fontSize="sm"><CheckIcon/>{' '}Out-of-the-box analytics and reporting</Text>
+                            <Text fontSize="sm"><CheckIcon/>{' '}Choose your data center location</Text>
+                            <Text fontSize="sm"><CheckIcon/>{' '}Team collaboration</Text>
+                            <Text fontSize="sm"><CheckIcon/>{' '}24x7 email support </Text>
+                        </GridItem>
+                        <GridItem p={1} justifySelf="center">
+                            <Text fontSize="sm" as='i'> Everything in Free and... </Text>
+                            <Text fontSize="sm"><CheckIcon/>{' '}Ticket Dispatch</Text>
+                            <Text fontSize="sm"><CheckIcon/>{' '}Knowledge Base</Text>
+                            <Text fontSize="sm"><CheckIcon/>{' '}Ticket Trend Report</Text>
+                            <Text fontSize="sm"><CheckIcon/>{' '}Out-of-the-box analytics and reporting</Text>
+                            <Text fontSize="sm"><CheckIcon/>{' '}Choose your data center location</Text>
+                            <Text fontSize="sm"><CheckIcon/>{' '}Team collaboration</Text>
+                            <Text fontSize="sm"><CheckIcon/>{' '}24x7 email support </Text>
+                        </GridItem>
+                        <GridItem>
+                        
+                        </GridItem>
+                        <GridItem>
+                        
+                        </GridItem>
+                        </SimpleGrid>
                       </Flex>
                     </Flex>
                   </ScaleFade>
