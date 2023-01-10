@@ -25,6 +25,10 @@ const theme = extendTheme({
     xl: '100rem',
     '2xl': '150rem',
   },
+  borderWidths: {
+    slim: '0.25rem',
+    md: '1rem',
+  },
   space: {
     min: '0.2rem',
     0: '0.5rem',
