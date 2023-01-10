@@ -49,18 +49,18 @@ export const Pricing: React.FC<PricingProps> = ({ plans }) => {
         borderRadius="md"
       >
         {plans.map(plan => (
-          <GridItem borderBottomWidth="slim" p={1}>
+          <GridItem borderBottomWidth="slim" p={1} key={plan.name && plan.description}>
             <Text fontSize="lg" fontWeight="bold" align="center">
               {plan.name}
             </Text>
-            <Text fontSize="sm" mt={1} align="center">
+            <Text fontSize="sm" mt={1} align="center" key={plan.description}>
               {plan.description}
             </Text>
           </GridItem>
         ))}
 
         {plans.map(plan => (
-          <GridItem p={1}>
+          <GridItem p={1} key={plan.price.description && plan.monthlyPrice?.description}>
             <Flex flexDirection="column" alignItems="center">
               <Text fontSize="2xl" fontWeight="semibold">
                 {renderPrice(plan.price)}
@@ -74,7 +74,7 @@ export const Pricing: React.FC<PricingProps> = ({ plans }) => {
 
               {plan.monthlyPrice && (
                 <>
-                  {' '}
+                  
                   <Text fontWeight="semibold">
                     {renderPrice(plan.monthlyPrice)}
                   </Text>
@@ -90,15 +90,15 @@ export const Pricing: React.FC<PricingProps> = ({ plans }) => {
         ))}
 
         {plans.map(plan => (
-          <GridItem borderBottomWidth="slim" p={2} justifySelf="center">
+          <GridItem borderBottomWidth="slim" p={2} justifySelf="center" key={plan.name}>
             <Button size="sm">Start Free Trial</Button>
           </GridItem>
         ))}
 
         {plans.map(plan => (
-          <GridItem p={2} justifySelf="center">
+          <GridItem p={2} justifySelf="center" key={plan.features.length}>
             {plan.features.map(feature => (
-              <Text fontSize="sm">
+              <Text fontSize="sm" key={feature.name && feature.tooltip}>
                 <CheckIcon /> {feature.name} {' '}
                 {feature.tooltip && <Tooltip label={feature.tooltip}>
                   <InfoOutlineIcon />
