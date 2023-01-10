@@ -3,8 +3,6 @@ import {
   Divider,
   Flex,
   FormControl,
-  FormHelperText,
-  FormLabel,
   Grid,
   GridItem,
   Image,
@@ -15,40 +13,29 @@ import {
   ListItem,
   ScaleFade,
   Show,
-  SimpleGrid,
   Stack,
   Tab,
   TabList,
   TabPanel,
   TabPanels,
-  Table,
-  TableContainer,
   Tabs,
-  Tbody,
   Text,
-  Th,
-  Thead,
-  Tooltip,
-  Tr,
   UnorderedList,
-  propNames,
   useColorMode,
   useDisclosure,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { Layout } from '../components/layout';
 import {
-  CheckIcon,
   EmailIcon,
-  InfoIcon,
-  InfoOutlineIcon,
   PhoneIcon,
   SearchIcon,
   SettingsIcon,
 } from '@chakra-ui/icons';
 import { Freshworks } from '../components/footer/elements/freshworks';
 import { FreshworksDark } from '../components/footer/elements/freshworks-dark';
-import { Pricing } from '../components/pricing';
+import { Pricing } from '../components/products/pricing';
+import { freshdeskPlans } from '../data/plans';
 
 const Products: React.FC = () => {
   const { colorMode, setColorMode } = useColorMode();
@@ -459,521 +446,36 @@ const Products: React.FC = () => {
                           <Text fontSize="2xl">Kundereferanser</Text>
                         </Flex>
                         <Flex flexDirection="row" gap={3}>
-                          <Image src="./pearson.svg" w="20%"/>
+                          <Image src="./pearson.svg" w="20%" />
                           <Flex flexDirection="column" gap={2}>
                             <Text>
-                              &apos;&apos;Vi ble solgt da vi så Freshdesk. Kombinasjonen av
-                              sosiale medier, e-post, kunnskapsbas, mobil og
-                              fleksibilitet på en og samme platform, gjorde det
-                              enkelt for oss å velge en kundesenter-løsning.&apos;&apos;
+                              &apos;&apos;Vi ble solgt da vi så Freshdesk.
+                              Kombinasjonen av sosiale medier, e-post,
+                              kunnskapsbas, mobil og fleksibilitet på en og
+                              samme platform, gjorde det enkelt for oss å velge
+                              en kundesenter-løsning.&apos;&apos;
                             </Text>
                             <Text fontWeight="semibold">Matthijs Lok</Text>
                           </Flex>
-                          <Image src="./lesley.jpg" w="20%" alignSelf="center"/>
-                          <Flex flexDirection="column" gap={2} >
+                          <Image
+                            src="./lesley.jpg"
+                            w="20%"
+                            alignSelf="center"
+                          />
+                          <Flex flexDirection="column" gap={2}>
                             <Text>
-                            &apos;&apos;Vi begynte å lete etter en ny løsning på høsten og
-                              var opptatt av å få noe på plass og optimalisert
-                              raskt. Freshdesk sørget for en rask og enkel
-                              implementering og vi var i gang innen 48 timer.&apos;&apos;
+                              &apos;&apos;Vi begynte å lete etter en ny løsning
+                              på høsten og var opptatt av å få noe på plass og
+                              optimalisert raskt. Freshdesk sørget for en rask
+                              og enkel implementering og vi var i gang innen 48
+                              timer.&apos;&apos;
                             </Text>
                             <Text fontWeight="semibold">Vaughan Potter</Text>
                           </Flex>
                         </Flex>
                       </Flex>
-                      <Flex></Flex>
-                      <Flex p={4} bgColor="green.100" width="100%">
-                        <SimpleGrid
-                          width="100%"
-                          columns={4}
-                          gridTemplateRows="auto auto auto"
-                          border="2px"
-                          borderRadius="md"
-                        >
-                          <GridItem borderBottom="2px" p={1}>
-                            <Text
-                              fontSize="lg"
-                              fontWeight="bold"
-                              align="center"
-                            >
-                              Free
-                            </Text>
-                            <Text fontSize="sm" mt={1} align="center">
-                              Get going for free
-                            </Text>
-                          </GridItem>
 
-                          <GridItem borderBottom="2px" p={1}>
-                            <Text
-                              fontSize="lg"
-                              align="center"
-                              fontWeight="bold"
-                            >
-                              Growth
-                            </Text>
-                            <Text fontSize="sm" mt={1} align="center">
-                              Intuitive, industry-leading
-                              <br />
-                              support for growing businesses
-                            </Text>
-                          </GridItem>
-                          <GridItem borderBottom="2px" p={1}>
-                            <Text
-                              fontSize="lg"
-                              align="center"
-                              fontWeight="bold"
-                            >
-                              Pro
-                            </Text>
-                            <Text fontSize="sm" mt={1} align="center">
-                              Advanced automation for high
-                              <br />
-                              performance
-                            </Text>
-                          </GridItem>
-                          <GridItem borderBottom="2px" p={1}>
-                            <Text
-                              fontSize="lg"
-                              align="center"
-                              fontWeight="bold"
-                            >
-                              Enterprise
-                            </Text>
-                            <Text fontSize="sm" mt={1} align="center">
-                              Fully featured with bots for
-                              <br />
-                              enterprise-level support
-                            </Text>
-                          </GridItem>
-                          <GridItem p={1}>
-                            <Text
-                              align="center"
-                              fontSize="lg"
-                              fontWeight="semibold"
-                            >
-                              €0
-                            </Text>
-                            <Text align="center" fontSize="md">
-                              Up to 10 agents
-                            </Text>
-                          </GridItem>
-                          <GridItem p={1}>
-                            <Text
-                              align="center"
-                              fontSize="lg"
-                              fontWeight="semibold"
-                            >
-                              €15
-                            </Text>
-                            <Text align="center" fontSize="md">
-                              /agent/month, billed annualy <br />
-                              €18 <br />
-                              /agent/month, billed monthly
-                            </Text>
-                          </GridItem>
-                          <GridItem p={1}>
-                            <Text
-                              align="center"
-                              fontSize="lg"
-                              fontWeight="semibold"
-                            >
-                              €49
-                            </Text>
-                            <Text align="center" fontSize="md">
-                              /agent/month, billed annualy <br />
-                              €59 <br />
-                              /agent/month, billed monthly
-                            </Text>
-                          </GridItem>
-                          <GridItem p={1}>
-                            <Text
-                              align="center"
-                              fontSize="lg"
-                              fontWeight="semibold"
-                            >
-                              €79
-                            </Text>
-                            <Text align="center" fontSize="md">
-                              /agent/month, billed annualy <br />
-                              €95 <br />
-                              /agent/month, billed monthly
-                            </Text>
-                          </GridItem>
-                          <GridItem
-                            borderBottom="2px"
-                            p={2}
-                            justifySelf="center"
-                          >
-                            <Button size="sm" border="1px" borderRadius="none">
-                              Start Free Trial
-                            </Button>
-                          </GridItem>
-                          <GridItem
-                            borderBottom="2px"
-                            p={2}
-                            justifySelf="center"
-                          >
-                            <Button size="sm" border="1px" borderRadius="none">
-                              Start Free Trial
-                            </Button>
-                          </GridItem>
-                          <GridItem
-                            borderBottom="2px"
-                            p={2}
-                            justifySelf="center"
-                          >
-                            <Button size="sm" border="1px" borderRadius="none">
-                              Start Free Trial
-                            </Button>
-                          </GridItem>
-                          <GridItem
-                            borderBottom="2px"
-                            p={2}
-                            justifySelf="center"
-                          >
-                            <Button size="sm" border="1px" borderRadius="none">
-                              Start Free Trial
-                            </Button>
-                          </GridItem>
-                          <GridItem p={2} justifySelf="center">
-                            <Text fontSize="sm">
-                              <CheckIcon /> Integrated ticketing across email
-                              and social{' '}
-                              <Tooltip
-                                label="Convert all email and social inquiries
-                                    into tickets and track, prioritize, 
-                                    and reply using Freshdesk."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Ticket Dispatch{' '}
-                              <Tooltip
-                                label="Categorize, prioritize, and route tickets to
-                                    the right teams by creating your own business rules."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Knowledge Base{' '}
-                              <Tooltip
-                                label="Enable customers to help themselves 
-                                    by finding answers on their own."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Ticket Trend Report{' '}
-                              <Tooltip
-                                label="Analyze trends and stay on top of
-                                    tickets by allocating resources at the right time."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Out-of-the-box analytics and
-                              reporting{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Choose your data center location{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Team collaboration{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> 24x7 email support{' '}
-                            </Text>
-                          </GridItem>
-                          <GridItem p={2} justifySelf="center">
-                            <Text fontSize="sm" as="i">
-                              {' '}
-                              Everything in Free and...{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Automation{' '}
-                              <Tooltip
-                                label="Automate follow-ups, escalations, and other tasks 
-                                using specific time and event-based triggers to perform any action of your choice."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Collision Detection{' '}
-                              <Tooltip
-                                label="Know when another agent is viewing/replying
-                                to a ticket to avoid duplicating each other's effort."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> 1000+ marketplace apps{' '}
-                              <Tooltip
-                                label="Get access to 1000+ apps and extend
-                                the capabilities of your helpdesk with the Freshworks Marketplace."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> In-depth helpdesk report{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> SLA management & business hours{' '}
-                              <Tooltip
-                                label="Set the right expectations with customers and agents
-                                on the response and resolution timeframes for every ticket
-                                in your helpdesk, and set the right business hours."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Custom Email Server{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Custom Ticket Views{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Custom ticket fields & status{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Custom SSL{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Easily track time spent by agents on
-                              tickets{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> 24x5 phone support{' '}
-                            </Text>
-                          </GridItem>
-                          <GridItem p={2} justifySelf="center">
-                            <Text fontSize="sm" as="i">
-                              {' '}
-                              Everything in Growth and...{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Multiple products{' '}
-                              <Tooltip label="Up to 5 products">
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Includes up to 5000 Collaborators{' '}
-                              <Tooltip
-                                label="Invite external agents and third parties into 
-                                Freshdesk to help full-time agents resolve complex customer issues."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Round-robin routing{' '}
-                              <Tooltip
-                                label="Automatically assign tickets to all available
-                                 agents in a group in a circular fashion."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Custom Roles{' '}
-                              <Tooltip label="Provide or restrict access to your agents at granular levels.">
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Custom Reports and Dashboards{' '}
-                              <Tooltip
-                                label="Create powerful reports and dashboards unique to your
-                                 business and draw deeper insights from your Freshdesk data."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Segment customers for personalized
-                              support{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Customer journey{' '}
-                              <Tooltip
-                                label="Show agents the solution articles that a customer
-                                 opened before they created a support ticket."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Canned forms{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Manage versions in knowledge base{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Community forums{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Extendable API Limits{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> CSAT surveys & reports{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Multiple SLA policies & business
-                              hours{' '}
-                              <Tooltip
-                                label="Set custom Service Level Agreements (SLA) for multiple regions, products and business
-                                 units to prioritize and deliver by suitable deadlines for each requirement."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> SLA reminder & escalation{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Multilingual knowledge base{' '}
-                              <Tooltip label="Supports 42 languages">
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Custom apps{' '}
-                              <Tooltip
-                                label="Extend your support capabilities 
-                                by building apps customized for your business."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Average handling Time (AHT){' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Custom Metrics{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Report Sharing{' '}
-                            </Text>
-                          </GridItem>
-                          <GridItem p={2} justifySelf="center">
-                            <Text fontSize="sm" as="i">
-                              {' '}
-                              Everything in Pro and...{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Unlimited products{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Sandbox{' '}
-                              <Tooltip
-                                label="Create a secure test environment to try new features and 
-                                settings in Freshdesk without impacting agents or customers."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Easily manage agent shifts across
-                              time zones{' '}
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Custom objects{' '}
-                              <Tooltip label="Create or bring in business-critical data right inside your Freshdesk.">
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Assist bot{' '}
-                              <Tooltip
-                                label="Guide agents through pre-configured steps
-                                 to help resolve customer queries faster. Does not require bot sessions."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Email bot{' '}
-                              <Tooltip
-                                label="Automatically respond to email tickets with relevant
-                                 solution articles. Consumes bot sessions."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Audit log{' '}
-                              <Tooltip
-                                label="Monitor changes and always stay up-to-date 
-                                on what's happening with your helpdesk."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Skill-based routing{' '}
-                              <Tooltip
-                                label="Match tickets to the agent most skilled in 
-                                handling specific types of issues within the group."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Knowledge base approval workflow{' '}
-                              <Tooltip label="Track, review, approve, and publish knowledge base articles.">
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Flexible knowledge base hierarchy{' '}
-                              <Tooltip label="Categorize articles up to 5 folder levels and scale your knowledge base.">
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> IP range restriction{' '}
-                              <Tooltip label="Increase helpdesk security by allowing certain IP addresses to access your portal.">
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Auto-triage Freddy{' '}
-                              <Tooltip
-                                label="Automatically predict basic ticket fields like Type, 
-                                Priority & Group and other custom ticket fields."
-                              >
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Article suggester{' '}
-                              <Tooltip label="Let Freddy suggest solution articles to your agents to help them respond to tickets faster.">
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> Canned response suggester{' '}
-                              <Tooltip label="Let Freddy suggest canned responses to help your agents respond to tickets faster.">
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                            <Text fontSize="sm">
-                              <CheckIcon /> AI-powered social signals{' '}
-                              <Tooltip label="Use AI to find important tweets and cancel out the noise.">
-                                <InfoOutlineIcon />
-                              </Tooltip>
-                            </Text>
-                          </GridItem>
-                        </SimpleGrid>
-                      </Flex>
+                      <Pricing plans={freshdeskPlans} />
                     </Flex>
                   </ScaleFade>
                 </TabPanel>
