@@ -74,19 +74,26 @@ const Home = () => (
               Vi gir deg verktøyene du trenger for å jobbe smart og effektivt i
               en ny digital hverdag.
             </Text>
-          </Flex>
+          </Box>
         </Flex>
+        </Show>
         <Flex
           gap={2}
-          flexDirection="column"
+          flexDirection={{base: 'column', md: 'row'}}
           alignItems="center"
-          width={{ md: '50%' }}
+          p= {3}
         >
-          <Text
-            textStyle="header"
-            color="green00"
-            align={{ base: 'center', md: 'left' }}
+          <Flex width={{md:"50%"}} justifyContent="center">
+            <Image src="../squares.svg" alt={''}/>
+          </Flex>
+          <Flex 
+            gap= {2}
+            flexDirection= 'column'
+            alignItems= 'center'
+            width={{md:"50%"}}
+            p={2}
           >
+          <Text textStyle="header" color="green00" align={{base: "center", md: "left"}}>
             Utvid, tilpass og skreddersy iterativt
           </Text>
           <Text
@@ -98,12 +105,8 @@ const Home = () => (
             forskjellige behov. Med oss på laget kan du utvide, tilpasse og
             skreddersky mens du går.
           </Text>
-          <Text textStyle="normal" color="green10noswap">
-            Velt er leverandør her i Norge, og tilbyr bistand til oppsett,
-            støtte og utvikling i produktene.
-          </Text>
         </Flex>
-      </Flex>
+        </Flex>
       <Flex
         sx={{
           flexDirection: 'column',
@@ -124,11 +127,6 @@ const Home = () => (
           Velt er leverandør her i Norge, og tilbyr bistand til oppsett, støtte
           og utvikling i produktene.
         </Text>
-        <Link href="/about">
-          <Text textStyle="link" color="green10noswap">
-            Les mer om oss
-          </Text>
-        </Link>
       </Flex>
       <FreshworksLogo />
         <FreshGrid inputs={freshgridInput} />
