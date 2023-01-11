@@ -206,11 +206,6 @@ const Home = () => (
                 i en ny digital hverdag.
               </Text>
             </Flex>
-            <Link as={NextLink} href="/about">
-              <Text textStyle="link" color="blue00">
-                Les mer om oss
-              </Text>
-            </Link>
           </Flex>
         </Flex>
         <Flex
@@ -231,11 +226,6 @@ const Home = () => (
               har forskjellige behov. Med oss på laget kan du utvide, tilpasse
               og skreddersky mens du går.
             </Text>
-            <Link as={NextLink} href="/about">
-              <Text textStyle="link" color="blacktogreen">
-                Les mer om vår kompetanse
-              </Text>
-            </Link>
           </Flex>
         </Flex>
         <Flex
@@ -260,11 +250,6 @@ const Home = () => (
             tristique senectus et netus et malesuada fames ac turpis egestas. In
             sit amet metus efficitur, cursus sapien maximus, semper purus.
           </Text>
-          <Link href="/about">
-            <Text textStyle="link" color="green10noswap">
-              Les mer om oss
-            </Text>
-          </Link>
         </Flex>
       </Flex>
     </Show>
