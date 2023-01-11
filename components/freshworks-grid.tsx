@@ -26,7 +26,8 @@ export const FreshGrid: React.FC<FreshGridProps> = ({inputs}) => {
           >
             <Box
               width="fit-content"
-              p={'min'}
+              px={0}
+              py='min'
               bgColor="green00"
               borderRadius="md"
             >
