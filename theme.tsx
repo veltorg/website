@@ -45,6 +45,7 @@ const theme = extendTheme({
   colors: {
     pink00: '#E1CCFF',
     blue00: '#454BFF',
+    blue80: '#000471',
     green00noswap: '#00837D',
     green10noswap: '#C8FAFF',
     black10: '#101326',
