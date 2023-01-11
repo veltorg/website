@@ -29,7 +29,7 @@ export const FreshGrid: React.FC<FreshGridProps> = ({ inputs }) => {
               width="fit-content"
               px={0}
               py="min"
-              bgColor="green00"
+              bgColor="blue80"
               borderRadius="md"
             >
               <Text color="green10" textAlign="center">
