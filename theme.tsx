@@ -14,6 +14,7 @@ const config: ThemeConfig = {
 const theme = extendTheme({
   config,
   breakpoints: {
+    stop: '0rem',
     sm: '30rem',
     md: '50.001rem',
     /* 
