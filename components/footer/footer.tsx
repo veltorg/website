@@ -98,9 +98,6 @@ export const Footer: React.FC = () => {
       </Show>
       <Show below="md">
         <Flex sx={{ flexDirection: 'column', p: 3, gap: 4, mt: 2 }}>
-          <Flex sx={{ alignItems: 'center', justifyContent: 'center', gap: 1 }}>
-            {freshLogo}
-          </Flex>
           <Flex
             sx={{
               flexDirection: 'column',
