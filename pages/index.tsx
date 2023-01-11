@@ -1,4 +1,6 @@
 import {
+  Box,
+  Container,
   Flex,
   Grid,
   GridItem,
@@ -10,6 +12,7 @@ import {
 import { Layout } from '../components/layout';
 import NextLink from 'next/link';
 import React from 'react';
+import { FreshworksLogo } from '../components/freshworks-logo';
 
 const Home = () => (
   <Layout>
@@ -244,27 +247,62 @@ const Home = () => (
             p: 3,
             backgroundColor: 'green00noswap',
             borderRadius: 'md',
-            alignItems: 'center',
             gap: 2,
           }}
         >
           <Text textStyle="header" color="green10noswap">
-            Lorem ipsum sit amet
+            Norges leverandør for Freshworks
           </Text>
           <Text textStyle="normal" color="green10noswap">
-            Aliquam pellentesque urna lacinia, finibus tellus non, aliquam urna.
-            Phasellus varius aliquet massa, id tempus dui aliquet at.
+            Freshworks lager verktøy som gjør det fantastiske verktøy for å
+            markedsføre, selge, kundestøtte og IT-løsninger.
           </Text>
           <Text textStyle="normal" color="green10noswap">
-            Aenean aliquam sed ante nec aliquam. Pellentesque habitant morbi
-            tristique senectus et netus et malesuada fames ac turpis egestas. In
-            sit amet metus efficitur, cursus sapien maximus, semper purus.
+            Velt er leverandør her i Norge, og tilbyr bistand til oppsett,
+            støtte og utvikling i produktene.
           </Text>
           <Link href="/about">
             <Text textStyle="link" color="green10noswap">
               Les mer om oss
             </Text>
           </Link>
+        </Flex>
+        <FreshworksLogo />
+        <Flex flexDirection="column" alignItems="center" gap={3}>
+          <Box
+            width="fit-content"
+            p={'min'}
+            bgColor="green00"
+            borderRadius="md"
+          >
+            <Text color="green10" textAlign="center">
+              Kundesenterløsning
+            </Text>
+          </Box>
+          <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }}>
+            <Flex
+              flexDirection="column"
+              gap={2}
+              maxWidth="25rem"
+              alignItems="center"
+            >
+              <Image
+                src="/freshdesk-logo.svg"
+                alt="Freshdesk Logo"
+                width="30%%"
+              />
+              <Text color="green00" fontWeight="extrabold" fontSize="2xl">
+                Freshdesk
+              </Text>
+              <Text textAlign="center">
+                Samle dine henvendelser fra alle kanaler og organiser de for en
+                mer effektiv og produktiv kundeservice.
+              </Text>
+              <Link as={NextLink} href="https://velt.no/produkter/freshdesk/">
+                <Text textDecoration="underline">Les mer</Text>
+              </Link>
+            </Flex>
+          </Grid>
         </Flex>
       </Flex>
     </Show>
