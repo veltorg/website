@@ -39,7 +39,7 @@ const theme = extendTheme({
   },
   radii: {
     sm: '0.4rem',
-    md: '1rem',
+    md: '0.8rem',
     lg: '2rem',
   },
   colors: {
