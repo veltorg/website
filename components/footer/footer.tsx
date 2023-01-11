@@ -24,7 +24,6 @@ export const Footer: React.FC = () => {
     colorMode === 'light' ? <DesktopLogo /> : <DesktopLogoDark />;
   return (
     <Flex width="100%" m="0rem" p="0rem" flexDirection="column">
-      <Show below="md">
         <Flex sx={{ flexDirection: 'column', p: 3, gap: 4, mt: 2 }}>
           <Flex
             sx={{
@@ -36,7 +35,6 @@ export const Footer: React.FC = () => {
             <Switches />
           </Flex>
         </Flex>
-      </Show>
     </Flex>
   );
 };
