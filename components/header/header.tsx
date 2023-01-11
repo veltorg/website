@@ -6,6 +6,7 @@ import {
   DrawerContent,
   DrawerOverlay,
   Flex,
+  Hide,
   Highlight,
   IconButton,
   Link,
@@ -35,7 +36,12 @@ export const Header: React.FC = () => {
   const burgerInput = colorMode === 'light' ? <Hamburger /> : <HamburgerDark />;
   return (
     <Flex>
-      <Show above="md">
+      <Show above="stop">
+        <Flex m={{ base:2, md: 4, lg: 5 }} justifyContent="space-between" width="100%">
+          <Link as={NextLink} href='/'>{desktopLogoInput}</Link>
+          </Flex>
+      </Show>
+      <Hide above="stop">
         <Flex m={{ md: 4, lg: 5 }} justifyContent="space-between" width="100%">
           <Link as={NextLink} href='/'>{desktopLogoInput}</Link>
           <Flex gap={{ md: 3, lg: 4 }} alignItems="end">
@@ -94,8 +100,8 @@ export const Header: React.FC = () => {
             </Menu>
           </Flex>
         </Flex>
-      </Show>
-      <Show below="md">
+      </Hide>
+      <Hide above="stop">
         <Flex
           m={3}
           justifyContent="space-between"
@@ -212,7 +218,7 @@ export const Header: React.FC = () => {
             </DrawerBody>
           </DrawerContent>
         </Drawer>
-      </Show>
+      </Hide>
     </Flex>
   );
 };
