@@ -107,6 +107,52 @@ Velt er et programvare- og konsulenthus bestående av 5 dedikerte mennesker med 
             <Text color="black10">
 Vårt fokus er ↓
             </Text>
+            <Grid gridTemplateColumns="1fr 1fr" gap={2}>
+                        <Box
+              width="fit-content"
+              px={0}
+              py="min"
+              bgColor="blue80"
+              borderRadius="md"
+            >
+              <Text color="green10" textAlign="center">
+                Kundesenterløsninger
+              </Text>
+            </Box>
+                                    <Box
+              width="fit-content"
+              px={0}
+              py="min"
+              bgColor="blue80"
+              borderRadius="md"
+            >
+              <Text color="green10" textAlign="center">
+                Chat- og meldingsløsninger
+              </Text>
+            </Box>
+                                    <Box
+              width="fit-content"
+              px={0}
+              py="min"
+              bgColor="blue80"
+              borderRadius="md"
+            >
+              <Text color="green10" textAlign="center">
+                IT-supportløsninger
+              </Text>
+            </Box>
+                                    <Box
+              width="fit-content"
+              px={0}
+              py="min"
+              bgColor="blue80"
+              borderRadius="md"
+            >
+              <Text color="green10" textAlign="center">
+                Salgs- og CRM-løsninger
+              </Text>
+            </Box>
+            </Grid>
         </Show>
         <Show below="md">
         <Flex width={{ md: '50%' }} justifyContent="center">
