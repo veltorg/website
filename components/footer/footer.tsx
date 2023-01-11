@@ -24,17 +24,17 @@ export const Footer: React.FC = () => {
     colorMode === 'light' ? <DesktopLogo /> : <DesktopLogoDark />;
   return (
     <Flex width="100%" m="0rem" p="0rem" flexDirection="column">
-        <Flex sx={{ flexDirection: 'column', p: 3, gap: 4, mt: 2 }}>
-          <Flex
-            sx={{
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <Switches />
-          </Flex>
+      <Flex sx={{ flexDirection: 'column', p: 3, gap: 4, mt: 2 }}>
+        <Flex
+          sx={{
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Switches />
         </Flex>
+      </Flex>
     </Flex>
   );
 };
