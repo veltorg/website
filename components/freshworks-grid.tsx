@@ -37,9 +37,9 @@ export const FreshGrid: React.FC<FreshGridProps> = ({inputs}) => {
               
             </Box>
             <Image
-              src="/freshdesk-logo.svg"
-              alt="Freshdesk Logo"
-              width="30%%"
+              src={input.img}
+              alt="Fresh Logo"
+              width="30%"
             />
             <Text color="green00" fontWeight="extrabold" fontSize="2xl">
               {input.name}
