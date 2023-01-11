@@ -13,6 +13,8 @@ import { Layout } from '../components/layout';
 import NextLink from 'next/link';
 import React from 'react';
 import { FreshworksLogo } from '../components/freshworks-logo';
+import { FreshGrid } from '../components/freshworks-grid';
+import { freshgridInput } from '../components/freshgrid-input';
 
 const Home = () => (
   <Layout>
@@ -129,42 +131,7 @@ const Home = () => (
         </Link>
       </Flex>
       <FreshworksLogo />
-      <Flex flexDirection="column" alignItems="center" gap={3}>
-        <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }}>
-          <Flex
-            flexDirection="column"
-            gap={2}
-            maxWidth="25rem"
-            alignItems="center"
-          >
-            <Box
-              width="fit-content"
-              p={'min'}
-              bgColor="green00"
-              borderRadius="md"
-            >
-              <Text color="green10" textAlign="center">
-                Kundesenterløsning
-              </Text>
-            </Box>
-            <Image
-              src="/freshdesk-logo.svg"
-              alt="Freshdesk Logo"
-              width="30%%"
-            />
-            <Text color="green00" fontWeight="extrabold" fontSize="2xl">
-              Freshdesk
-            </Text>
-            <Text textAlign="center">
-              Samle dine henvendelser fra alle kanaler og organiser de for en
-              mer effektiv og produktiv kundeservice.
-            </Text>
-            <Link as={NextLink} href="https://velt.no/produkter/freshdesk/">
-              <Text textDecoration="underline">Les mer</Text>
-            </Link>
-          </Flex>
-        </Grid>
-      </Flex>
+        <FreshGrid inputs={freshgridInput} />
     </Flex>
   </Layout>
 );
