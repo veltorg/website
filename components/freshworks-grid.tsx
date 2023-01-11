@@ -32,7 +32,7 @@ export const FreshGrid: React.FC<FreshGridProps> = ({ inputs }) => {
               bgColor="blue80"
               borderRadius="md"
             >
-              <Text color="green10" textAlign="center">
+              <Text color="green10noswap" textAlign="center">
                 {input.type}
               </Text>
             </Box>

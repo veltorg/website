@@ -94,17 +94,17 @@ const Home = () => (
         m={{base: 3, md: 4, lg: 5}}
       >
         <Show above="md">
-            <Text color="black10">
+            <Text color="blacktogreen">
 Vi anerkjenner innvirkningen mennesker har på et selskap. Det man møter i kontakt med et selskap er avgjørende for å lykkes, og derfor bruker vi våre liv for å forbedre det.
             </Text>
-            <Text>
+            <Text color="blacktogreen">
             <Highlight query={["programvare", "konsulenthus", "dedikerte", "Freshworks"]}
-            styles={{fontWeight:"bold"}}>
+            styles={{fontWeight:"bold", color:"blacktogreen"}}>
             
 Velt er et programvare- og konsulenthus bestående av 5 dedikerte mennesker med lang erfaring inne kundesenter, chat, IT, salg og CRM-løsninger. Vi er også Norges første autoriserte Freshworks-partner.
             </Highlight>
             </Text>
-            <Text color="black10">
+            <Text color="blacktogreen">
 Vårt fokus er ↓
             </Text>
             <Grid gridTemplateColumns="1fr 1fr" gap={2}>
@@ -115,7 +115,7 @@ Vårt fokus er ↓
               bgColor="blue80"
               borderRadius="md"
             >
-              <Text color="green10" textAlign="center">
+              <Text color="green10noswap" textAlign="center">
                 Kundesenterløsninger
               </Text>
             </Box>
@@ -126,7 +126,7 @@ Vårt fokus er ↓
               bgColor="blue80"
               borderRadius="md"
             >
-              <Text color="green10" textAlign="center">
+              <Text color="green10noswap" textAlign="center">
                 Chat- og meldingsløsninger
               </Text>
             </Box>
@@ -137,7 +137,7 @@ Vårt fokus er ↓
               bgColor="blue80"
               borderRadius="md"
             >
-              <Text color="green10" textAlign="center">
+              <Text color="green10noswap" textAlign="center">
                 IT-supportløsninger
               </Text>
             </Box>
@@ -148,7 +148,7 @@ Vårt fokus er ↓
               bgColor="blue80"
               borderRadius="md"
             >
-              <Text color="green10" textAlign="center">
+              <Text color="green10noswap" textAlign="center">
                 Salgs- og CRM-løsninger
               </Text>
             </Box>
