@@ -18,7 +18,7 @@ import { freshgridInput } from '../components/freshgrid-input';
 
 const Home = () => (
   <Layout>
-    <Flex width="100%" px={3} py={3} flexDirection="column">
+    <Flex width="100%" p={{ base: 3, md: 4, lg: 5 }} flexDirection="column">
       <Show below="md">
         <Flex
           sx={{
@@ -76,24 +76,28 @@ const Home = () => (
             </Text>
           </Box>
         </Flex>
-        </Show>
+      </Show>
+      <Flex
+        gap={2}
+        flexDirection={{ base: 'column', md: 'row' }}
+        alignItems="center"
+        p={3}
+      >
+        <Flex width={{ md: '50%' }} justifyContent="center">
+          <Image src="../squares.svg" alt={''} />
+        </Flex>
         <Flex
           gap={2}
-          flexDirection={{base: 'column', md: 'row'}}
+          flexDirection="column"
           alignItems="center"
-          p= {3}
+          width={{ md: '50%' }}
+          p={2}
         >
-          <Flex width={{md:"50%"}} justifyContent="center">
-            <Image src="../squares.svg" alt={''}/>
-          </Flex>
-          <Flex 
-            gap= {2}
-            flexDirection= 'column'
-            alignItems= 'center'
-            width={{md:"50%"}}
-            p={2}
+          <Text
+            textStyle="header"
+            color="green00"
+            align={{ base: 'center', md: 'left' }}
           >
-          <Text textStyle="header" color="green00" align={{base: "center", md: "left"}}>
             Utvid, tilpass og skreddersy iterativt
           </Text>
           <Text
@@ -106,7 +110,7 @@ const Home = () => (
             skreddersky mens du går.
           </Text>
         </Flex>
-        </Flex>
+      </Flex>
       <Flex
         sx={{
           flexDirection: 'column',
@@ -129,7 +133,7 @@ const Home = () => (
         </Text>
       </Flex>
       <FreshworksLogo />
-        <FreshGrid inputs={freshgridInput} />
+      <FreshGrid inputs={freshgridInput} />
     </Flex>
   </Layout>
 );

@@ -36,11 +36,22 @@ export const Header: React.FC = () => {
   const burgerInput = colorMode === 'light' ? <Hamburger /> : <HamburgerDark />;
   return (
     <Flex>
-      <Show above="stop">
-        <Flex m={{ base:2, md: 4, lg: 5 }} justifyContent="space-between" width="100%">
-          <Link as={NextLink} href='/'>{desktopLogoInput}</Link>
-          </Flex>
-      </Show>
+      <Flex
+        p={{ base: 3, md: 4, lg: 5 }}
+        justifyContent="space-between"
+        width="100%"
+      >
+        <Show above="md">
+          <Link as={NextLink} href="/">
+            {desktopLogoInput}
+          </Link>
+        </Show>
+        <Show below="md">
+          <Link as={NextLink} href="/">
+            {logoInput}
+          </Link>
+        </Show>
+      </Flex>
     </Flex>
   );
 };
