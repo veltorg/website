@@ -22,7 +22,7 @@ const Home = () => (
     <Flex width="100%" flexDirection="column">
       <Show below="md">
         <Flex
-          m= {3}
+          m={3}
           sx={{
             backgroundColor: 'pink00',
             flexDirection: 'column',
@@ -69,10 +69,15 @@ const Home = () => (
           bgRepeat="no-repeat"
           minH="30rem"
           justifyContent="end"
-          m={{md:4, lg:5}}
+          m={{ md: 4, lg: 5 }}
         >
-          
-          <Box bgColor="pink00" justifySelf="center" borderRadius="md" w="50%" p="1.5rem">
+          <Box
+            bgColor="pink00"
+            justifySelf="center"
+            borderRadius="md"
+            w="50%"
+            p="1.5rem"
+          >
             <Text textStyle="header" color="blue00" mb={2}>
               Vi styrker mennesker til å oppnå mer
             </Text>
@@ -80,33 +85,35 @@ const Home = () => (
               Vi gir deg verktøyene du trenger for å jobbe smart og effektivt i
               en ny digital hverdag.
             </Text>
-            
           </Box>
-          
         </Flex>
       </Show>
       <Flex
         gap={2}
         flexDirection="column"
         alignItems="center"
-        m={{base: 3, md: 4, lg: 5}}
+        m={{ base: 3, md: 4, lg: 5 }}
       >
         <Show above="md">
-            <Text color="blacktogreen">
-Vi anerkjenner innvirkningen mennesker har på et selskap. Det man møter i kontakt med et selskap er avgjørende for å lykkes, og derfor bruker vi våre liv for å forbedre det.
-            </Text>
-            <Text color="blacktogreen">
-            <Highlight query={["programvare", "konsulenthus", "dedikerte", "Freshworks"]}
-            styles={{fontWeight:"bold", color:"blacktogreen"}}>
-            
-Velt er et programvare- og konsulenthus bestående av 5 dedikerte mennesker med lang erfaring inne kundesenter, chat, IT, salg og CRM-løsninger. Vi er også Norges første autoriserte Freshworks-partner.
+          <Text color="blacktogreen">
+            Vi anerkjenner innvirkningen mennesker har på et selskap. Det man
+            møter i kontakt med et selskap er avgjørende for å lykkes, og derfor
+            bruker vi våre liv for å forbedre det.
+          </Text>
+          <Text color="blacktogreen">
+            <Highlight
+              query={['programvare', 'konsulenthus', 'dedikerte', 'Freshworks']}
+              styles={{ fontWeight: 'bold', color: 'blacktogreen' }}
+            >
+              Velt er et programvare- og konsulenthus bestående av 5 dedikerte
+              mennesker med lang erfaring inne kundesenter, chat, IT, salg og
+              CRM-løsninger. Vi er også Norges første autoriserte
+              Freshworks-partner.
             </Highlight>
-            </Text>
-            <Text color="blacktogreen">
-Vårt fokus er ↓
-            </Text>
-            <Grid gridTemplateColumns="1fr 1fr" gap={2}>
-                        <Box
+          </Text>
+          <Text color="blacktogreen">Vårt fokus er ↓</Text>
+          <Grid gridTemplateColumns="1fr 1fr" gap={2}>
+            <Box
               width="fit-content"
               px={0}
               py="min"
@@ -117,7 +124,7 @@ Vårt fokus er ↓
                 Kundesenterløsninger
               </Text>
             </Box>
-                                    <Box
+            <Box
               width="fit-content"
               px={0}
               py="min"
@@ -128,7 +135,7 @@ Vårt fokus er ↓
                 Chat- og meldingsløsninger
               </Text>
             </Box>
-                                    <Box
+            <Box
               width="fit-content"
               px={0}
               py="min"
@@ -139,7 +146,7 @@ Vårt fokus er ↓
                 IT-supportløsninger
               </Text>
             </Box>
-                                    <Box
+            <Box
               width="fit-content"
               px={0}
               py="min"
@@ -150,87 +157,94 @@ Vårt fokus er ↓
                 Salgs- og CRM-løsninger
               </Text>
             </Box>
-            </Grid>
+          </Grid>
         </Show>
         <Show below="md">
-        <Flex width={{ md: '50%' }} justifyContent="center">
-          <Image src="../squares.svg" alt={''} />
-        </Flex>
-        
-        <Flex
-          gap={2}
-          flexDirection="column"
-          alignItems="center"
-          width={{ md: '50%' }}
-          p={2}
-        >
-          <Text
-            textStyle="header"
-            color="green00"
-            align={{ base: 'center', md: 'left' }}
+          <Flex width={{ md: '50%' }} justifyContent="center">
+            <Image src="../squares.svg" alt={''} />
+          </Flex>
+
+          <Flex
+            gap={2}
+            flexDirection="column"
+            alignItems="center"
+            width={{ md: '50%' }}
+            p={2}
           >
-            Utvid, tilpass og skreddersy iterativt
-          </Text>
-          <Text
-            textStyle="normal"
-            color="blacktogreen"
-            align={{ base: 'center', md: 'left' }}
-          >
-            Vi elsker å skape fantastiske opplevelser, og vi innser at alle har
-            forskjellige behov. Med oss på laget kan du utvide, tilpasse og
-            skreddersky mens du går.
-          </Text>
-        </Flex>
+            <Text
+              textStyle="header"
+              color="green00"
+              align={{ base: 'center', md: 'left' }}
+            >
+              Utvid, tilpass og skreddersy iterativt
+            </Text>
+            <Text
+              textStyle="normal"
+              color="blacktogreen"
+              align={{ base: 'center', md: 'left' }}
+            >
+              Vi elsker å skape fantastiske opplevelser, og vi innser at alle
+              har forskjellige behov. Med oss på laget kan du utvide, tilpasse
+              og skreddersky mens du går.
+            </Text>
+          </Flex>
         </Show>
       </Flex>
       <Show below="md">
-      <Flex
-        sx={{
-          flexDirection: 'column',
-          m: { base: 3, md: 4, lg: 5 },
-          p: { base: 3, md: 4 },
-          backgroundColor: 'green00noswap',
-          borderRadius: 'md',
-          gap: 2,
-        }}
-      >
-        <Text textStyle="header" color="green10noswap">
-          Norges leverandør for Freshworks
-        </Text>
-        <Text textStyle="normal" color="green10noswap">
-          Freshworks lager verktøy som gjør det fantastiske verktøy for å
-          markedsføre, selge, kundestøtte og IT-løsninger.
-        </Text>
-        <Text textStyle="normal" color="green10noswap">
-          Velt er leverandør her i Norge, og tilbyr bistand til oppsett, støtte
-          og utvikling i produktene.
-        </Text>
-      </Flex>
-      <Freshworks/>
+        <Flex
+          sx={{
+            flexDirection: 'column',
+            m: { base: 3, md: 4, lg: 5 },
+            p: { base: 3, md: 4 },
+            backgroundColor: 'green00noswap',
+            borderRadius: 'md',
+            gap: 2,
+          }}
+        >
+          <Text textStyle="header" color="green10noswap">
+            Norges leverandør for Freshworks
+          </Text>
+          <Text textStyle="normal" color="green10noswap">
+            Freshworks lager verktøy som gjør det fantastiske verktøy for å
+            markedsføre, selge, kundestøtte og IT-løsninger.
+          </Text>
+          <Text textStyle="normal" color="green10noswap">
+            Velt er leverandør her i Norge, og tilbyr bistand til oppsett,
+            støtte og utvikling i produktene.
+          </Text>
+        </Flex>
+        <Freshworks />
       </Show>
       <Show above="md">
-        <Flex flexDirection="column" gap={2} justifyContent="center" alignItems="center" p={{md:5, lg:6}} bgColor="blue80" my={{md: 4, lg: 5}}>
-          <Freshworks color="white"/>
+        <Flex
+          flexDirection="column"
+          gap={2}
+          justifyContent="center"
+          alignItems="center"
+          p={{ md: 5, lg: 6 }}
+          bgColor="blue80"
+          my={{ md: 4, lg: 5 }}
+        >
+          <Freshworks color="white" />
           <Flex flexDirection="column" width="65%" alignItems="center" gap={2}>
-                  <Text textStyle="header" color="green10noswap" fontSize="4xl">
-          Norges Freshworks-leverandør
-        </Text>
-        <Flex flexDirection="column" width="60%" gap={2}>
-        <Text textStyle="normal" color="green10noswap" textAlign="center">
-          Freshworks lager verktøy som gjør det fantastiske verktøy for å
-          markedsføre, selge, kundestøtte og IT-løsninger.
-        </Text>
-        <Text textStyle="normal" color="green10noswap" textAlign="center">
-          Velt er leverandør her i Norge, og tilbyr bistand til oppsett, støtte
-          og utvikling i produktene.
-        </Text>
-        </Flex>
-        </Flex>
+            <Text textStyle="header" color="green10noswap" fontSize="4xl">
+              Norges Freshworks-leverandør
+            </Text>
+            <Flex flexDirection="column" width="60%" gap={2}>
+              <Text textStyle="normal" color="green10noswap" textAlign="center">
+                Freshworks lager verktøy som gjør det fantastiske verktøy for å
+                markedsføre, selge, kundestøtte og IT-løsninger.
+              </Text>
+              <Text textStyle="normal" color="green10noswap" textAlign="center">
+                Velt er leverandør her i Norge, og tilbyr bistand til oppsett,
+                støtte og utvikling i produktene.
+              </Text>
+            </Flex>
+          </Flex>
         </Flex>
       </Show>
       <FreshGrid inputs={freshgridInput} />
     </Flex>
-    
   </Layout>
 );
 
