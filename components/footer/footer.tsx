@@ -10,8 +10,6 @@ import {
   UnorderedList,
   useColorMode,
 } from '@chakra-ui/react';
-import { Freshworks } from './elements/freshworks';
-import { FreshworksDark } from './elements/freshworks-dark';
 import { Switches } from './elements/switch';
 import NextLink from 'next/link';
 import { DesktopLogo } from '../header/elements/desktop-logo';
@@ -19,7 +17,6 @@ import { DesktopLogoDark } from '../header/elements/desktop-logo-dark';
 
 export const Footer: React.FC = () => {
   const { colorMode, setColorMode } = useColorMode();
-  const freshLogo = colorMode === 'light' ? <Freshworks /> : <FreshworksDark />;
   const logoInput =
     colorMode === 'light' ? <DesktopLogo /> : <DesktopLogoDark />;
   return (

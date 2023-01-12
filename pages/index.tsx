@@ -13,11 +13,9 @@ import {
 import { Layout } from '../components/layout';
 import NextLink from 'next/link';
 import React from 'react';
-import { FreshworksLogo } from '../components/freshworks-logo';
 import { FreshGrid } from '../components/freshworks-grid';
 import { freshgridInput } from '../components/freshgrid-input';
 import { Freshworks } from '../components/footer/elements/freshworks';
-import { FreshworksDark } from '../components/footer/elements/freshworks-dark';
 
 const Home = () => (
   <Layout>
@@ -208,11 +206,11 @@ Vårt fokus er ↓
           og utvikling i produktene.
         </Text>
       </Flex>
-      <FreshworksLogo />
+      <Freshworks/>
       </Show>
       <Show above="md">
         <Flex flexDirection="column" gap={2} justifyContent="center" alignItems="center" p={{md:5, lg:6}} bgColor="blue80" my={{md: 4, lg: 5}}>
-          <FreshworksDark/>
+          <Freshworks color="white"/>
           <Flex flexDirection="column" width="65%" alignItems="center" gap={2}>
                   <Text textStyle="header" color="green10noswap" fontSize="4xl">
           Norges Freshworks-leverandør
