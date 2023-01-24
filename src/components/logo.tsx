@@ -3,7 +3,7 @@ import { FC, SVGProps } from 'react';
 
 type Props = StyleConfig & SVGProps<SVGSVGElement>;
 
-export const DesktopLogo: FC<Props> = () => {
+export const Logo: FC<Props> = () => {
   return (
     <svg
       width="104"
