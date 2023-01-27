@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build-static": "next build && next export && next-export-optimize-images",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write . --ignore-path .gitignore ",
@@ -20,6 +21,7 @@
     "@fontsource/inter": "^4.5.15",
     "framer-motion": "^7.6.19",
     "next": "13.0.6",
+    "next-export-optimize-images": "^2.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
