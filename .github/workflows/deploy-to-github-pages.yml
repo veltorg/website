@@ -46,7 +46,7 @@ jobs:
       - name: Upload GitHub Pages assets 📦️
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./build
+          path: ./out
 
   deploy:
     name: Deployment
