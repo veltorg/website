@@ -3,11 +3,13 @@ import { Box, Container, Flex, Heading, Text } from '@chakra-ui/react';
 export const Footer: React.FC = () => {
   return (
     <Box backgroundColor="black" p="l" color="white">
-      <Container sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 's',
-      }}>
+      <Container
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 's',
+        }}
+      >
         <Heading fontSize="xl">Velt AS</Heading>
         <Text>Organisasjonsnummer: 919 429 739</Text>
         <Text>

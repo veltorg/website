@@ -21,7 +21,10 @@ export const AutomationFigure: React.FC = () => (
       stroke-width=".86"
       d="M276.354 353.161h32.69m40.061 0h14.18v19.001H104.879v-19.001h146.554"
     />
-    <path fill="currentColor" d="M199.532 353.161h-94.653v19.001h94.653v-19.001Z" />
+    <path
+      fill="currentColor"
+      d="M199.532 353.161h-94.653v19.001h94.653v-19.001Z"
+    />
     <path
       stroke="currentColor"
       stroke-miterlimit="10"
