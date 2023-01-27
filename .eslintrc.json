@@ -1,3 +1,11 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["@bjerk/eslint-config", "next/core-web-vitals"],
+  "overrides": [
+    {
+      "files": ["src/pages/**/*.{js,jsx,ts,tsx}"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
+  ]
 }
