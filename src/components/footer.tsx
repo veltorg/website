@@ -2,7 +2,7 @@ import { Container, Flex, Heading, Text } from '@chakra-ui/react';
 
 export const Footer: React.FC = () => {
   return (
-    <Flex backgroundColor="black" width="100%" p={4} color="white">
+    <Flex backgroundColor="black" p="xl" color="white">
       <Container>
         <Flex flexDirection="column" gap={2}>
           <Heading as="h2">Velt AS</Heading>
