@@ -1,11 +1,11 @@
 import {
   Box,
-  chakra,
   Container,
   Divider,
   Flex,
   Heading,
   Text,
+  chakra,
 } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import Image from 'next/image';
