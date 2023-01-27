@@ -30,7 +30,7 @@ const space = {
   '2xl': 'clamp(4.5rem, calc(4.33rem + 0.87vw), 5rem)',
   '3xl': 'clamp(6.75rem, calc(6.49rem + 1.3vw), 7.5rem)',
 
-  hero: '1695px',
+  heroHeight: 'clamp(20rem, 35vw, 28rem)',
 };
 
 export const theme = extendTheme({
@@ -96,8 +96,9 @@ export const theme = extendTheme({
     max: 'max-content',
     min: 'min-content',
 
-    // container: {
-    // }
+    container: {
+      m: '60rem',
+    },
   },
   components: {
     Container,

@@ -12,7 +12,15 @@ export const Layout: React.FC<PropsWithChildren> = ({ children }) => (
     }}
   >
     <Header />
-    {children}
+    <Flex
+      sx={{
+        flexDirection: 'column',
+        gap: 'xl',
+        mb: 'l'
+      }}
+    >
+      {children}
+    </Flex>
     <Footer />
   </Flex>
 );
