@@ -107,9 +107,7 @@ export const theme = extendTheme({
   styles: {
     global: {
       '*': {
-        '-webkit-font-smoothing': 'antialiased',
-        '-moz-osx-font-smoothing': 'grayscale',
-        'font-smoothing': 'antialiased',
+        fontSmoothing: 'antialiased',
       },
     },
   },

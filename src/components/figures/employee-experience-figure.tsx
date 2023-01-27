@@ -10,114 +10,114 @@ export const EmployeeExperienceFigure: React.FC = () => (
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M255.411 435.061c13.854 0 25.085-10.79 25.085-24.102 0-13.311-11.231-24.102-25.085-24.102-13.854 0-25.085 10.791-25.085 24.102 0 13.312 11.231 24.102 25.085 24.102Z"
     />
     <path
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M229.858 410.913s24.945 10.085 50.193 0m-24.429-24.102v48.227"
     />
     <path
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M273.242 394.182c-9.992 2.854-13.128 9.36-12.285 20.896m11.723 12.893c-7.886-.655-11.302-5.101-11.7-12.893m-24.055-20.896c10.015 2.854 13.127 9.36 12.308 20.896m-11.723 12.893c7.886-.655 11.302-5.101 11.7-12.893"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="M154.347 434.336h54.171v-4.446h-54.171v4.446Z"
     />
     <path
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M327.226 267.26c1.685 52.159 17.573 103.147 31.777 146.133 0 0-13.642 6.084-23.845 7.301-4.89.561-9.547 3.299-8.4 9.547l.749 4.68h53.492s1.31-119.34.351-187.2"
     />
     <path
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M290.956 247.744c-13.853 5.78-42.12 19.797-45.116 28.08-6.364 17.855 15.444 89.388 15.444 89.388-4.188 1.124-13.876 6.038-24.078 7.231-4.914.585-9.547 3.299-8.401 9.571l.655 4.867 51.48-.234s-3.416-80.941 2.106-85.644c10.437-8.916 28.899-14.461 44.999-14.04"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="M88.195 216.154c-.609 13.292-1.451 23.4-1.92 32.246l91.869-.164c-.304-16.989-9.196-77.969-12.917-100.995"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M84.1 409.696c6.154-5.031 53.094-86.884 63.297-142.319M88.92 248.54c-2.808 53.492-21.06 154.44-21.06 154.44"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M135.72 307.461c4.399 23.868 17.316 97.087 18.556 104.902 0 0 18.346.375 18.557 0 3.088-6.739 5.218-78.226 3.322-163.261m-71.393 12.331c-2.34 12.613-14.859 16.38-26.348 14.438"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="M173.511 412.34c3.159.234 16.216 6.458 26.395 7.652 4.914.561 9.548 3.299 8.424 9.57l-54.03.234"
     />
     <path
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M154.276 411.778v17.667"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="m57.587 423.01 24.453 10.998 29.391-.234v-4.446l-28.361-.257-22.979-10.834-2.504 4.773Zm53.82 5.71c-.608-4.001-6.645-9.571-14.04-9.22-4.399.211-4.68-5.733-13.595-10.062l-16.193-6.411-7.394 15.14"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M119.551 67.143c.725-5.312 1.685-13.174 5.382-17.292 11.84-13.245 25.599 13.735 27.799 22.417 2.083 8.096-9.36 26.348-12.636 27.659-4.961 1.965-12.004-2.691-14.227-7.301"
     />
     <path
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M117.866 117.664c0-13.876-.749-26.442.421-40.272m20.452 22.301c.678 5.967 1.451 12.916 3.767 17.947"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M121.446 69.577c-6.529-9.641-11.372 3.042-8.845 6.365 1.614 2.129 5.078 1.731 7.02.725"
     />
     <path
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M144.729 55.888c.795 0 19.562-3.744 16.918-8.892-2.995-5.897-39.195 12.706-41.418 13.689"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M134.152 70.7a6.367 6.367 0 0 0-5.686 1.006m-10.062-.234a5.5 5.5 0 0 1-3.744 1.568"
     />
     <path
@@ -126,103 +126,103 @@ export const EmployeeExperienceFigure: React.FC = () => (
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M146.859 70.957c-1.545-.702-5.055-.491-5.687 1.03-.982 2.34.515 7.535 1.147 10.46.421 1.989 1.147 5.873-2.34 4.82"
     />
     <path
       stroke="currentColor"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="M216.707 107.953a191.321 191.321 0 0 1-21.925 39.171s-22.535-16.754-30.42-21.06c-7.02-3.814-18.486-3.346-18.486-3.346a6.583 6.583 0 0 0-4.283-5.218c-7.862-2.153-22.23-.608-24.008.491a8.142 8.142 0 0 0-2.925 4.751s-19.141 2.831-24.734 7.441c-4.96 4.071-25.178 30.42-28.688 37.627-2.761 5.733-5.78 10.787-5.382 17.199 1.287 19.867 37.089 37.066 58.125 35.685 2.902-.187 2.2-12.262 2.2-12.262-7.628-1.848-38.797-16.38-34.398-23.751a203.886 203.886 0 0 1 28.08-30.747"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="M227.518 98.101c-.234-4.68-.257-8.05-.163-12.214 0-1.428.748-7.278-2.013-6.693s-2.012 13.408-1.965 15.397"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="M224.125 80.294c-.257-1.732-.959-2.644-2.527-2.62-3.463 0-2.621 11.7-2.691 17.034m8.611 13.947c2.761.327 4.329-10.53 4.47-13.876 0-1.1.187-3.136-1.194-3.815-.936-.444-1.731.422-2.059 1.077a10.836 10.836 0 0 0-.819 3.159c-.187 1.404-.445 3.089-.608 4.493"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="M219.445 80.177c-.257-1.45-1.755-1.217-2.714-.351-2.762 2.48-2.013 19.937-.141 28.08 0 0 3.463-1.989 10.834.632"
     />
     <path
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M167.287 160.158c.725.351 23.751 13.221 33.579 14.04 8.681.702 26.746-65.52 26.746-65.52m-92.734 82.532H122.99a1.842 1.842 0 0 0-1.614 2.129l.725 13.736m17.012-.936.702-12.8a1.874 1.874 0 0 0-1.615-2.129h-.912m-14.204 31.988.257 4.68c-.014.455.145.899.444 1.242.3.342.718.559 1.171.606h11.349a1.776 1.776 0 0 0 1.615-1.848l.28-5.078"
     />
     <path
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M122.078 206.794c1.333 3.768 8.236 3.136 11.232 2.621 1.099-.187 6.364-2.34 5.826-3.791"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M139.206 205.601a2.623 2.623 0 0 1 2.785 2.527c-.187 3.557-6.692 6.763-13.783 5.663"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M139.323 211.849a2.34 2.34 0 0 1 2.668 2.036c-.187 3.112-6.458 5.99-13.549 5.031"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M139.417 217.207a1.972 1.972 0 0 1 1.737.259 1.958 1.958 0 0 1 .837 1.543c0 2.878-10.647 7.909-26.863 1.568m.866-12.051c-.445-1.1 2.34-4.142 5.733-4.399m230.162 4.844c.515-1.077-2.691-4.142-6.482-4.376m-223.469-3.393c5.452-2.176 6.318 4.235 13.548 3.58a5.22 5.22 0 0 0 3.838-2.878"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="m135.79 204.548 3.417-23.283 10.81-.047.234-3.065h-13.782l-3.885 26.114m248.111 11.817c.889 14.532 1.708 27.87 1.942 31.965l-91.868-.164c.327-16.989 7.16-65.076 10.904-88.101m76.494 12.987c.211 4.329.702 12.144 1.287 21.972"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M346.133 55.303a14.71 14.71 0 0 0-3.066-5.452c-8.049-9.01-17.807-4.797-23.4 5.218m28.782 12.074c0-.842-.14-1.146-.281-2.059"
     />
     <path
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M352.919 117.149c0-13.876-2.036-25.927-3.206-39.78"
     />
     <path
       stroke="#fff"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".62"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".62"
       d="M346.788 69.273c6.599-10.437 11.443 3.276 8.915 6.856a5.451 5.451 0 0 1-7.02.819M333.848 70.7a6.363 6.363 0 0 1 5.686 1.006"
     />
     <path
       stroke="#fff"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".62"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".62"
       d="M349.596 71.472a5.501 5.501 0 0 0 3.744 1.568"
     />
     <path
@@ -231,150 +231,150 @@ export const EmployeeExperienceFigure: React.FC = () => (
     />
     <path
       stroke="#fff"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".62"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".62"
       d="M321.844 70.957c1.544-.702 5.031-.491 5.663 1.03 1.006 2.34-2.832 9.968-3.487 12.893-.421 1.99 2.878 1.755 4.891 1.521m7.604 2.598c-1.755 5.873-9.36 5.943-10.857 2.036"
     />
     <path
       stroke="#fff"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".62"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".62"
       d="M240.552 96.089c0-4.984 0-6.178-.164-10.436 0-1.475-.772-7.442 2.129-6.857 3.253.656 2.34 13.713 2.153 15.749"
     />
     <path
       stroke="#fff"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".62"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".62"
       d="M243.734 79.592a2.353 2.353 0 0 1 .797-1.782 2.348 2.348 0 0 1 1.871-.558c3.838 0 3.019 11.396 2.878 17.035"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="M310.284 120.682c2.34 33.509-9.571 39.476-9.571 39.476-.725.351-23.751 13.221-33.579 14.04-8.681.702-26.582-65.052-26.582-65.052"
     />
     <path
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M282.321 301.775s-16.567-11.7-36.387-26.653m136.118 63.204s-20.101 0-44.741-.538"
     />
     <path
       stroke="currentColor"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="M122.031 197.622a5.964 5.964 0 0 1-5.513-3.684 5.964 5.964 0 0 1 1.294-6.503 5.972 5.972 0 0 1 6.502-1.293 5.962 5.962 0 0 1 3.684 5.513"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="M351.866 209.181c7.628-1.848 38.867-17.082 34.468-24.5-3.814-5.733-24.991-29.437-17.69-63.18"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="M251.129 107.578a195.45 195.45 0 0 0 22.09 39.546s24.523-20.779 32.291-25.225c5.991-3.416 18.978-3.814 18.978-3.814.725 3.58 7.16 25.178 11.279 26.419 3.463 1.029 15.701-21.809 17.152-27.846 0 0 17.41 3.439 23.026 8.049 4.937 4.048 27.424 35.896 30.934 43.103 2.762 5.733 5.78 10.787 5.382 17.199-1.287 19.867-37.299 37.112-58.336 35.732M253.796 115.417l-10.951 1.545m111.22 280.519h26.63m-124.512-50.193h23.26"
     />
     <path
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M327.202 432.675c2.34-9.056 12.192-1.638 27.004-3.464 8.447-1.029 16.941-6.692 26.301-6.06M229.32 386.038c2.153-9.032 11.7-1.614 25.904-3.439 8.096-1.053 16.239-6.693 25.225-6.084"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M344.776 223.502v2.2a4.68 4.68 0 0 1-4.68 4.68h-7.488a4.682 4.682 0 0 1-4.68-4.68v-3.347m.023-15.935v-18.018a4.677 4.677 0 0 1 4.68-4.68h7.488a4.677 4.677 0 0 1 4.68 4.68v18.72m-1.661-23.517a1.201 1.201 0 0 0 1.149-.888c.044-.168.051-.345.021-.516a8.073 8.073 0 0 0-15.889 0 1.198 1.198 0 0 0 .258.975 1.198 1.198 0 0 0 .912.429h13.549Z"
     />
     <path
       stroke="#fff"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".62"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".62"
       d="M240.645 100.02a44.312 44.312 0 0 0-.187-4.68 10.884 10.884 0 0 0-.936-3.276c-.351-.678-1.24-1.591-2.34-1.123-1.568.725-1.427 2.831-1.38 4.001 0 2.691 0 10.46 3.393 14.976"
     />
     <path
       stroke="#fff"
-      stroke-linecap="square"
-      stroke-linejoin="round"
-      stroke-width=".62"
+      strokeLinecap="square"
+      strokeLinejoin="round"
+      strokeWidth=".62"
       d="M252.322 107.298c1.943-8.284 2.036-25.483-.865-28.08-1.007-.866-2.855-.96-2.691.374"
     />
     <path
       stroke="#fff"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".62"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".62"
       d="M327.272 212.457a1.868 1.868 0 0 0-2.55 2.036c.21 3.299 6.645 6.131 14.04 5.195"
     />
     <path
       stroke="#fff"
-      stroke-linecap="square"
-      stroke-miterlimit="10"
-      stroke-width=".62"
+      strokeLinecap="square"
+      strokeMiterlimit="10"
+      strokeWidth=".62"
       d="M327.6 218.12c-2.34-1.147-3.018.491-2.784 1.427.819 3.066 8.681 8.424 27.939 2.34 0 0 2.34.492 2.832.515"
     />
     <path
       stroke="#fff"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".62"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".62"
       d="M344.214 207.403c-1.685 3.018-6.833 2.667-10.366 2.153a20.492 20.492 0 0 1-5.897-3.136 1.926 1.926 0 0 0-1.638-.211 2.336 2.336 0 0 0-1.708 2.34c.187 3.581 7.02 7.254 14.367 6.131M315.713 65.037a36.032 36.032 0 0 0-.749 7.512c0 8.33 9.36 26.278 12.683 27.588 4.961 1.966 12.004-2.69 14.25-7.3"
     />
     <path
       stroke="#fff"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M329.121 100.324c-1.404 5.219-4.68 15.678-4.68 16.942"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="M347.911 64.64s-9.149-1.1-15.725-1.1c-6.154 0-15.35 1.1-15.35 1.1a3.232 3.232 0 0 1-3.047-2.032 3.22 3.22 0 0 1-.229-1.268v-2.574a3.228 3.228 0 0 1 3.229-3.23s10.296-1.005 15.397-1.005c5.569 0 15.678 1.006 15.678 1.006a3.23 3.23 0 0 1 3.229 3.229v2.574a3.223 3.223 0 0 1-1.944 3.034c-.391.169-.812.26-1.238.265Z"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M320.58 118.693s7.582 29.789 14.929 29.718c8.05 0 16.006-17.713 20.709-30.256m8.495 1.685a69.342 69.342 0 0 0-.028 31.141 69.341 69.341 0 0 0 13.6 28.014m-64.725-59.459s4.071 33.789-12.355 45.583m61.916 83.047v89.996m5.687-89.996v89.996"
     />
     <path
       stroke="#fff"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="M86.58 217.137a68.134 68.134 0 0 0 27.284 3.557c2.902-.187 2.2-12.262 2.2-12.262-7.628-1.848-38.797-16.38-34.398-23.751a203.886 203.886 0 0 1 28.08-30.747"
     />
     <path
       stroke="currentColor"
-      stroke-miterlimit="10"
-      stroke-width=".86"
+      strokeMiterlimit="10"
+      strokeWidth=".86"
       d="M137.007 95.832c-4.68-.164-6.622-7.301-5.452-6.342a12.306 12.306 0 0 0 11.044.258c1.287-.702-1.801 6.247-5.592 6.084Z"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="m213.385 114.739-20.007 9.641 8.236-20.312-16.965-8.775 22.979-10.6-19.609-18.392 25.997 4.399-8.892-28.08 21.856 19.75 7.699-28.431 7.698 28.43 16.661-11.302-3.697 19.633 29.063-4.82-22.675 18.813 16.45 9.5-18.626 5.757 16.427 24.43-20.686-10.016"
     />
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width=".86"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth=".86"
       d="m246.8 129.481-1.732 4.446-10.927-13.783-14.017 20.241.094-6.458"
     />
     <path
