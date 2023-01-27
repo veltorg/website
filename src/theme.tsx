@@ -5,6 +5,12 @@ const config: ThemeConfig = {
   useSystemColorMode: false,
 };
 
+const Container = {
+  baseStyle: {
+    maxW: '80ch',
+  },
+};
+
 export const theme = extendTheme({
   config,
   space: {
@@ -68,5 +74,8 @@ export const theme = extendTheme({
       fontSize: '2xl',
       lineHeight: 'shorter',
     },
+  },
+  components: {
+    Container,
   },
 });
