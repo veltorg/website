@@ -1,10 +1,16 @@
-import { Container } from '@chakra-ui/react';
+import { Box, Container } from '@chakra-ui/react';
 import { Logo } from './logo';
 
 export const Header: React.FC = () => {
   return (
     <Container>
-      <Logo />
+      <Box
+        sx={{
+          display: 'block',
+        }}
+      >
+        <Logo height="logoHeight" />
+      </Box>
     </Container>
   );
 };
