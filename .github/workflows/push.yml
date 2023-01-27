@@ -1,0 +1,36 @@
+name: Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - '[0-9]+.x'
+    tags:
+      - '*'
+
+jobs:
+  build:
+    name: Lint, format, test and build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Use Node LTS ✨
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: yarn
+
+      - name: Install dependencies 📦️
+        run: yarn install --immutable
+
+      - name: Lint 💅
+        run: yarn lint
+
+      - name: Format 🔍
+        run: yarn format:check
+
+      - name: Build 🔨
+        run: yarn build
