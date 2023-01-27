@@ -13,6 +13,7 @@ import React from 'react';
 import veltHero from '../assets/velt-hero.jpg';
 import { CustomerExperienceFigure } from '../components/figures/customer-experience-figure';
 import { EmployeeExperienceFigure } from '../components/figures/employee-experience-figure';
+import { FreshworkLogo } from '../components/freshworks-logo';
 import { Layout } from '../components/layout';
 import { ShowCase } from '../components/show-case';
 
@@ -122,6 +123,32 @@ const Home: NextPage = () => (
         </Text>
       </ShowCase>
     </Container>
+    <Flex
+      color="white"
+      backgroundColor="base"
+      sx={{
+        display: 'flex',
+        gap: 's',
+        p: 'xl',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+      }}
+    >
+      <Box width="150px">
+        <FreshworkLogo />
+      </Box>
+      <Heading>Freshworks-partner</Heading>
+      <Text maxWidth="60ch">
+        Freshworks lager verktøy som gjør det enklere å markedsføre, selge, gi
+        god kundestøtte og håndtere intern og ekstern IT.
+      </Text>
+      <Text maxWidth="60ch">
+        Velt er leverandør i Norge og tilbyr bistand til oppsett, støtte og
+        utvikling av produktene, i tillegg til å forhandle lisenser.
+      </Text>
+    </Flex>
   </Layout>
 );
 
