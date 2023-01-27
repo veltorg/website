@@ -1,5 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import { DefaultSeo } from 'next-seo';
+import { DefaultSeo, LocalBusinessJsonLd } from 'next-seo';
 import type { AppProps } from 'next/app';
 import { theme } from '../theme';
 import '@fontsource/inter';
@@ -8,6 +8,8 @@ export const app: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={theme}>
       <DefaultSeo
+        title="Velt – Vi skaper gode opplevelser"
+        description="Vi skaper gode kunde- og ansattopplevelser for å gjøre hverdagen bedre for folk"
         openGraph={{
           type: 'website',
           locale: 'no_NB',
@@ -18,6 +20,21 @@ export const app: React.FC<AppProps> = ({ Component, pageProps }) => {
           handle: '@handle',
           site: '@site',
           cardType: 'summary_large_image',
+        }}
+      />
+      <LocalBusinessJsonLd
+        type="LocalBusiness"
+        id="https://velt.no/"
+        name="Velt AS"
+        description="Vi skaper gode kunde- og ansattopplevelser for å gjøre hverdagen bedre for folk"
+        url="https://velt.no/"
+        telephone="+4721080000"
+        address={{
+          streetAddress: 'Myntgata 2',
+          addressLocality: 'Oslo',
+          addressRegion: 'Oslo',
+          postalCode: '0152',
+          addressCountry: 'NO',
         }}
       />
       <Component {...pageProps} />
