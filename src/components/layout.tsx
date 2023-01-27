@@ -16,7 +16,7 @@ export const Layout: React.FC<PropsWithChildren> = ({ children }) => (
       sx={{
         flexDirection: 'column',
         gap: 'xl',
-        mb: 'l'
+        mb: 'l',
       }}
     >
       {children}
