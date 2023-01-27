@@ -82,10 +82,10 @@ const Home: NextPage = () => (
     >
       <ShowCase figure={<CustomerExperienceFigure />}>
         <Box>
-          <Text color="muted">Produkter og tjenester</Text>
+          <Text>Produkter og tjenester</Text>
           <Heading>Kundeopplevelse – CX</Heading>
         </Box>
-        <Text color="muted">
+        <Text>
           Kundeopplevelse (CX) er en av måtene vi kan gjøre verden til et bedre
           sted. Vi har over 20 års erfaring med utvikling av fantastiske
           kundeopplevelser.
@@ -93,30 +93,30 @@ const Home: NextPage = () => (
       </ShowCase>
       <ShowCase figure={<EmployeeExperienceFigure />} direction="right">
         <Box>
-          <Text color="muted">Produkter og tjenester</Text>
+          <Text>Produkter og tjenester</Text>
           <Heading>Ansattopplevelse – EX</Heading>
         </Box>
-        <Text color="muted">
+        <Text>
           Ansattopplevelse (EX) refererer til hva en medarbeider føler om jobben
           sin og bedriften de jobber for - fra første til siste dag av
           ansettelsesforholdet. Vi tror at det er enklere å sørge for god
           kundeopplevelse, dersom ansattopplevelsen er god.
         </Text>
-        <Text color="muted">
+        <Text>
           La oss ta en prat om hvorfor vi tror det og hvordan vi løser det.
         </Text>
       </ShowCase>
       <ShowCase figure={<EmployeeExperienceFigure />}>
         <Box>
-          <Text color="muted">Produkter og tjenester</Text>
+          <Text>Produkter og tjenester</Text>
           <Heading>Marketing Automation – MA</Heading>
         </Box>
-        <Text color="muted">
+        <Text>
           Marketing Automation er bruk av teknologi for å automatisere og
           forbedre markedsføringen med mål om å spare tid og øke effektiviteten
           - uten at det går ut over kvaliteten på arbeidet.
         </Text>
-        <Text color="muted">
+        <Text>
           Med vår bakgrunn fra salg, markedsføring og journalistikk kan vi rådgi
           våre kunder, slik at de kan utnytte det uforløste potensialet som
           ligger der.
