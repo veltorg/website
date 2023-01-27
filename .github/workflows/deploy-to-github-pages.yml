@@ -59,6 +59,3 @@ jobs:
       - name: Deploy to GitHub Pages 🚀
         id: deployment
         uses: actions/deploy-pages@v1
-      - uses: atymic/sitemap-ping-action@master
-        with:
-          sitemap-url: https://klyngeorg.no/sitemap.xml
