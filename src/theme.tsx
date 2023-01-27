@@ -14,9 +14,8 @@ const Container = {
 export const theme = extendTheme({
   config,
   fonts: {
-    heading: 'Inter',
-    body: 'Inter',
-    mono: 'Inter',
+    heading: "'Inter', sans-serif",
+    body: "'Inter', sans-serif",
   },
   components: {
     Container,
