@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/add-to-project@v0.3.0
         with:
-          project-url: https://github.com/orgs/nefino/projects/2
+          project-url: https://github.com/orgs/nefino/projects/1
           github-token: ${{ secrets.BJERKBOT_GITHUB_TOKEN }}
           labeled: type/epic
           label-operator: NOT
