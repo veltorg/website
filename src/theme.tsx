@@ -9,6 +9,7 @@ const config: ThemeConfig = {
 const Container = {
   baseStyle: {
     maxW: '80ch',
+    px: 'l',
   },
 };
 const Divider = {

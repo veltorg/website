@@ -54,7 +54,7 @@ const Home: NextPage = () => (
         flexDirection: 'column',
       }}
     >
-      <Heading>
+      <Heading fontWeight={400}>
         Vi skaper gode kunde- og ansattopplevelser for å gjøre hverdagen bedre
         for folk
       </Heading>
