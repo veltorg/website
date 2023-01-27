@@ -11,6 +11,7 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import React from 'react';
 import veltHero from '../assets/velt-hero.jpg';
+import { AutomationFigure } from '../components/figures/automation-figure';
 import { CustomerExperienceFigure } from '../components/figures/customer-experience-figure';
 import { EmployeeExperienceFigure } from '../components/figures/employee-experience-figure';
 import { FreshworkLogo } from '../components/freshworks-logo';
@@ -106,7 +107,7 @@ const Home: NextPage = () => (
           La oss ta en prat om hvorfor vi tror det og hvordan vi løser det.
         </Text>
       </ShowCase>
-      <ShowCase figure={<EmployeeExperienceFigure />}>
+      <ShowCase figure={<AutomationFigure />}>
         <Box>
           <Text>Produkter og tjenester</Text>
           <Heading>Marketing Automation – MA</Heading>
