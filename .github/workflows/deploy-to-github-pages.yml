@@ -41,9 +41,7 @@ jobs:
         run: yarn install --immutable
 
       - name: Build 🔨
-        run: yarn build
-
-      - run: yarn 
+        run: yarn build-static
 
       - name: Upload GitHub Pages assets 📦️
         uses: actions/upload-pages-artifact@v1
