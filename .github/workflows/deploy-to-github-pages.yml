@@ -53,9 +53,28 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Deploy to GitHub Pages 🚀
         id: deployment
         uses: actions/deploy-pages@v1
+
+  screenshot:
+    name: Screenshot
+    needs: deploy
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        width: [1200, 992, 768, 600]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Screenshot Website 📸
+        uses: swinton/screenshot-website@v1.x
+        with:
+          source: https://github.com/swinton/screenshot-website
+          destination: screenshot-${{ matrix.os }}-${{ matrix.width }}.png
+          width: ${{ matrix.width }}
