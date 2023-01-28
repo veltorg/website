@@ -75,6 +75,21 @@ jobs:
       - name: Screenshot Website 📸
         uses: swinton/screenshot-website@v1.x
         with:
-          source: https://github.com/swinton/screenshot-website
+          source: ${{ needs.deploy.outputs.url }}
           destination: screenshot-${{ matrix.os }}-${{ matrix.width }}.png
           width: ${{ matrix.width }}
+
+  lighthouse:
+    name: Lighthouse
+    needs: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Lighthouse Website 📈
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          # TODO: Add URLs as we add more pages
+          urls: |
+            ${{ needs.deploy.outputs.url }}
+          uploadArtifacts: true
+          temporaryPublicStorage: true
