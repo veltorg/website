@@ -54,7 +54,7 @@ const Home: NextPage = () => (
         flexDirection: 'column',
       }}
     >
-      <Heading fontWeight={400}>
+      <Heading fontSize={['2xl', '3xl']} fontWeight={400}>
         Vi skaper gode kunde- og ansattopplevelser for å gjøre hverdagen bedre
         for folk
       </Heading>
@@ -84,7 +84,7 @@ const Home: NextPage = () => (
       <ShowCase figure={<CustomerExperienceFigure />}>
         <Box>
           <Text>Produkter og tjenester</Text>
-          <Heading>Kundeopplevelse – CX</Heading>
+          <Heading fontSize="2xl">Kundeopplevelse – CX</Heading>
         </Box>
         <Text>
           Kundeopplevelse (CX) er en av måtene vi kan gjøre verden til et bedre
@@ -95,7 +95,7 @@ const Home: NextPage = () => (
       <ShowCase figure={<EmployeeExperienceFigure />} direction="right">
         <Box>
           <Text>Produkter og tjenester</Text>
-          <Heading>Ansattopplevelse – EX</Heading>
+          <Heading fontSize="2xl">Ansattopplevelse – EX</Heading>
         </Box>
         <Text>
           Ansattopplevelse (EX) refererer til hva en medarbeider føler om jobben
@@ -110,7 +110,7 @@ const Home: NextPage = () => (
       <ShowCase figure={<AutomationFigure />}>
         <Box>
           <Text>Produkter og tjenester</Text>
-          <Heading>Marketing Automation – MA</Heading>
+          <Heading fontSize="2xl">Marketing Automation – MA</Heading>
         </Box>
         <Text>
           Marketing Automation er bruk av teknologi for å automatisere og
