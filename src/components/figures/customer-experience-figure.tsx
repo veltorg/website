@@ -1,5 +1,10 @@
 export const CustomerExperienceFigure: React.FC = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 468 469">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    fill="none"
+    viewBox="0 0 468 469"
+  >
     <path
       fill="currentColor"
       d="M176.155 289.981h-46.706a103.405 103.405 0 0 1 1.1-22.323c10.6 3.182 25.459 6.505 43.266 10.202l2.481.515c3.837.959 8.564.562 10.647 5.639.187.445.397 1.217.655 2.06h-.468l-8.494.397a2.487 2.487 0 0 0-2.029 1.173 2.483 2.483 0 0 0-.148 2.337h-.304Z"

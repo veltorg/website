@@ -1,5 +1,10 @@
 export const AutomationFigure: React.FC = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 468 469">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    width="100%"
+    viewBox="0 0 468 469"
+  >
     <path
       fill="currentColor"
       d="m363.262 340.432-47.572 25.74-8.401-15.538.14-.234 18.72-9.758h.351c.702-.21 3.042-.327 6.201-.608a70.867 70.867 0 0 0 18.72-3.721c3.604-1.427 7.676-1.614 10.226 1.287a8.282 8.282 0 0 1 1.615 2.808v.024Z"
