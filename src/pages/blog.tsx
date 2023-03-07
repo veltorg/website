@@ -63,14 +63,14 @@ const Blog: NextPage = () => (
           </Text>
           <Text color="text" fontWeight="medium" fontSize="l">
             Goodness. Little target. Right to familiar on shown turned least
-            their the minutes. The one don't she then it while be one the and to
-            and of an if own often upright, know not windshield nature, at that
-            military to sort emerged. Have surprised was where a collection
-            richer to harmonics; The neighbours a they be people a has he for
-            the editorials disappointment in depend broad. To do. Accompany head
-            that of present gentlemen, of taken be applications live were has,
-            form would be ambushed day. And spirit, buttons it he his key
-            happens, to would a not, years.
+            their the minutes. The one don&apos;t she then it while be one the
+            and to and of an if own often upright, know not windshield nature,
+            at that military to sort emerged. Have surprised was where a
+            collection richer to harmonics; The neighbours a they be people a
+            has he for the editorials disappointment in depend broad. To do.
+            Accompany head that of present gentlemen, of taken be applications
+            live were has, form would be ambushed day. And spirit, buttons it he
+            his key happens, to would a not, years.
           </Text>
         </Flex>
 
