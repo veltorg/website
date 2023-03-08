@@ -19,7 +19,7 @@ export const Hero = chakra(Image, {
 
 const Blog: NextPage = () => (
   <Layout>
-    <Container p="l">
+    <Container>
       <Hero
         src={veltBoss}
         alt="Picture of the boss in Velt"
