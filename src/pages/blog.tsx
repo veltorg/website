@@ -1,13 +1,25 @@
-import { Container, Flex, Heading, Image, Text } from '@chakra-ui/react';
+import {
+  Container,
+  Flex,
+  Heading,
+  Image,
+  ListItem,
+  Text,
+  UnorderedList,
+} from '@chakra-ui/react';
 import { createClient } from 'next-sanity';
 import { Layout } from '../components/layout';
-import { useRef } from 'react';
 
 const postQuery = `*[_type == "post"] {
     _id,
     author,
     headline,
-    image,
+    "image": Image[]{
+      _type,
+      asset,
+      attribution,
+      caption,
+    },
     "articleBody": articleBody[]{
       _key,
       _type,
@@ -15,47 +27,15 @@ const postQuery = `*[_type == "post"] {
         _key,
         _type,
         text,
-        marks[],
+        marks,
       },
       markDefs[],
       style,
       asset,
+      listItem,
+      level,
     },
     }`;
-
-const textStyles = {
-  h1: { size: '4xl', weight: 'bold' },
-  h2: { size: '2xl', weight: 'bold' },
-  h3: { size: 'lg', weight: 'bold' },
-  h4: { size: 'md', weight: 'bold' },
-  h5: { size: 'sm', weight: 'bold' },
-  h6: { size: 'xs', weight: 'bold' },
-  normal: { size: 'md', weight: 'normal' },
-  small: { size: 'sm', weight: 'normal' },
-};
-
-function convertStyle(style: string) {
-  switch (style) {
-    case 'h1':
-      return textStyles.h1;
-    case 'h2':
-      return textStyles.h2;
-    case 'h3':
-      return textStyles.h3;
-    case 'h4':
-      return textStyles.h4;
-    case 'h5':
-      return textStyles.h5;
-    case 'h6':
-      return textStyles.h6;
-    case 'normal':
-      return textStyles.normal;
-    case 'small':
-      return textStyles.small;
-    default:
-      return textStyles.normal;
-  }
-}
 
 const Blog = ({ posts }) => {
   return (
@@ -64,8 +44,11 @@ const Blog = ({ posts }) => {
         {posts.length > 0 && (
           <Container>
             {posts.map(post => (
-              <Container key={post._id} p="0">
+              <Flex key={post._id} flexDirection="column" gap={3}>
                 <Heading>{post.headline}</Heading>
+                <Text textStyle="h6" mt="-1rem">
+                  Written by Anna Christina Lyra
+                </Text>
                 {post.articleBody.map(body => (
                   <Container key={body._key} p="0">
                     {body.asset ? (
@@ -83,26 +66,23 @@ const Blog = ({ posts }) => {
 
                     {body.children?.map(child => (
                       <Container key={child._key} p="0">
-                        <Text
-                          sx={{
-                            size: convertStyle(body.style).size,
-                            weight: convertStyle(body.style).weight,
-                          }}
-                        >
-                          {child.text}
-                        </Text>
+                        {body.listItem === 'bullet' &&
+                        child.text.at(-1) !== ':' ? (
+                          <UnorderedList>
+                            <ListItem>
+                              <Text textStyle={body.style}>{child.text}</Text>
+                            </ListItem>
+                          </UnorderedList>
+                        ) : (
+                          <Text textStyle={body.style}>{child.text}</Text>
+                        )}
                       </Container>
                     ))}
                   </Container>
                 ))}
-              </Container>
+              </Flex>
             ))}
           </Container>
-        )}
-        {posts.length > 0 && (
-          <div>
-            <pre>{JSON.stringify(posts, null, 2)}</pre>
-          </div>
         )}
       </Flex>
     </Layout>
