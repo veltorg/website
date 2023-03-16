@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, Container, Heading, Image, Text } from '@chakra-ui/react';
 import { createClient } from 'next-sanity';
 import { Layout } from '../components/layout';
 import { PortableText } from '@portabletext/react';
@@ -31,11 +31,39 @@ const postQuery = `*[_type == "post"] {
     }`;
 
 const Blog = ({ posts }) => {
-  const [post] = posts;
   return (
     <Layout>
-      <Flex flexDirection="column">
-        <PortableText value={[post]} />
+      <Flex>
+        <Container>
+          {posts.length > 0 && (
+            <Container>
+              {posts.map(post => (
+                <Container key={post._id}>
+                  <Heading>{post.headline}</Heading>
+                  {post.articleBody.map(body => (
+                    <Container key={body._key}>
+                      {body.asset?.map(asset => (
+                        <Image
+                          key={asset._type}
+                          src={`${asset._ref}`}
+                          alt="Velt Image"
+                        />
+                      ))}
+                      {body.children?.map(child => (
+                        <Text key={child._key}>{child.text}</Text>
+                      ))}
+                    </Container>
+                  ))}
+                </Container>
+              ))}
+            </Container>
+          )}
+          {posts.length > 0 && (
+            <div>
+              <pre>{JSON.stringify(posts, null, 2)}</pre>
+            </div>
+          )}
+        </Container>
       </Flex>
     </Layout>
   );
