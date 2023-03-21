@@ -46,7 +46,7 @@ const Blog = ({ posts }) => {
             {posts.map(post => (
               <Flex key={post._id} flexDirection="column" gap={3}>
                 <Heading>{post.headline}</Heading>
-                <Text textStyle="h6" mt="-1rem">
+                <Text textStyle="h6">
                   Written by Anna Christina Lyra
                 </Text>
                 {post.articleBody.map(body => (
