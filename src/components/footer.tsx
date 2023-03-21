@@ -2,7 +2,7 @@ import { Box, Container, Heading, Text } from '@chakra-ui/react';
 
 export const Footer: React.FC = () => {
   return (
-    <Box backgroundColor="black" p="l" color="white">
+    <Box backgroundColor="black" py="l" px="xl" color="white">
       <Container
         sx={{
           display: 'flex',
