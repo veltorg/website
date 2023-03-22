@@ -7,6 +7,7 @@ const postQuery = `*[_type == "post"] {
     _id,
     author,
     headline,
+    _createdAt,
     "image": Image[]{
       _type,
       asset,
@@ -30,7 +31,13 @@ const postQuery = `*[_type == "post"] {
     },
     }`;
 
-const Blog = ({ posts }) => {
+const personQuery = `*[_type == "person"] {
+    _id,
+    familyName,
+    givenName,
+    }`;
+
+const Blog = ({ posts, people }) => {
   return (
     <Layout>
       <Flex flexDirection="column">
@@ -40,7 +47,8 @@ const Blog = ({ posts }) => {
               <Flex key={post._id} flexDirection="column" gap={3}>
                 <Heading>{post.headline}</Heading>
                 <Text textStyle="h6">
-                  Written by Anna Christina Lyra
+                  Written by {people[0].givenName}
+                  {people[0].familyName} on {post._createdAt.split('T')[0]}
                 </Text>
                 {post.articleBody.map(body => (
                   <Container key={body._key} p="0">
@@ -73,6 +81,14 @@ const Blog = ({ posts }) => {
                     ))}
                   </Container>
                 ))}
+                {posts.length > 0 && (
+                  <div>
+                    <pre>
+                      {JSON.stringify(people, null, 2)}
+                      {JSON.stringify(posts, null, 2)}
+                    </pre>
+                  </div>
+                )}
               </Flex>
             ))}
           </Container>
@@ -90,11 +106,13 @@ const client = createClient({
 });
 
 export const getStaticProps = async () => {
-  const posts: unknown = await client.fetch(postQuery);
+  const posts = await client.fetch(postQuery);
+  const people = await client.fetch(personQuery);
 
   return {
     props: {
       posts,
+      people,
     },
   };
 };
