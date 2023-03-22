@@ -38,53 +38,10 @@ const postQuery = `*[_type == "post"] {
     }`;
 
 const Blog = ({ posts }) => {
+  const [post] = posts;
   return (
     <Layout>
-      <Flex flexDirection="column">
-        {posts.length > 0 && (
-          <Container>
-            {posts.map(post => (
-              <Flex key={post._id} flexDirection="column" gap={3}>
-                <Heading>{post.headline}</Heading>
-                <Text textStyle="h6">
-                  Written by Anna Christina Lyra
-                </Text>
-                {post.articleBody.map(body => (
-                  <Container key={body._key} p="0">
-                    {body.asset ? (
-                      <Image
-                        key={body.asset?._ref}
-                        src={
-                          'https://cdn.sanity.io/images/djmpbnmm/production/' +
-                          `${body.asset?._ref}`
-                            .replace('image-', '')
-                            .replace('-jpg', '.jpg')
-                        }
-                        alt={'Velt Image'}
-                      />
-                    ) : null}
-
-                    {body.children?.map(child => (
-                      <Container key={child._key} p="0">
-                        {body.listItem === 'bullet' &&
-                        child.text.at(-1) !== ':' ? (
-                          <UnorderedList>
-                            <ListItem>
-                              <Text textStyle={body.style}>{child.text}</Text>
-                            </ListItem>
-                          </UnorderedList>
-                        ) : (
-                          <Text textStyle={body.style}>{child.text}</Text>
-                        )}
-                      </Container>
-                    ))}
-                  </Container>
-                ))}
-              </Flex>
-            ))}
-          </Container>
-        )}
-      </Flex>
+      <Flex flexDirection="column"></Flex>
     </Layout>
   );
 };
