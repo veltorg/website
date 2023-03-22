@@ -88,14 +88,6 @@ const Blog = ({ posts, people }) => {
                     ))}
                   </Container>
                 ))}
-                {posts.length > 0 && (
-                  <div>
-                    <pre>
-                      {JSON.stringify(people, null, 2)}
-                      {JSON.stringify(posts, null, 2)}
-                    </pre>
-                  </div>
-                )}
               </Flex>
             ))}
           </Container>
