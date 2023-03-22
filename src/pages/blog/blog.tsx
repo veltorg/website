@@ -8,7 +8,7 @@ import {
   UnorderedList,
 } from '@chakra-ui/react';
 import { createClient } from 'next-sanity';
-import { Layout } from '../components/layout';
+import { Layout } from '../../components/layout';
 
 const postQuery = `*[_type == "post"] {
     _id,
