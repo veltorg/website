@@ -1,14 +1,7 @@
-import {
-  Container,
-  Flex,
-  Heading,
-  Image,
-  ListItem,
-  Text,
-  UnorderedList,
-} from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { createClient } from 'next-sanity';
 import { Layout } from '../components/layout';
+import { PortableText } from '@portabletext/react';
 
 const postQuery = `*[_type == "post"] {
     _id,
@@ -41,7 +34,9 @@ const Blog = ({ posts }) => {
   const [post] = posts;
   return (
     <Layout>
-      <Flex flexDirection="column"></Flex>
+      <Flex flexDirection="column">
+        <PortableText value={[post]} />
+      </Flex>
     </Layout>
   );
 };
