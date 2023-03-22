@@ -1,7 +1,7 @@
 import { Flex } from '@chakra-ui/react';
+import { PortableText } from '@portabletext/react';
 import { createClient } from 'next-sanity';
 import { Layout } from '../components/layout';
-import { PortableText } from '@portabletext/react';
 
 const postQuery = `*[_type == "post"] {
     _id,
