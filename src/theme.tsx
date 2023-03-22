@@ -88,6 +88,16 @@ export const theme = extendTheme({
       'chakra-placeholder-color': { _light: 'text' },
     },
   },
+  textStyles: {
+    h1: { fontSize: '4xl', fontWeight: 'bold' },
+    h2: { fontSize: '2xl', fontWeight: 'bold' },
+    h3: { fontSize: 'lg', fontWeight: 'bold' },
+    h4: { fontSize: 'md', fontWeight: 'bold' },
+    h5: { fontSize: 'sm', fontWeight: 'bold' },
+    h6: { fontSize: 'xs', fontWeight: 'bold' },
+    normal: { size: 'md', fontWeight: 'normal' },
+    small: { size: 'sm', fontWeight: 'normal' },
+  },
   fonts: {
     heading: "'Inter', system-ui, sans-serif",
     body: "'Inter', system-ui, sans-serif",
