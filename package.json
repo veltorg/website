@@ -19,6 +19,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fontsource/inter": "^4.5.15",
+    "@portabletext/react": "^2.0.2",
     "framer-motion": "^7.6.19",
     "next": "13.0.6",
     "next-export-optimize-images": "^2.0.0",
