@@ -10,7 +10,7 @@ import {
 import { client } from '../../../client';
 import { Layout } from '../../components/layout';
 
-const pathQuery = `*[_type == "post" && slug.current]`;
+const pathQuery = '*[_type == "post" && defined(slug.current)][].slug.current';
 
 const postQuery = `*[_type == "post" && slug.current == $slug][0] {
     _id,
