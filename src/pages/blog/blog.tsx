@@ -1,7 +1,14 @@
-import { Flex, Container, Heading, Image, Text } from '@chakra-ui/react';
+import {
+  Container,
+  Flex,
+  Heading,
+  Image,
+  ListItem,
+  Text,
+  UnorderedList,
+} from '@chakra-ui/react';
 import { createClient } from 'next-sanity';
-import { Layout } from '../components/layout';
-import { PortableText } from '@portabletext/react';
+import { Layout } from '../../components/layout';
 
 const postQuery = `*[_type == "post"] {
     _id,
