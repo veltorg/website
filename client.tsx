@@ -6,6 +6,3 @@ export const client = createClient({
   apiVersion: '2023-03-16',
   useCdn: false,
 });
-
-
-
