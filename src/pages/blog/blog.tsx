@@ -7,8 +7,8 @@ import {
   Text,
   UnorderedList,
 } from '@chakra-ui/react';
-import { createClient } from 'next-sanity';
 import { Layout } from '../../components/layout';
+import { client } from '../../../client';
 
 const postQuery = `*[_type == "post"] {
     _id,
@@ -104,13 +104,6 @@ const Blog = ({ posts, people }) => {
     </Layout>
   );
 };
-
-const client = createClient({
-  projectId: 'djmpbnmm',
-  dataset: 'production',
-  apiVersion: '2023-03-16',
-  useCdn: false,
-});
 
 export const getStaticProps = async () => {
   const posts = await client.fetch(postQuery);
