@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write . --ignore-path .gitignore ",
-    "format:check": "prettier --check . --ignore-path .gitignore"
+    "format:check": "prettier --check . --ignore-path .gitignore",
+    "generate": "graphql-codegen --config codegen.ts"
   },
   "prettier": "@cobraz/prettier",
   "dependencies": {
@@ -20,10 +21,14 @@
     "@emotion/styled": "^11.10.5",
     "@fontsource/inter": "^4.5.15",
     "@portabletext/react": "^2.0.2",
+    "@sanity/image-url": "^1.0.2",
+    "date-fns": "^2.29.3",
     "framer-motion": "^7.6.19",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.2.0",
     "next": "13.0.6",
     "next-export-optimize-images": "^2.0.0",
-    "next-sanity": "^4.1.5",
+    "next-sanity-image": "^6.0.0",
     "next-seo": "^5.15.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -32,6 +37,8 @@
     "@bjerk/eslint-config": "^3.0.1",
     "@chakra-ui/cli": "^2.2.1",
     "@cobraz/prettier": "^2.0.1",
+    "@graphql-codegen/cli": "3.2.2",
+    "@graphql-codegen/client-preset": "2.1.1",
     "@types/node": "18.11.12",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.9",

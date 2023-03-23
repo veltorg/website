@@ -32,7 +32,7 @@ const space = {
   '3xl': 'clamp(6.75rem, calc(6.49rem + 1.3vw), 7.5rem)',
 
   heroHeight: 'clamp(20rem, 35vw, 28rem)',
-  logoHeight: 'clamp(3rem, 10vw, 6rem)',
+  logoHeight: 'clamp(3rem, 10vw, 4rem)',
 };
 
 export const theme = extendTheme({

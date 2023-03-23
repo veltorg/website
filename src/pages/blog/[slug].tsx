@@ -1,119 +1,157 @@
 import {
+  Box,
   Container,
   Flex,
   Heading,
-  Image,
+  List,
   ListItem,
   Text,
-  UnorderedList,
 } from '@chakra-ui/react';
-import { client } from '../../../client';
+import { PortableText } from '@portabletext/react';
+import { format } from 'date-fns';
+import { FC } from 'react';
 import { Layout } from '../../components/layout';
+import { SanityImage } from '../../components/sanity-image';
+import { graphql } from '../../gql';
+import { client } from '../../gql-client';
+import { GetPostsBySlugQuery } from '../../gql/graphql';
+import { notEmpty } from '../../utils';
 
-const pathQuery = '*[_type == "post" && defined(slug.current)][].slug.current';
+const getPostsBySlugQuery = graphql(/* GraphQL */ `
+  query GetPostsBySlug($slug: String!) {
+    posts: allPost(where: { slug: { current: { eq: $slug } } }) {
+      author {
+        givenName
+        familyName
+      }
 
-const postQuery = `*[_type == "post" && slug.current == $slug][0] {
-    _id,
-    author[0]->,
-    headline,
-    _createdAt,
-    "image": Image[]{
-      _type,
-      asset,
-      attribution,
-      caption,
-    },
-    "articleBody": articleBody[]{
-      _key,
-      _type,
-      "children": children[] {
-        _key,
-        _type,
-        text,
-        marks,
-      },
-      markDefs[],
-      style,
-      asset,
-      listItem,
-      level,
-    },
-    }`;
+      headline
+      _createdAt
+      image {
+        _type
+        asset {
+          url
+        }
+        attribution
+        caption
+      }
+      articleBodyRaw
+    }
+  }
+`);
 
-const personQuery = `*[_type == "person"] {
-    _id,
-    familyName,
-    givenName,
-    }`;
+const getAllPostSlugsQuery = graphql(/* GraphQL */ `
+  query GetAllPostSlugs {
+    posts: allPost {
+      slug {
+        current
+      }
+    }
+  }
+`);
 
-const urlBuilder = (sanityUrl: string) => {
-  return (
-    'https://cdn.sanity.io/images/djmpbnmm/production/' +
-    sanityUrl.replace('image-', '').replace('-jpg', '.jpg')
-  );
+type Post = GetPostsBySlugQuery['posts'][number];
+
+type BlogProps = {
+  post: Post;
 };
 
-const Blog = props => {
-  const { post } = props;
+const Blog: FC<BlogProps> = ({ post }) => {
+  if (!post) {
+    return <div>Could not find it...</div>;
+  }
+
+  const authors = post.author
+    ? post.author
+        .map(author => `${author?.givenName} ${author?.familyName}`)
+        .join(', ')
+    : false;
+
+  const date = format(new Date(post._createdAt), 'MMMM do, yyyy');
+
   return (
     <Layout>
       <Flex flexDirection="column">
-        <Container>
-          <Flex flexDirection="column" gap={3}>
-            <Heading>{post?.headline}</Heading>
-            <Text textStyle="h6">
-              Written by {post?.author.givenName}
-              {post?.author.familyName} on {post?._createdAt.split('T')[0]}
+        <Container sx={{ mb: 'xl' }}>
+          <Flex flexDirection="column" gap={3} sx={{ pb: 6 }}>
+            <Heading>{post.headline}</Heading>
+            <Text as="em">
+              Written{authors && <> by {authors}</>} on {date}
             </Text>
-            {post?.articleBody.map(body => (
-              <Container key={body._key} p="0">
-                {body.asset ? (
-                  <Image
-                    key={body.asset?._ref}
-                    src={urlBuilder(body.asset?._ref)}
-                    alt={'Velt Image'}
-                  />
-                ) : null}
-
-                {body.children?.map(child => (
-                  <Container key={child._key} p="0">
-                    {body.listItem === 'bullet' && child.text.at(-1) !== ':' ? (
-                      <UnorderedList>
-                        <ListItem>
-                          <Text textStyle={body.style}>{child.text}</Text>
-                        </ListItem>
-                      </UnorderedList>
-                    ) : (
-                      <Text textStyle={body.style}>{child.text}</Text>
-                    )}
-                  </Container>
-                ))}
-              </Container>
-            ))}
           </Flex>
+          <PortableText
+            value={post.articleBodyRaw}
+            components={{
+              types: {
+                image: ({ value }) => (
+                  <Box py="s">
+                    <SanityImage value={value} />
+                  </Box>
+                ),
+              },
+              block: {
+                normal: ({ children }) => <Text py="2xs">{children}</Text>,
+                // 'blockquote'
+                h1: ({ children }) => <Heading as="h1">{children}</Heading>,
+                h2: ({ children }) => <Heading as="h2">{children}</Heading>,
+                h3: ({ children }) => <Heading as="h3">{children}</Heading>,
+                h4: ({ children }) => <Heading as="h4">{children}</Heading>,
+                h5: ({ children }) => <Heading as="h5">{children}</Heading>,
+                h6: ({ children }) => <Heading as="h6">{children}</Heading>,
+              },
+
+              list: {
+                bullet: ({ children }) => <List p="s">{children}</List>,
+                number: ({ children }) => <List p="s">{children}</List>,
+              },
+
+              listItem: {
+                bullet: ({ children }) => (
+                  <ListItem py="xs">{children}</ListItem>
+                ),
+                number: ({ children }) => (
+                  <ListItem py="xs">{children}</ListItem>
+                ),
+              },
+            }}
+          />
         </Container>
       </Flex>
     </Layout>
   );
 };
 
-export async function getStaticPaths() {
-  const paths = await client.fetch(pathQuery);
+export async function getStaticPaths(): Promise<{
+  paths: { params: { slug: string } }[];
+  fallback: boolean;
+}> {
+  const { posts } = await client.request(getAllPostSlugsQuery);
+  const slugs = posts.map(post => post.slug?.current).filter(notEmpty);
 
   return {
-    paths: paths.map(slug => ({ params: { slug } })),
+    paths: slugs.map(slug => ({ params: { slug } })),
     fallback: true,
   };
 }
-export async function getStaticProps(context) {
-  const { slug = '' } = context.params;
-  const post = await client.fetch(postQuery, { slug });
-  const people = await client.fetch(personQuery);
+
+type Context = {
+  params: {
+    slug: string;
+  };
+};
+
+export async function getStaticProps(
+  context: Context,
+): Promise<{ props: BlogProps }> {
+  const {
+    posts: [post],
+  } = await client.request(getPostsBySlugQuery, {
+    slug: context.params.slug,
+  });
 
   return {
     props: {
       post,
-      people,
     },
   };
 }

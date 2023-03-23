@@ -1,5 +1,6 @@
 {
   "extends": ["@bjerk/eslint-config", "next/core-web-vitals"],
+  "ignorePatterns": ["src/gql/**/*.ts", "src/gql/**/*.tsx"],
   "overrides": [
     {
       "files": ["src/pages/**/*.{js,jsx,ts,tsx}"],
