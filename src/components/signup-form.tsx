@@ -1,5 +1,5 @@
 import { Box, Button, chakra } from '@chakra-ui/react';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   GoogleReCaptcha,
   GoogleReCaptchaProvider,
@@ -70,7 +70,7 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
   const { isEnabled } = useToggles();
   const [token, setToken] = useState<string | undefined>();
   const url = new URL([baseUrls[props.type], formPath].join('/'));
-  
+
   useEffect(() => {
     const handleMessage = (event: MessageEvent): void => {
       if (isEnabled('dev-signup-form')) {
