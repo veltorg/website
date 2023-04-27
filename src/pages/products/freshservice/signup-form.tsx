@@ -1,3 +1,4 @@
+import { Box, chakra } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 
 type MessageEvent = {
@@ -18,6 +19,8 @@ const isValidJSON = (data: string): boolean => {
   }
   return true;
 };
+
+const Form = chakra('iframe');
 
 export const SignUpForm: React.FC = () => {
   useEffect(() => {
@@ -44,14 +47,24 @@ export const SignUpForm: React.FC = () => {
   }, []);
 
   return (
-    <div className="fw-ctner">
-      <iframe
+    <Box sx={{
+      position: 'relative',
+      overflow: 'hidden',
+      minHeight: '800px',
+    }}>
+      <Form
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          border: 0,
+        }}
         className="fw-iframe"
-        // gesture="media"
-        // allow="encrypted-media"
         allowFullScreen
         src="https://www.freshworks.com/no/freshdesk/signup/partners-external-iframe-signup/"
-      ></iframe>
-    </div>
+      />
+    </Box>
   );
 };
