@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import React from 'react';
-import { SignUpForm } from './signup-form';
+import { SignUpForm } from '../../../components/signup-form';
 
 const Freshservice: NextPage = () => {
   return <SignUpForm />;
