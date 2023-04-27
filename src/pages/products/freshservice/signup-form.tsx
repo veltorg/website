@@ -22,10 +22,12 @@ const isValidJSON = (data: string): boolean => {
 export const SignUpForm: React.FC = () => {
   useEffect(() => {
     const handleMessage = (event: MessageEvent): void => {
+      // eslint-disable-next-line no-console
       console.log({ event });
       if (isValidJSON(event.data)) {
         const parsedMessage = JSON.parse(event.data) as ParsedMessage;
 
+        // eslint-disable-next-line no-console
         console.log({ parsedMessage });
 
         if (parsedMessage.signup_finished) {
