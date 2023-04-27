@@ -106,7 +106,12 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
     <>
       {isEnabled('dev-signup-form') && (
         <Button
-          onClick={() => sendSignUpToCollector('https://testdomain.com', token)}
+          onClick={() =>
+            sendSignUpToCollector(
+              'https://testdomain.com',
+              token || 'hello-world',
+            )
+          }
         >
           Send to collector
         </Button>
