@@ -23,8 +23,24 @@ const isValidJSON = (data: string): boolean => {
 
 const Form = chakra('iframe');
 
-export const SignUpForm: React.FC = () => {
+const formUrl = '/signup/partners-external-iframe-signup';
+
+const types = {
+  freshchat: new URL(formUrl, 'https://freshworks.com/live-chat-software/'),
+  freshdesk: new URL(formUrl, 'https://freshdesk.com'),
+  freshsales: new URL(formUrl, 'https://freshsales.com/freshsales-crm/'),
+  freshservice: new URL(formUrl, 'https://freshservice.com'),
+} as const;
+
+type Types = keyof typeof types;
+
+type SignUpFormProps = {
+  type: Types;
+};
+
+export const SignUpForm: React.FC<SignUpFormProps> = (props) => {
   const { isEnabled } = useToggles();
+  const url = types[props.type];
   useEffect(() => {
     const handleMessage = (event: MessageEvent): void => {
       if (isEnabled('dev-signup-form')) {
@@ -50,7 +66,7 @@ export const SignUpForm: React.FC = () => {
     return () => {
       window.removeEventListener('message', handleMessage);
     };
-  }, []);
+  }, [isEnabled]);
 
   return (
     <Box
@@ -74,7 +90,7 @@ export const SignUpForm: React.FC = () => {
           }}
           className="fw-iframe"
           allowFullScreen
-          src="https://freshservice.com/signup/partners-external-iframe-signup"
+          src={url.toString()}
         />
       ) : (
         <Form
