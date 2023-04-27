@@ -50,6 +50,7 @@ export const SignUpForm: React.FC = () => {
     <Box sx={{
       position: 'relative',
       overflow: 'hidden',
+      height: '100vh',
       minHeight: '800px',
     }}>
       <Form
