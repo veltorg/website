@@ -1,5 +1,6 @@
 import { Box, chakra } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
+import { useToggles } from '../providers/toggles-provider';
 
 type MessageEvent = {
   data: string;
@@ -23,18 +24,23 @@ const isValidJSON = (data: string): boolean => {
 const Form = chakra('iframe');
 
 export const SignUpForm: React.FC = () => {
+  const { isEnabled } = useToggles();
   useEffect(() => {
     const handleMessage = (event: MessageEvent): void => {
-      // eslint-disable-next-line no-console
-      console.log({ event });
+      if (isEnabled('dev-signup-form')) {
+        // eslint-disable-next-line no-console
+        console.log({ event });
+      }
       if (isValidJSON(event.data)) {
         const parsedMessage = JSON.parse(event.data) as ParsedMessage;
 
-        // eslint-disable-next-line no-console
-        console.log({ parsedMessage });
-
-        if (parsedMessage.signup_finished) {
-          window.location.href = parsedMessage.url.trim();
+        if (isEnabled('dev-signup-form')) {
+          // eslint-disable-next-line no-console
+          console.log({ parsedMessage });
+        } else {
+          if (parsedMessage.signup_finished) {
+            window.location.href = parsedMessage.url.trim();
+          }
         }
       }
     };
@@ -47,12 +53,15 @@ export const SignUpForm: React.FC = () => {
   }, []);
 
   return (
-    <Box sx={{
-      position: 'relative',
-      overflow: 'hidden',
-      height: '100vh',
-      minHeight: '800px',
-    }}>
+    <Box
+      sx={{
+        position: 'relative',
+        overflow: 'hidden',
+        height: '100vh',
+        minHeight: '800px',
+      }}
+    >
+      {isEnabled('dev-signup-form') && <div>Development Signup Form Mode</div>}
       <Form
         sx={{
           position: 'absolute',
@@ -64,7 +73,7 @@ export const SignUpForm: React.FC = () => {
         }}
         className="fw-iframe"
         allowFullScreen
-        src="https://www.freshworks.com/no/freshdesk/signup/partners-external-iframe-signup/"
+        src="https://freshservice.com/signup/partners-external-iframe-signup"
       />
     </Box>
   );

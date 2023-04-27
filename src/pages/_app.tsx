@@ -1,6 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { DefaultSeo, LocalBusinessJsonLd } from 'next-seo';
 import type { AppProps } from 'next/app';
+import { TogglesProvider } from '../providers/toggles-provider';
 import { theme } from '../theme';
 import '@fontsource/inter';
 
@@ -8,7 +9,7 @@ export const app: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={theme}>
       <DefaultSeo
-        title="Velt – Vi skaper gode opplevelser"
+        title="Velt – vi skaper gode opplevelser"
         description="Vi skaper gode kunde- og ansattopplevelser for å gjøre hverdagen bedre for folk"
         openGraph={{
           type: 'website',
@@ -37,7 +38,9 @@ export const app: React.FC<AppProps> = ({ Component, pageProps }) => {
           addressCountry: 'NO',
         }}
       />
-      <Component {...pageProps} />
+      <TogglesProvider>
+        <Component {...pageProps} />
+      </TogglesProvider>
     </ChakraProvider>
   );
 };
