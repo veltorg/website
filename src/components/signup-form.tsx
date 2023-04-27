@@ -1,5 +1,6 @@
 import { Box, chakra } from '@chakra-ui/react';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { useToggles } from '../providers/toggles-provider';
 
 type MessageEvent = {
@@ -11,6 +12,10 @@ type ParsedMessage = {
   signup_finished: boolean;
   url: string;
 };
+
+const siteKey = '6Lc_78ElAAAAAFFkzMSMFg-Uisc7-nlxPrFvVbuN';
+const collectorUrl =
+  'https://europe-west1-velt-metrics.cloudfunctions.net/signup-form-collector-7b80f45';
 
 const isValidJSON = (data: string): boolean => {
   try {
@@ -40,6 +45,7 @@ type SignUpFormProps = {
 export const SignUpForm: React.FC<SignUpFormProps> = props => {
   const { isEnabled } = useToggles();
   const url = new URL([baseUrls[props.type], formPath].join('/'));
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   useEffect(() => {
     const handleMessage = (event: MessageEvent): void => {
       if (isEnabled('dev-signup-form')) {
@@ -48,6 +54,22 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
       }
       if (isValidJSON(event.data)) {
         const parsedMessage = JSON.parse(event.data) as ParsedMessage;
+
+        try {
+          fetch(collectorUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                ...parsedMessage,
+                recaptchaToken: recaptchaRef.current?.getValue() || '',
+              }),
+            });
+        } catch {
+          // eslint-disable-next-line no-console
+          console.error('Failed to send data to collector');
+        }
 
         if (isEnabled('dev-signup-form')) {
           // eslint-disable-next-line no-console
@@ -76,36 +98,21 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
         minHeight: '800px',
       }}
     >
-      {isEnabled('dev-signup-form') ? (
-        <Form
-          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-          sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            border: 0,
-          }}
-          className="fw-iframe"
-          allowFullScreen
-          src={url.toString()}
-        />
-      ) : (
-        <Form
-          sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            border: 0,
-          }}
-          className="fw-iframe"
-          allowFullScreen
-          src={url.toString()}
-        />
-      )}
+      <ReCAPTCHA ref={recaptchaRef} sitekey={siteKey} />
+      <Form
+        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          border: 0,
+        }}
+        className="fw-iframe"
+        allowFullScreen
+        src={url.toString()}
+      />
     </Box>
   );
 };
