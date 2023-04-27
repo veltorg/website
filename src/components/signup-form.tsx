@@ -1,4 +1,4 @@
-import { Box, chakra } from '@chakra-ui/react';
+import { Box, Button, chakra } from '@chakra-ui/react';
 import React, { useEffect, useRef } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useToggles } from '../providers/toggles-provider';
@@ -42,6 +42,27 @@ type SignUpFormProps = {
   type: Types;
 };
 
+function sendSignUpToCollector(
+  signUpUrl: string,
+  recaptchaToken: string,
+): void {
+  try {
+    fetch(collectorUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        signUpUrl,
+        recaptchaToken,
+      }),
+    });
+  } catch {
+    // eslint-disable-next-line no-console
+    console.error('Failed to send data to collector');
+  }
+}
+
 export const SignUpForm: React.FC<SignUpFormProps> = props => {
   const { isEnabled } = useToggles();
   const url = new URL([baseUrls[props.type], formPath].join('/'));
@@ -55,21 +76,10 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
       if (isValidJSON(event.data)) {
         const parsedMessage = JSON.parse(event.data) as ParsedMessage;
 
-        try {
-          fetch(collectorUrl, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                ...parsedMessage,
-                recaptchaToken: recaptchaRef.current?.getValue() || '',
-              }),
-            });
-        } catch {
-          // eslint-disable-next-line no-console
-          console.error('Failed to send data to collector');
-        }
+        sendSignUpToCollector(
+          parsedMessage.url,
+          recaptchaRef.current?.getValue() || '',
+        );
 
         if (isEnabled('dev-signup-form')) {
           // eslint-disable-next-line no-console
@@ -90,29 +100,43 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
   }, [isEnabled]);
 
   return (
-    <Box
-      sx={{
-        position: 'relative',
-        overflow: 'hidden',
-        height: '100vh',
-        minHeight: '800px',
-      }}
-    >
-      <ReCAPTCHA ref={recaptchaRef} sitekey={siteKey} />
-      <Form
-        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+    <>
+      {isEnabled('dev-signup-form') && (
+        <Button
+          onClick={() =>
+            sendSignUpToCollector(
+              'https://testdomain.com',
+              recaptchaRef.current?.getValue() || '',
+            )
+          }
+        >
+          Send to collector
+        </Button>
+      )}
+      <Box
         sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          border: 0,
+          position: 'relative',
+          overflow: 'hidden',
+          height: '90vh',
+          minHeight: '800px',
         }}
-        className="fw-iframe"
-        allowFullScreen
-        src={url.toString()}
-      />
-    </Box>
+      >
+        <Form
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            border: 0,
+          }}
+          className="fw-iframe"
+          allowFullScreen
+          src={url.toString()}
+        />
+      </Box>
+      <ReCAPTCHA ref={recaptchaRef} sitekey={siteKey} />
+    </>
   );
 };
