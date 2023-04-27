@@ -103,7 +103,7 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
           }}
           className="fw-iframe"
           allowFullScreen
-          src="https://freshservice.com/signup/partners-external-iframe-signup"
+          src={url.toString()}
         />
       )}
     </Box>
