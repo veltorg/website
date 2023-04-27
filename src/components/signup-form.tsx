@@ -1,6 +1,9 @@
 import { Box, Button, chakra } from '@chakra-ui/react';
-import React, { useEffect, useRef } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import React, { useEffect, useRef, useState } from 'react';
+import {
+  GoogleReCaptcha,
+  GoogleReCaptchaProvider,
+} from 'react-google-recaptcha-v3';
 import { useToggles } from '../providers/toggles-provider';
 
 type MessageEvent = {
@@ -65,8 +68,9 @@ function sendSignUpToCollector(
 
 export const SignUpForm: React.FC<SignUpFormProps> = props => {
   const { isEnabled } = useToggles();
+  const [token, setToken] = useState<string | undefined>();
   const url = new URL([baseUrls[props.type], formPath].join('/'));
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  
   useEffect(() => {
     const handleMessage = (event: MessageEvent): void => {
       if (isEnabled('dev-signup-form')) {
@@ -76,10 +80,9 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
       if (isValidJSON(event.data)) {
         const parsedMessage = JSON.parse(event.data) as ParsedMessage;
 
-        sendSignUpToCollector(
-          parsedMessage.url,
-          recaptchaRef.current?.getValue() || '',
-        );
+        if (token) {
+          sendSignUpToCollector(parsedMessage.url, token);
+        }
 
         if (isEnabled('dev-signup-form')) {
           // eslint-disable-next-line no-console
@@ -103,12 +106,7 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
     <>
       {isEnabled('dev-signup-form') && (
         <Button
-          onClick={() =>
-            sendSignUpToCollector(
-              'https://testdomain.com',
-              recaptchaRef.current?.getValue() || '',
-            )
-          }
+          onClick={() => sendSignUpToCollector('https://testdomain.com', token)}
         >
           Send to collector
         </Button>
@@ -136,7 +134,13 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
           src={url.toString()}
         />
       </Box>
-      <ReCAPTCHA ref={recaptchaRef} sitekey={siteKey} />
+      <GoogleReCaptchaProvider reCaptchaKey={siteKey}>
+        <GoogleReCaptcha
+          onVerify={token => {
+            setToken(token);
+          }}
+        />
+      </GoogleReCaptchaProvider>
     </>
   );
 };
