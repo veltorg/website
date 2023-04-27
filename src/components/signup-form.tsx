@@ -61,20 +61,36 @@ export const SignUpForm: React.FC = () => {
         minHeight: '800px',
       }}
     >
-      {isEnabled('dev-signup-form') && <div>Development Signup Form Mode</div>}
-      <Form
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          border: 0,
-        }}
-        className="fw-iframe"
-        allowFullScreen
-        src="https://freshservice.com/signup/partners-external-iframe-signup"
-      />
+      {isEnabled('dev-signup-form') ? (
+        <Form
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            border: 0,
+          }}
+          className="fw-iframe"
+          allowFullScreen
+          src="https://freshservice.com/signup/partners-external-iframe-signup"
+        />
+      ) : (
+        <Form
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            border: 0,
+          }}
+          className="fw-iframe"
+          allowFullScreen
+          src="https://freshservice.com/signup/partners-external-iframe-signup"
+        />
+      )}
     </Box>
   );
 };
