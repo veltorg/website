@@ -23,24 +23,23 @@ const isValidJSON = (data: string): boolean => {
 
 const Form = chakra('iframe');
 
-const formUrl = '/signup/partners-external-iframe-signup';
-
-const types = {
-  freshchat: new URL(formUrl, 'https://freshworks.com/live-chat-software/'),
-  freshdesk: new URL(formUrl, 'https://freshdesk.com'),
-  freshsales: new URL(formUrl, 'https://freshsales.com/freshsales-crm/'),
-  freshservice: new URL(formUrl, 'https://freshservice.com'),
+const formPath = 'signup/partners-external-iframe-signup';
+const baseUrls = {
+  freshchat: 'https://freshworks.com/live-chat-software',
+  freshdesk: 'https://freshdesk.com',
+  freshsales: 'https://freshsales.com/freshsales-crm',
+  freshservice: 'https://freshservice.com',
 } as const;
 
-type Types = keyof typeof types;
+type Types = keyof typeof baseUrls;
 
 type SignUpFormProps = {
   type: Types;
 };
 
-export const SignUpForm: React.FC<SignUpFormProps> = (props) => {
+export const SignUpForm: React.FC<SignUpFormProps> = props => {
   const { isEnabled } = useToggles();
-  const url = types[props.type];
+  const url = new URL([baseUrls[props.type], formPath].join('/'));
   useEffect(() => {
     const handleMessage = (event: MessageEvent): void => {
       if (isEnabled('dev-signup-form')) {
