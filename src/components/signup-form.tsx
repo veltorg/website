@@ -1,7 +1,6 @@
 import { Box, Button, chakra } from '@chakra-ui/react';
 import { useReCaptcha } from 'next-recaptcha-v3';
 import React, { useEffect } from 'react';
-import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { useToggles } from '../providers/toggles-provider';
 
 type MessageEvent = {
@@ -137,11 +136,6 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
           src={url.toString()}
         />
       </Box>
-      <GoogleReCaptcha
-        onVerify={token => {
-          setToken(token);
-        }}
-      />
     </>
   );
 };
