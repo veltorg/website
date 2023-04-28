@@ -2,7 +2,6 @@ import { Box, Button, chakra } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import {
   GoogleReCaptcha,
-  GoogleReCaptchaProvider,
 } from 'react-google-recaptcha-v3';
 import { useToggles } from '../providers/toggles-provider';
 
@@ -16,7 +15,6 @@ type ParsedMessage = {
   url: string;
 };
 
-const siteKey = '6Lc_78ElAAAAAFFkzMSMFg-Uisc7-nlxPrFvVbuN';
 const collectorUrl =
   'https://europe-west1-velt-metrics.cloudfunctions.net/signup-form-collector-7b80f45';
 
@@ -100,7 +98,7 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
     return () => {
       window.removeEventListener('message', handleMessage);
     };
-  }, [isEnabled]);
+  }, [isEnabled, token]);
 
   return (
     <>
@@ -125,7 +123,7 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
         }}
       >
         <Form
-          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+          // sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
           sx={{
             position: 'absolute',
             top: 0,
@@ -139,13 +137,11 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
           src={url.toString()}
         />
       </Box>
-      <GoogleReCaptchaProvider reCaptchaKey={siteKey}>
-        <GoogleReCaptcha
-          onVerify={token => {
-            setToken(token);
-          }}
-        />
-      </GoogleReCaptchaProvider>
+      <GoogleReCaptcha
+        onVerify={token => {
+          setToken(token);
+        }}
+      />
     </>
   );
 };
