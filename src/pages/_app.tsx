@@ -1,7 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
+import { ReCaptchaProvider } from 'next-recaptcha-v3';
 import { DefaultSeo, LocalBusinessJsonLd } from 'next-seo';
 import type { AppProps } from 'next/app';
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { TogglesProvider } from '../providers/toggles-provider';
 import { theme } from '../theme';
 import '@fontsource/inter';
@@ -10,7 +10,7 @@ const siteKey = '6Lc_78ElAAAAAFFkzMSMFg-Uisc7-nlxPrFvVbuN';
 
 export const app: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={siteKey}>
+    <ReCaptchaProvider reCaptchaKey={siteKey}>
       <ChakraProvider theme={theme}>
         <DefaultSeo
           title="Velt – vi skaper gode opplevelser"
@@ -46,7 +46,7 @@ export const app: React.FC<AppProps> = ({ Component, pageProps }) => {
           <Component {...pageProps} />
         </TogglesProvider>
       </ChakraProvider>
-    </GoogleReCaptchaProvider>
+    </ReCaptchaProvider>
   );
 };
 

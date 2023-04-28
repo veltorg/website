@@ -1,8 +1,7 @@
 import { Box, Button, chakra } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
-import {
-  GoogleReCaptcha,
-} from 'react-google-recaptcha-v3';
+import { useReCaptcha } from 'next-recaptcha-v3';
+import React, { useEffect } from 'react';
+import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { useToggles } from '../providers/toggles-provider';
 
 type MessageEvent = {
@@ -43,31 +42,31 @@ type SignUpFormProps = {
   type: Types;
 };
 
-function sendSignUpToCollector(
-  signUpUrl: string,
-  recaptchaToken: string,
-): void {
-  try {
-    fetch(collectorUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        signUpUrl,
-        recaptchaToken,
-      }),
-    });
-  } catch {
-    // eslint-disable-next-line no-console
-    console.error('Failed to send data to collector');
-  }
-}
-
 export const SignUpForm: React.FC<SignUpFormProps> = props => {
   const { isEnabled } = useToggles();
-  const [token, setToken] = useState<string | undefined>();
   const url = new URL([baseUrls[props.type], formPath].join('/'));
+  const { executeRecaptcha } = useReCaptcha();
+
+  const sendSignUpToCollector = (
+    signUpUrl: string,
+    recaptchaToken: string,
+  ) => {
+    try {
+      fetch(collectorUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          signUpUrl,
+          recaptchaToken,
+        }),
+      });
+    } catch {
+      // eslint-disable-next-line no-console
+      console.error('Failed to send data to collector');
+    }
+  }
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent): void => {
@@ -78,9 +77,10 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
       if (isValidJSON(event.data)) {
         const parsedMessage = JSON.parse(event.data) as ParsedMessage;
 
-        if (token) {
-          sendSignUpToCollector(parsedMessage.url, token);
-        }
+        // eslint-disable-next-line promise/catch-or-return
+        executeRecaptcha('signup').then(token =>
+          sendSignUpToCollector(parsedMessage.url, token),
+        );
 
         if (isEnabled('dev-signup-form')) {
           // eslint-disable-next-line no-console
@@ -98,7 +98,7 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
     return () => {
       window.removeEventListener('message', handleMessage);
     };
-  }, [isEnabled, token]);
+  }, [isEnabled, executeRecaptcha]);
 
   return (
     <>
