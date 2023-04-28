@@ -1,10 +1,10 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { DefaultSeo, LocalBusinessJsonLd } from 'next-seo';
 import type { AppProps } from 'next/app';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { TogglesProvider } from '../providers/toggles-provider';
 import { theme } from '../theme';
 import '@fontsource/inter';
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 const siteKey = '6Lc_78ElAAAAAFFkzMSMFg-Uisc7-nlxPrFvVbuN';
 
