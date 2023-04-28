@@ -46,11 +46,9 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
   const url = new URL([baseUrls[props.type], formPath].join('/'));
   const { executeRecaptcha } = useReCaptcha();
 
-  const sendSignUpToCollector = (
-    signUpUrl: string,
-    recaptchaToken: string,
-  ) => {
+  const sendSignUpToCollector = async (signUpUrl: string) => {
     try {
+      const token = await executeRecaptcha('signup');
       fetch(collectorUrl, {
         method: 'POST',
         headers: {
@@ -58,14 +56,14 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
         },
         body: JSON.stringify({
           signUpUrl,
-          recaptchaToken,
+          recaptchaToken: token,
         }),
       });
     } catch {
       // eslint-disable-next-line no-console
       console.error('Failed to send data to collector');
     }
-  }
+  };
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent): void => {
@@ -76,10 +74,7 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
       if (isValidJSON(event.data)) {
         const parsedMessage = JSON.parse(event.data) as ParsedMessage;
 
-        // eslint-disable-next-line promise/catch-or-return
-        executeRecaptcha('signup').then(token =>
-          sendSignUpToCollector(parsedMessage.url, token),
-        );
+        sendSignUpToCollector(parsedMessage.url);
 
         if (isEnabled('dev-signup-form')) {
           // eslint-disable-next-line no-console
@@ -102,14 +97,7 @@ export const SignUpForm: React.FC<SignUpFormProps> = props => {
   return (
     <>
       {isEnabled('dev-signup-form') && (
-        <Button
-          onClick={() =>
-            sendSignUpToCollector(
-              'https://testdomain.com',
-              token || 'hello-world',
-            )
-          }
-        >
+        <Button onClick={() => sendSignUpToCollector('https://testdomain.com')}>
           Send to collector
         </Button>
       )}
