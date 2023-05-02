@@ -31,7 +31,7 @@ const formPath = 'signup/partners-external-iframe-signup';
 const baseUrls = {
   freshchat: 'https://freshworks.com/live-chat-software',
   freshdesk: 'https://freshdesk.com',
-  freshsales: 'https://freshsales.com/freshsales-crm',
+  freshsales: 'https://freshworks.com/crm',
   freshservice: 'https://freshservice.com',
 } as const;
 
