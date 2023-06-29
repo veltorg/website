@@ -1,7 +1,7 @@
 import { Container, Heading, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 import { FC } from 'react';
 import { Layout } from '../components/layout';
-import Link from 'next/link';
 
 const Terms: FC = () => {
   return (
