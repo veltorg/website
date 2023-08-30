@@ -116,6 +116,11 @@
   title="freshworks"
   src={url.toString()}
   allowFullscreen
+  style={{
+    height: '100vh',
+    width: '100%',
+    border: 'none',
+  }}
 />
 
 {#if isEnabled('dev-signup-form')}
@@ -123,14 +128,3 @@
     Simulate signup collector call
   </button>
 {/if}
-
-<style lang="css">
-  .fw-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    border: none;
-  }
-</style>
