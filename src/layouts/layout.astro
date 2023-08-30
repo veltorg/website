@@ -1,0 +1,62 @@
+--- 
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="nb">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+    <Header />
+		<slot />
+    <Footer />
+	</body>
+</html>
+<style is:global>
+	:root {
+    --liberty-hue: 238;
+    --pale-hue: 265;
+		--color-liberty: hsla(var(--liberty-hue), 100%, 64%, 1);
+		--color-pale: hsla(var(--pale-hue), 100%, 90%, 1);
+
+    --container-width: 850px;
+
+    --color-app-bg: hsla(var(--liberty-hue), 100%, 98%, 1);
+    --color-low-contract-text: hsla(var(--liberty-hue), 100%, 80%, 1);
+    --color-high-contract-text: hsla(var(--liberty-hue), 100%, 20%, 1);
+    --color-solid-bg: hsla(var(--liberty-hue), 100%, 20%, 1);
+    --color-solid-bg-text: hsla(var(--liberty-hue), 100%, 100%, 1);
+	}
+
+	html {
+		font-family: system-ui, sans-serif;
+    color: var(--color-high-contract-text);
+    background-color: var(--color-app-bg);
+
+    line-height: 1.3;
+
+    /* font anti-aliasing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: auto;
+    text-rendering: optimizeLegibility;
+	}
+
+  .container {
+      margin: 0 auto;
+      padding: 1rem;
+    }
+</style>

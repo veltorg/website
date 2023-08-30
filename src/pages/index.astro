@@ -1,0 +1,221 @@
+---
+import { Image } from "astro:assets";
+import veltHeroImage from "../assets/velt-hero.jpg";
+import Layout from "../layouts/layout.astro";
+import CustomerExperienceFigure from "../components/figures/customer-experience-figure.astro";
+import EmployeeExperienceFigure from "../components/figures/employee-experience-figure.astro";
+import MarketingAutomationFigure from "../components/figures/marketing-automation-figure.astro";
+import FreshworkLogo from "../components/freshworks-logo.astro";
+---
+
+<Layout title="Home">
+  <main class="container">
+    <Image
+      class="hero"
+      src={veltHeroImage}
+      alt="people around table"
+      decoding="async"
+      loading="lazy"
+      width={850}
+    />
+
+    <article class="introduction">
+      <h1>
+        Vi skaper gode kunde- og ansattopplevelser for å gjøre hverdagen bedre
+        for folk
+      </h1>
+      <p>
+        Vi brenner for å skape gode opplevelser, og vi erfarer at det starter
+        hos de ansatte. Det man møter i kontakt med en bedrift er helt
+        avgjørende for et videre samarbeid.
+      </p>
+      <p>
+        Velt er et <strong>konsulenthus</strong> bestående av
+        <strong>dedikerte</strong> mennesker med lang erfaring innenfor
+        kundeservice, salg, markedføring og ledelse.
+      </p>
+    </article>
+
+    <article class="service">
+      <div class="figure">
+        <CustomerExperienceFigure />
+      </div>
+      <div class="content">
+        <p>Produkter og tjenester</p>
+        <h2>Kundeopplevelse – <strong>CX</strong></h2>
+        <p>
+          Kundeopplevelse (CX) er en av måtene vi kan gjøre verden til et bedre
+          sted. Vi har over 20 års erfaring med utvikling av fantastiske
+          kundeopplevelser.
+        </p>
+      </div>
+    </article>
+
+    <article class="service">
+      <div class="figure">
+        <EmployeeExperienceFigure />
+      </div>
+      <div class="content">
+        <p>Produkter og tjenester</p>
+        <h2>Ansattopplevelse – <strong>EX</strong></h2>
+        <p>
+          Ansattopplevelse (EX) refererer til hva en medarbeider føler om jobben
+          sin og bedriften de jobber for - fra første til siste dag av
+          ansettelsesforholdet. Vi tror at det er enklere å sørge for god
+          kundeopplevelse, dersom ansattopplevelsen er god.
+        </p>
+        <p>La oss ta en prat om hvorfor vi tror det og hvordan vi løser det.</p>
+      </div>
+    </article>
+
+    <article class="service">
+      <div class="figure">
+        <MarketingAutomationFigure />
+      </div>
+      <div class="content">
+        <p>Produkter og tjenester</p>
+        <h2>Marketing Automation – <strong>MA</strong></h2>
+        <p>
+          Marketing Automation er bruk av teknologi for å automatisere og
+          forbedre markedsføringen med mål om å spare tid og øke effektiviteten
+          - uten at det går ut over kvaliteten på arbeidet.
+        </p>
+        <p>
+          Med vår bakgrunn fra salg, markedsføring og journalistikk kan vi rådgi
+          våre kunder, slik at de kan utnytte det uforløste potensialet som
+          ligger der.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <div class="spot">
+    <div class="logo">
+      <FreshworkLogo />
+    </div>
+    <h2>Freshworks-partner</h2>
+    <p>
+      Freshworks lager verktøy som gjør det enklere å markedsføre, selge, gi god
+      kundestøtte og håndtere intern og ekstern IT.
+    </p>
+    <p>
+      Velt er leverandør i Norge og tilbyr bistand til oppsett, støtte og
+      utvikling av produktene, i tillegg til å forhandle lisenser.
+    </p>
+  </div>
+</Layout>
+
+<style lang="scss">
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero {
+    object-fit: cover;
+    max-height: 400px;
+    border-radius: 0.5rem;
+  }
+
+  .introduction {
+    max-width: 60ch;
+
+    h1 {
+      font-weight: normal;
+    }
+
+    /* Devider after heading */
+    h1:after {
+      content: "";
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+      height: 0.2rem;
+      background-color: var(--color-pale);
+    }
+  }
+
+  .service {
+    border-radius: 0.5rem;
+    max-width: var(--container-width);
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border: 1px solid var(--color-pale);
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 660px) {
+      flex-direction: column !important;
+    }
+
+    .figure {
+      border-radius: 0.5rem;
+      background-color: var(--color-pale);
+      align-self: stretch;
+      min-width: 200px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem;
+
+      :global(> *) {
+        object-fit: cover;
+        max-width: 200px;
+      }
+    }
+
+    .content {
+      flex-grow: 2;
+
+      padding: 3rem;
+
+      /** first child of p */
+      p:first-child {
+        color: var(--color-low-contract-text);
+        margin: 0px;
+      }
+
+      h2 {
+        margin-top: 0.3rem;
+      }
+    }
+  }
+
+  .spot {
+    margin-top: 3rem;
+    background-color: var(--color-solid-bg);
+    color: var(--color-solid-bg-text);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+    text-align: center;
+
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 0;
+      margin-top: 0.3rem;
+    }
+
+    .logo {
+      max-width: 150px;
+    }
+
+    p {
+      margin: none;
+      max-width: 50ch;
+    }
+  }
+</style>

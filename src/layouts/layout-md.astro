@@ -1,0 +1,21 @@
+---
+import Layout from "./layout.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<Layout title={title}>
+  <div class="container">
+    <slot />
+  </div>
+</Layout>
+
+<style>
+  .container {
+    max-width: 60ch;
+  }
+</style>
