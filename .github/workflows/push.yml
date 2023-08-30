@@ -1,6 +1,7 @@
-name: Workflow
+name: Typical
 
 on:
+  pull_request:
   push:
     branches:
       - main
