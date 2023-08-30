@@ -116,11 +116,7 @@
   title="freshworks"
   src={url.toString()}
   allowFullscreen
-  style={{
-    height: '100vh',
-    width: '100%',
-    border: 'none',
-  }}
+  style="height: 100vh; width: 100%; border: none;"
 />
 
 {#if isEnabled('dev-signup-form')}
