@@ -124,8 +124,8 @@
   </button>
 {/if}
 
-<style>
-  :global(.fw-iframe) {
+<style lang="css">
+  .fw-iframe {
     position: absolute;
     top: 0;
     left: 0;
