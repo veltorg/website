@@ -125,7 +125,7 @@
 {/if}
 
 <style>
-  iframe {
+  :global(.fw-iframe) {
     position: absolute;
     top: 0;
     left: 0;
