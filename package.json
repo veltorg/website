@@ -21,7 +21,7 @@
   "prettier": "@simenandre/prettier",
   "dependencies": {
     "@astrojs/svelte": "^4.0.0",
-    "astro": "^3.0.0",
+    "astro": "^4.0.0",
     "sharp": "^0.32.5",
     "svelte": "^4.0.0"
   },
